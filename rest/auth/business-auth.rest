@@ -1,0 +1,24 @@
+
+# @name getAnonymToken
+GET /public/anonymous-auth?projectId=933a51e1c87a9ccc181d21fca91c2aad HTTP/1.1
+Host: {{host}}
+
+###
+
+@anonymAccessToken = {{getAnonymToken.response.body.$.accessToken}}
+
+# @name adminLogin
+POST /user/action?auth={{anonymAccessToken}}&action=rbs.businessuserauth.request.LOGIN
+Host: {{host}}
+
+{
+    "email": "email@test.com",
+    "password": "password"
+}
+
+###
+
+@customToken = {{adminLogin.response.body.$[0].response.customToken}}
+
+GET /public/auth?customToken={{customToken}} HTTP/1.1
+Host: {{host}}
