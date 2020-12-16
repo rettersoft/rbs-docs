@@ -1,0 +1,11 @@
+POST /user/action?auth={{accessToken}}&action=rbs.logistics.request.UPSERT_SHIPMENT_PROVIDER HTTP/1.1
+Host: {{host}}
+
+{
+    "merchantId": "DEFAULT",
+    "storeId": "STORE3",
+    "shipmentType": "CARGO",
+    "providerId": "YURTICI_KARGO",
+    "name": "Yurtiçi Kargo",
+    "data": {}
+}
