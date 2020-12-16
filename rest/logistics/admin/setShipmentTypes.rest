@@ -1,0 +1,12 @@
+POST /user/action?auth={{accessToken}}&action=rbs.logistics.request.UPSERT_OPTION HTTP/1.1
+Host: {{host}}
+
+{
+    "optionId": "SHIPMENT_TYPES",
+    "data": [
+        "CARGO",
+        "RESERVED",
+        "ON_DEMAND",
+        "SELF"
+    ]
+}

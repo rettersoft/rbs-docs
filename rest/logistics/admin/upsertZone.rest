@@ -1,0 +1,56 @@
+POST /user/action?auth={{accessToken}}&action=rbs.logistics.request.UPSERT_ZONE HTTP/1.1
+Host: {{host}}
+
+{
+    "zoneId": "ZONE3",
+    "name": "Zone #3",
+    "rules": [
+        {
+            "addr": {
+                "city": {
+                    "IN": [
+                        "İSTANBUL"
+                    ]
+                },
+                "district": {
+                    "NIN": [
+                        "KADIKÖY"
+                    ]
+                }
+            }
+        },
+        {
+            "loc": {
+                "circle": {
+                    "center": {
+                        "lat": 41,
+                        "lng": 29
+                    },
+                    "radius": 15000
+                }
+            }
+        },
+        {
+            "loc": {
+                "polygon": [
+                    {
+                        "lat": 41,
+                        "lng": 29
+                    },
+                    {
+                        "lat": 42,
+                        "lng": 28
+                    },
+                    {
+                        "lat": 43,
+                        "lng": 27
+                    },
+                    {
+                        "lat": 41,
+                        "lng": 29
+                    }
+                ]
+            }
+        }
+    ]
+}

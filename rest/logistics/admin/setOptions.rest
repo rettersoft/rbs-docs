@@ -1,0 +1,10 @@
+POST /user/action?auth={{accessToken}}&action=rbs.logistics.request.UPSERT_OPTION HTTP/1.1
+Host: {{host}}
+
+{
+    "optionId": "SHIPMENT",
+    "data": {
+        "days": 3,
+        "linearStatuses": true
+    }
+}

@@ -1,0 +1,13 @@
+POST /user/action?auth={{accessToken}}&action=rbs.logistics.request.UPSERT_OPTION HTTP/1.1
+Host: {{host}}
+
+{
+    "optionId": "SHIPMENT_STATUSES",
+    "data": [
+            { "status": "PENDING", "cancellable": true, "addable": true },
+            { "status": "PACKAGING", "addable": true, "back": true },
+            { "status": "READY", "back": true },
+            { "status": "IN_TRANSIT", "trackDelivery": true },
+            { "status": "DELIVERED", "triggerInvoice": true }
+        ]
+}

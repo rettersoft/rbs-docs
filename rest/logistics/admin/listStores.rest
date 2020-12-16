@@ -1,0 +1,6 @@
+POST /user/action?auth={{accessToken}}&action=rbs.logistics.request.LIST_STORES HTTP/1.1
+Host: {{host}}
+
+{
+    "merchantId": "DEFAULT"
+}

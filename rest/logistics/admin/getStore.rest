@@ -1,0 +1,7 @@
+POST /user/action?auth={{accessToken}}&action=rbs.logistics.request.GET_STORE HTTP/1.1
+Host: {{host}}
+
+{
+    "merchantId": "DEFAULT",
+    "storeId": "STORE3"
+}

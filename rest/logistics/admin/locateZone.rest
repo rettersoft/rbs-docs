@@ -1,0 +1,9 @@
+POST /user/action?auth={{accessToken}}&action=rbs.logistics.request.LOCATE_ZONE HTTP/1.1
+Host: {{host}}
+
+{
+    "address": {
+        "city": "İSTANBUL",
+        "district": "ATAŞEHİR"
+    }
+}

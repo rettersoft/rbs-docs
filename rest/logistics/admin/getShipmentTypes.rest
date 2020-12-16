@@ -1,0 +1,4 @@
+POST /user/action?auth={{accessToken}}&action=rbs.logistics.request.GET_OPTION HTTP/1.1
+Host: {{host}}
+
+{ "optionId": "SHIPMENT_TYPES" }
