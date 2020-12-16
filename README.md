@@ -1,6 +1,6 @@
 # RBS Documentation.
 
-Check [wiki](wiki) for documentation.
+Check [wiki](https://github.com/rettersoft/rbs-docs/wiki) for documentation.
 
 ### Rest Calls
 
