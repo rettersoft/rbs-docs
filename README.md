@@ -1,6 +1,6 @@
 # RBS Documentation.
 
-Check wiki for documentation.
+Check [wiki](wiki) for documentation.
 
 ### Rest Calls
 
