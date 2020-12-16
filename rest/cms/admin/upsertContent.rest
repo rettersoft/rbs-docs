@@ -1,0 +1,25 @@
+POST /user/action?auth={{accessToken}}&action=rbs.cms.request.UPSERT_CONTENT HTTP/1.1
+Host: {{host}}
+
+{
+    "id": "content1",
+    "widgets": [
+        {
+            "id": "widget1",
+            "title": [{
+                "locale": "tr_TR",
+                "value": "Birinci Widget"
+            }],
+            "lines": [
+                {
+                    "id": "line1",
+                    "relatedItems": [{
+                        "itemType": "rbs.product",
+                        "itemId": "somesku"
+                    }]
+                }
+            ]
+        }
+    ]
+}
+
