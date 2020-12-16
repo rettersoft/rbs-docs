@@ -1,0 +1,5 @@
+
+POST /user/action?auth={{accessToken}}&action=rbs.address.request.GET_NEIGHBORHOODS HTTP/1.1
+Host: {{host}}
+
+{ "district": "TR_ISTANBUL_ATASEHIR" }

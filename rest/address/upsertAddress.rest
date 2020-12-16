@@ -1,0 +1,11 @@
+
+POST /user/action?auth={{accessToken}}&action=rbs.address.request.UPSERT_ADDRESS HTTP/1.1
+Host: {{host}}
+
+{
+    "addressId": "TEST_ADDRESS",
+    "name": "Test Address",
+    "country": "TÜRKİYE",
+    "city": "İSTANBUL",
+    "district": "ATAŞEHİR"
+}

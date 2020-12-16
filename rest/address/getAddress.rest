@@ -1,0 +1,5 @@
+
+POST /user/action?auth={{accessToken}}&action=rbs.address.request.GET_ADDRESS HTTP/1.1
+Host: {{host}}
+
+{ "addressId": "TEST_ADDRESS" }
