@@ -1,14 +1,14 @@
-# RBS Documentation.
+# RBS Documentation
 
 Check [wiki](https://github.com/rettersoft/rbs-docs/wiki) for documentation.
 
-### Rest Calls
+## Rest Calls
 
 Rest folder contains all necessary request files to make rbs calls to RBS services. To execute calls [VS Code Rest Client extension](https://marketplace.visualstudio.com/items?itemName=humao.rest-client) should be installed.
 
 ### Example VS Code Environment File
 
-```
+```json
 "rest-client.environmentVariables": {
     "beta": {
         "host": "core-test.rettermobile.com",
@@ -18,6 +18,6 @@ Rest folder contains all necessary request files to make rbs calls to RBS servic
 }
 ```
 
-This json should go into your VS Code settings.json file. 
+This json should go into your VS Code settings.json file.
 
-[VS Code Settings](https://code.visualstudio.com/docs/getstarted/settings) 
+[VS Code Settings](https://code.visualstudio.com/docs/getstarted/settings)
