@@ -1,0 +1,24 @@
+
+# @name validateCode
+POST /user/action?auth={{accessToken}}&action=rbs.basicauth.request.ANSWER_CHALLENGE HTTP/1.1
+Host: {{host}}
+
+{
+    "hashedKey": "MSZfRI0ORiyOInUT1NwqLsu8T3rlpeDQKGf4RGEhWGc=",    
+    "answer": {
+        "code": "141414"
+    }
+}
+
+
+# @name signup
+POST /user/action?auth={{accessToken}}&action=rbs.basicauth.request.ANSWER_CHALLENGE HTTP/1.1
+Host: {{host}}
+
+{
+    "hashedKey": "MSZfRI0ORiyOInUT1NwqLsu8T3rlpeDQKGf4RGEhWGc=",    
+    "answer": {
+        "firstName": "Baran",
+        "lastName": "Baygan"
+    }
+}

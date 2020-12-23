@@ -1,0 +1,8 @@
+POST /user/action?auth={{accessToken}}&action=rbs.crm.request.SIGNUP HTTP/1.1
+Host: {{host}}
+
+{
+    "firstName": "Baran",
+    "lastName": "Baygan",
+    "email": "baran@rettermobile.com"
+}
