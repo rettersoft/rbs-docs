@@ -1,0 +1,67 @@
+POST /user/action?auth={{accessToken}}&action=rbs.wms.request.UPSERT_OPTION HTTP/1.1
+Host: {{host}}
+
+{
+    "optionId": "MAIN",
+    "data": {
+        "assets": [
+            { "id": "MAIN", "name": "Main Store" },
+
+            {
+                "id": "SELLABLE",
+                "name": "Sellable",
+                "options": {
+                    "first": true
+                }
+            },
+            {
+                "id": "RESERVED",
+                "name": "Reserved"
+            },
+            {
+                "id": "SOLD",
+                "name": "Sold"
+            },
+            {
+                "id": "INVEST",
+                "name": "Investigation",
+                "options": {
+                    "ttl": {
+                        "val": 864000,
+                        "to": "$back"
+                    }
+                }
+            },
+            {
+                "id": "DISCARD",
+                "name": "Discarded"
+            }
+        ],
+        "rules": [
+            {
+                "direction": ["MAIN", "SELLABLE"],
+                "options": {
+                    "ttl": {
+                        "val": "$skt",
+                        "to": "DISCARD"
+                    }
+                }
+            },
+
+            { "direction": ["SELLABLE", "INVEST"], "options": {} },
+            {
+                "direction": ["SELLABLE", "RESERVED"],
+                "options": {
+                    "ttl": {
+                        "val": 300,
+                        "to": "SELLABLE"
+                    }
+                }
+            },
+
+            { "direction": ["RESERVED", "SOLD"], "options": {} },
+            { "direction": ["SOLD", "INVEST"], "options": {} },
+            { "direction": ["INVEST", "DISCARD"], "options": {} }
+        ]
+    }
+}
