@@ -10,6 +10,5 @@ Host: {{host}}
     "ownerId": "-",
     "exp": "20211227",
     "sectionId": "A13",
-    "qty": 1,
-    "actor": "test-actor"
+    "qty": 1
 }
