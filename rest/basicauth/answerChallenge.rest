@@ -4,7 +4,7 @@ POST /user/action?auth={{accessToken}}&action=rbs.basicauth.request.ANSWER_CHALL
 Host: {{host}}
 
 {
-    "hashedKey": "aEWcm681k0BK57fCtRr2T/uQXUPpmM9pTlJeTdsf3cQ=",    
+    "hashedKey": "vQaAdDzD5h3VaeQn/f6WIvFCOrivw0sdeDCCeAg0ZBo=",    
     "answer": {
         "code": "141414"
     }
@@ -17,7 +17,7 @@ POST /user/action?auth={{accessToken}}&action=rbs.basicauth.request.ANSWER_CHALL
 Host: {{host}}
 
 {
-    "hashedKey": "aEWcm681k0BK57fCtRr2T/uQXUPpmM9pTlJeTdsf3cQ=",    
+    "hashedKey": "vQaAdDzD5h3VaeQn/f6WIvFCOrivw0sdeDCCeAg0ZBo=",    
     "answer": {
         "firstName": "Baran",
         "lastName": "Baygan",
