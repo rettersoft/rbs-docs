@@ -6,7 +6,7 @@ Host: {{host}}
 {
     "hashedKey": "vQaAdDzD5h3VaeQn/f6WIvFCOrivw0sdeDCCeAg0ZBo=",    
     "answer": {
-        "code": "141414"
+        "code": "1414"
     }
 }
 

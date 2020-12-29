@@ -1,6 +1,3 @@
-POST /user/action?auth={{accessToken}}&action=rbs.pimproduct.request.GET_ATTRIBUTE HTTP/1.1
+POST /user/action?auth={{accessToken}}&action=rbs.catalog.request.AGGREGATE HTTP/1.1
 Host: {{host}}
 
-{
-    "id": "barcode"
-}
