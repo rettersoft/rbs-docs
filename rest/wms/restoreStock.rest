@@ -1,0 +1,12 @@
+POST /user/action?auth={{accessToken}}&action=rbs.wms.request.RESTORE_STOCK HTTP/1.1
+Host: {{host}}
+
+{
+    "type": "?",
+    "merchantId": "DEFAULT",
+    "storeId": "STOREA",
+    "variantGroupId": "NIKE_AIR",
+    "sku": "NIKE_AIR_38_WHITE",
+    "ownerId": "ORDER_ID_Y",
+    "qty": 1
+}
