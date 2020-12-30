@@ -8,5 +8,5 @@ Host: {{host}}
     "variantGroupId": "NIKE_AIR",
     "sku": "NIKE_AIR_38_WHITE",
     "ownerId": "ORDER_ID_Y",
-    "qty": 1
+    "qty": 2
 }
