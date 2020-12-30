@@ -1,0 +1,15 @@
+POST /user/action?auth={{accessToken}}&action=rbs.catalog.request.SEARCH HTTP/1.1
+Host: {{host}}
+
+{
+    "from": 0,
+    "size": 5,
+    "searchTerm": "hardal",
+    "filters": [
+       {
+           "filterId": "size",
+           "filterValues": ["500 ML", "250 GR"]
+       }
+    ]
+
+}
