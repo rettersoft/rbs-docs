@@ -5,22 +5,31 @@ Host: {{host}}
     "optionId": "MAIN",
     "data": {
         "assets": [
-            { "id": "MAIN", "name": "Main Store" },
-
             {
                 "id": "SELLABLE",
                 "name": "Sellable",
                 "options": {
-                    "first": true
+                    "first": true,
+                    "active": true,
+                    "ttl": {
+                        "val": "exp",
+                        "to": "DISCARD"
+                    }
                 }
             },
             {
                 "id": "RESERVED",
-                "name": "Reserved"
+                "name": "Reserved",
+                "options": {
+                    "hold": true
+                }
             },
             {
                 "id": "SOLD",
-                "name": "Sold"
+                "name": "Sold",
+                "options": {
+                    "last": true
+                }
             },
             {
                 "id": "INVEST",
@@ -38,16 +47,6 @@ Host: {{host}}
             }
         ],
         "rules": [
-            {
-                "direction": ["MAIN", "SELLABLE"],
-                "options": {
-                    "ttl": {
-                        "val": "$skt",
-                        "to": "DISCARD"
-                    }
-                }
-            },
-
             { "direction": ["SELLABLE", "INVEST"], "options": {} },
             {
                 "direction": ["SELLABLE", "RESERVED"],
@@ -60,8 +59,10 @@ Host: {{host}}
             },
 
             { "direction": ["RESERVED", "SOLD"], "options": {} },
+            { "direction": ["RESERVED", "SELLABLE"], "options": {} },
             { "direction": ["SOLD", "INVEST"], "options": {} },
-            { "direction": ["INVEST", "DISCARD"], "options": {} }
+            { "direction": ["INVEST", "DISCARD"], "options": {} },
+            { "direction": ["INVEST", "SELLABLE"], "options": {} }
         ]
     }
 }
