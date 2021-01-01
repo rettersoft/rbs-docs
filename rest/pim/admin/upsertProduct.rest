@@ -3,8 +3,20 @@ Host: {{host}}
 
 {
     "sku": "someproduct1",
+    "variantGroupId": "variantGroup1",
     "categories": [],
     "attributes": [
-        
+        {
+            "attributeId": "baranNumberAttribute",
+            "numberValue": 246
+        },
+        {
+            "attributeId": "barantestattr2",
+            "boolValue": true
+        },
+        {
+            "attributeId": "barantestattr",
+            "listValues": ["deneme","some", "some3","some4", "heyhat"]
+        }
     ]
 }
