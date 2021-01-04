@@ -7,7 +7,7 @@ Host: {{host}}
         "assets": [
             {
                 "id": "SELLABLE",
-                "name": "Sellable",
+                "name": "Sellable Products",
                 "options": {
                     "first": true,
                     "active": true,
@@ -19,14 +19,14 @@ Host: {{host}}
             },
             {
                 "id": "RESERVED",
-                "name": "Reserved",
+                "name": "Reserved Products",
                 "options": {
                     "hold": true
                 }
             },
             {
                 "id": "SOLD",
-                "name": "Sold",
+                "name": "Sold Products",
                 "options": {
                     "last": true
                 }
@@ -43,7 +43,7 @@ Host: {{host}}
             },
             {
                 "id": "DISCARD",
-                "name": "Discarded"
+                "name": "Discarded Products"
             }
         ],
         "rules": [
