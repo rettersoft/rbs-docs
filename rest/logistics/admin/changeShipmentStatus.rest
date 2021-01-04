@@ -1,0 +1,8 @@
+POST /user/action?auth={{accessToken}}&action=rbs.logistics.request.CHANGE_SHIPMENT_STATUS HTTP/1.1
+Host: {{host}}
+
+{
+    "orderId": "ORDER_A",
+    "shipmentId": "SHIPMENT_A",
+    "next": true
+}

@@ -3,6 +3,6 @@ Host: {{host}}
 
 {
     "merchantId": "DEFAULT",
-    "storeId": "STORE3",
-    "name": "Store #3"
+    "storeId": "TEST_STORE",
+    "name": "Test Store"
 }

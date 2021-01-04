@@ -3,7 +3,7 @@ Host: {{host}}
 
 {
     "merchantId": "DEFAULT",
-    "storeId": "STORE3",
+    "storeId": "STORE_A",
     "shipmentType": "CARGO",
     "providerId": "YURTICI_KARGO"
 }
