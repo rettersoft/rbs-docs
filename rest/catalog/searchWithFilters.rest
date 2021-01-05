@@ -3,13 +3,8 @@ Host: {{host}}
 
 {
     "from": 0,
-    "size": 10,
-    "searchTerm": "hardal",
+    "size": 100,
     "filters": [
-       {
-           "filterId": "size",
-           "filterValues": ["500 ML", "250 GR"]
-       }
+        
     ]
-
 }
