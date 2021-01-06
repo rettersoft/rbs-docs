@@ -1,0 +1,191 @@
+
+# Aggregate with no payload
+POST /user/action?auth={{accessToken}}&action=rbs.catalog.request.ADMIN_UPDATE_CONFIG HTTP/1.1
+Host: {{host}}
+
+{
+        "defaultMerchantDiscountedPriceFieldName": "storeAdiscountPrice",
+        "updateToken": "7rb1sh",
+        "textSearchFields": [
+            {
+                "boost": 10,
+                "fieldName": "shortName.ru_RU"
+            },
+            {
+                "boost": 10,
+                "fieldName": "shortName.en_US"
+            },
+            {
+                "boost": 10,
+                "fieldName": "shortName.tr_TR"
+            }
+        ],
+        "searchProjectionFields": [
+            "shortName",
+            "productDescription",
+            "size",
+            "content",
+            "longName",
+            "isHeroProduct",
+            "HeroType",
+            "productFeature",
+            "longName",
+            "NewProducts",
+            "specialToPinar",
+            "ingredients",
+            "producer",
+            "storageConditions"
+        ],
+        "filters": [
+            {
+                "filterId": "NewProducts",
+                "fieldName": "NewProducts",
+                "label": "NewProducts",
+                "visibility": true,
+                "filterType": "string",
+                "order": 1
+            },
+            {
+                "filterId": "categories",
+                "fieldName": "categories",
+                "label": "categories",
+                "visibility": true,
+                "filterType": "string",
+                "order": 1
+            },
+            {
+                "filterId": "size",
+                "fieldName": "size",
+                "label": "size",
+                "visibility": true,
+                "filterType": "string"
+            },
+            {
+                "filterId": "content",
+                "fieldName": "content",
+                "label": "content",
+                "visibility": true,
+                "filterType": "string"
+            },
+            {
+                "filterId": "specialToPinar",
+                "fieldName": "specialToPinar",
+                "label": "specialToPinar",
+                "visibility": true,
+                "filterType": "string"
+            },
+            {
+                "filterId": "productFeature",
+                "fieldName": "productFeature",
+                "label": "productFeature",
+                "visibility": true,
+                "filterType": "string"
+            }
+        ],
+        "layouts": [],
+        "rootCategoryId": "B2C",
+        "badgeImages": [
+            {
+                "keyword": "glutenfree",
+                "image": {
+                    "contentType": "image/jpeg",
+                    "contentEncoding": "base64",
+                    "alias": "kisgelisim.jpg",
+                    "resizeConfigs": [
+                        {
+                            "guid": "desktop",
+                            "width": 1024,
+                            "height": 1024,
+                            "quality": 90
+                        },
+                        {
+                            "guid": "mob",
+                            "width": 163,
+                            "height": 150,
+                            "quality": 90
+                        }
+                    ]
+                }
+            },
+            {
+                "keyword": "protein",
+                "image": {
+                    "contentType": "image/jpeg",
+                    "contentEncoding": "base64",
+                    "alias": "banner_1500x1500.jpg",
+                    "resizeConfigs": [
+                        {
+                            "guid": "desktop",
+                            "width": 1024,
+                            "height": 1024,
+                            "quality": 90
+                        },
+                        {
+                            "guid": "mob",
+                            "width": 163,
+                            "height": 150,
+                            "quality": 90
+                        }
+                    ]
+                }
+            }
+        ],
+        "locales": [
+            "tr_TR",
+            "en_US"
+        ],
+        "defaultMerchantPriceFieldName": "storeAsuggestedPrice",
+        "lists": [
+            {
+                "fieldName": "topSeller",
+                "id": "list1",
+                "size": 77,
+                "fieldValue": "1"
+            }
+        ],
+        "lastUpdate": 1609363711,
+        "currency": "TRY",
+        "loc_keys": {
+            "lowSalt": [
+                "Az Tuzlu",
+                "Low Salt"
+            ],
+            "glutenfree": [
+                "Glutensiz",
+                "Glutenfree"
+            ],
+            "kidProduct": [
+                "Çocuk",
+                "For Kids"
+            ],
+            "plain": [
+                "Sade",
+                "Plain"
+            ],
+            "artCafe": [
+                "Art Cafe",
+                "Art Cafe"
+            ],
+            "protein": [
+                "Protein",
+                "Protein"
+            ],
+            "lactosefree": [
+                "Laktozsuz",
+                "Lactose-free"
+            ],
+            "lowFat": [
+                "Düşük Yağlı",
+                "Light"
+            ],
+            "flavoured": [
+                "Aromalı",
+                "Flavoured"
+            ],
+            "organic": [
+                "Organik",
+                "Organic"
+            ]
+        },
+        "defaultMerchantId": "store3"
+    }
