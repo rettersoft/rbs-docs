@@ -2,4 +2,4 @@
 POST /user/action?auth={{accessToken}}&action=rbs.address.request.REMOVE_ADDRESS HTTP/1.1
 Host: {{host}}
 
-{ "addressId": "TEST_ADDRESS" }
+{ "addressId": "01EVC12BM4ZYWGV9B7GST6H0XH" }
