@@ -3,8 +3,6 @@ Host: {{host}}
 
 {
     "type": "SELLABLE",
-    "merchantId": "DEFAULT",
-    "storeId": "STORE_A",
     "products": [
         {
             "variantGroupId": "NIKE_AIR",
