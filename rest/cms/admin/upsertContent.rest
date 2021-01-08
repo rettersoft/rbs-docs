@@ -2,24 +2,10 @@ POST /user/action?auth={{accessToken}}&action=rbs.cms.request.UPSERT_CONTENT HTT
 Host: {{host}}
 
 {
-    "id": "content1",
-    "widgets": [
-        {
-            "id": "widget1",
-            "title": [{
-                "locale": "tr_TR",
-                "value": "Birinci Widget"
-            }],
-            "lines": [
-                {
-                    "id": "line1",
-                    "relatedItems": [{
-                        "itemType": "rbs.product",
-                        "itemId": "somesku"
-                    }]
-                }
-            ]
-        }
-    ]
+    "id": "D2BD74C2-7650-4A88-B572-7F13537A17FE",
+    "itemType": "some type",
+    "name": "something",
+    "attributes": [],
+    "children": []
 }
 
