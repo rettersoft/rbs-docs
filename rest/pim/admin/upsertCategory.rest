@@ -1,13 +1,20 @@
 POST /user/action?auth={{accessToken}}&action=rbs.pimproduct.request.UPSERT_CATEGORY HTTP/1.1
 Host: {{host}}
 
+
 {
-    "id": "SkinCare",
-    "name": [
+    "id":"dondurulmusurun",
+    "parent":"B2C",
+    "name":[{"locale":"en_US","value":"Dondurulmuş Ürünler"},{"locale":"tr_TR","value":"Dondurulmuş Ürünler"}],
+    "image":
         {
-            "locale": "default",
-            "value": "SkinCare"
+            "contentEncoding":"base64",
+            "alias":"iStock_000016966331_Medium.jpg",
+            "resizeConfigs":[
+                {"width":1024,"guid":"1609275600000-web","height":1024,"quality":90},
+                {"width":200,"guid":"1609275600000-mob","height":200,"quality":90}
+            ],
+            "contentType":"image/jpeg"
         }
-    ],
-    "parent": "B2C"
+    
 }

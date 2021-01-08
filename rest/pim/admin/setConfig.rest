@@ -2,5 +2,23 @@ POST /user/action?auth={{accessToken}}&action=rbs.pimproduct.request.SET_CONFIG 
 Host: {{host}}
 
 {
-    "locales": ["en_US", "tr_TR", "ru_RU"]
+  "locales": [
+    "en_US",
+    "tr_TR"
+  ],
+  "resizeConfigs": [
+    {
+      "width": 1024,
+      "guid": "web",
+      "height": 1024,
+      "quality": 90
+    },
+    {
+      "width": 200,
+      "guid": "mobile",
+      "height": 200,
+      "quality": 90
+    }
+  ]
 }
+    
