@@ -1,2 +1,10 @@
 POST /user/action?auth={{accessToken}}&action=rbs.profile.request.UPDATE HTTP/1.1
 Host: {{host}}
+
+{
+    "firstName": "Baran",
+    "lastName": "Baygan",
+    "birthDate": "05/06/1980",
+    "email": "baran@rettermobile.com",
+    "receivePromotionalContent": true
+}
