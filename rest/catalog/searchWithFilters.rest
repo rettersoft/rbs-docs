@@ -4,6 +4,7 @@ Host: {{host}}
 {
     "from": 0,
     "size": 100,
+    "searchTerm": "hardal",
     "filters": [
         
     ]

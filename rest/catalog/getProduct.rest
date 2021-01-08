@@ -2,6 +2,6 @@ POST /user/action?auth={{accessToken}}&action=rbs.catalog.request.GET_PRODUCT HT
 Host: {{host}}
 
 {
-    "variantGroupId": "153107162",
-    "id": "153107162"
+    "variantGroupId": "123",
+    "id": "153104781"
 }
