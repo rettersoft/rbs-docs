@@ -3,10 +3,14 @@ Host: {{host}}
 
 {
     "type": "?",
-    "merchantId": "DEFAULT",
-    "storeId": "STOREA",
-    "variantGroupId": "NIKE_AIR",
-    "sku": "NIKE_AIR_38_WHITE",
     "ownerId": "ORDER_ID_Y",
-    "qty": 2
+    "products": [
+        {
+            "merchantId": "DEFAULT",
+            "storeId": "STORE_A",
+            "variantGroupId": "NIKE_AIR",
+            "sku": "NIKE_AIR_38_WHITE",
+            "qty": 2
+        }
+    ]
 }

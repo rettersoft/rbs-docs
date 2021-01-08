@@ -1,0 +1,5 @@
+
+POST /service/action?auth={{accessToken}}&action=rbs.alarm.request.CANCEL HTTP/1.1
+Host: {{host}}
+
+{ "executionId": "EXECUTION_ID" }

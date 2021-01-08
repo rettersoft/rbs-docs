@@ -1,0 +1,5 @@
+
+POST /service/action?auth={{accessToken}}&action=rbs.alarm.request.SET HTTP/1.1
+Host: {{host}}
+
+{ "waitSeconds": 5, "data": "?" }

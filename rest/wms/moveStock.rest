@@ -4,9 +4,14 @@ Host: {{host}}
 {
     "from": "SELLABLE",
     "type": "RESERVED",
-    "merchantId": "DEFAULT",
-    "storeId": "STOREA",
-    "variantGroupId": "NIKE_AIR",
-    "sku": "NIKE_AIR_38_WHITE",
-    "qty": 1
+    "ownerId": "ORDER_ID_X",
+    "products": [
+        {
+            "merchantId": "DEFAULT",
+            "storeId": "STORE_A",
+            "variantGroupId": "NIKE_AIR",
+            "sku": "NIKE_AIR_38_WHITE",
+            "qty": 3
+        }
+    ]
 }
