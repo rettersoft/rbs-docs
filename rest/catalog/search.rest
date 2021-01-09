@@ -2,6 +2,7 @@ POST /user/action?auth={{accessToken}}&action=rbs.catalog.request.SEARCH HTTP/1.
 Host: {{host}}
 
 {
+    "searchTerm": "hardal",
     "from": 0,
     "size": 50
 } 

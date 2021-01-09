@@ -1,0 +1,16 @@
+POST /user/action?auth={{accessToken}}&action=rbs.cms.request.UPSERT_CONTENT HTTP/1.1
+Host: {{host}}
+
+{
+    "id": "D2BD74C2-7650-4A88-B572-7F13537A17FE",
+    "name": "deneme",
+    "templateItem": {
+        "id": "D2BD74C2-7650-4A88-B572-7F13537A17FE",
+        "itemType": "someType",
+        "name": "something1",
+        "attributes": [],
+        "children": []
+    }
+}
+
+
