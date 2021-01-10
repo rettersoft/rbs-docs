@@ -7,12 +7,9 @@ Host: {{host}}
     
     "filters": [
        {
-           "filterId": "categories",
-           "filterValues": ["hardal"]
-       }, 
-       {
-           "filterId": "productFeature",
-           "filterValues": ["lactosefree", "lowFat"]
+           "filterId": "ozgur",
+           "filterValues": ["selam"]
        }
+       
     ]
 }

@@ -4,7 +4,7 @@ Host: {{host}}
 {
     "id": "D2BD74C2-7650-4A88-B572-7F13537A17FE",
     "itemType": "some type",
-    "name": "something",
+    "name": "something1",
     "attributes": [],
     "children": []
 }
