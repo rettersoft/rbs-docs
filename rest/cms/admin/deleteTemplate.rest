@@ -1,0 +1,4 @@
+POST /user/action?auth={{accessToken}}&action=rbs.cms.request.DELETE_TEMPLATE HTTP/1.1
+Host: {{host}}
+
+"526d38ef-b3a5-4353-9a68-2f9f1f2c4a27"

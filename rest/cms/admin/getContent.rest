@@ -1,4 +1,4 @@
-POST /user/action?auth={{accessToken}}&action=rbs.cms.request.LIST_CONTENTS HTTP/1.1
+POST /user/action?auth={{accessToken}}&action=rbs.cms.request.GET_CONTENT HTTP/1.1
 Host: {{host}}
 
-"content1"
+"526d38ef-b3a5-4353-9a68-2f9f1f2c4a27"

@@ -3,12 +3,15 @@ Host: {{host}}
 
 {
     "id": "D2BD74C2-7650-4A88-B572-7F13537A17FE",
-    "name": "deneme",
+    "name": "Yemek Tarifi",
     "templateItem": {
         "id": "D2BD74C2-7650-4A88-B572-7F13537A17FE",
         "itemType": "someType",
         "name": "something1",
-        "attributes": [],
+        "attributes": [{
+            "itemType": "size",
+            "value"
+        }],
         "children": []
     }
 }
