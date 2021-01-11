@@ -11,11 +11,12 @@ Host: {{host}}
 			"type": "color",
 			"value": [
 				{
-					
+					"locale": "en_US",
 					"value": "123"
 				}
 			]
 		}
 	],
+	"parentId": "AABD74C2-7650-4A88-B572-7F13537A17FE",
 	"children": []
 }
