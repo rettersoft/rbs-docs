@@ -1,0 +1,50 @@
+
+# @name getAnonymToken
+GET /public/anonymous-auth?projectId={{projectId}} HTTP/1.1
+Host: {{host}}
+
+
+###
+
+@anonymAccessToken = {{getAnonymToken.response.body.$.accessToken}}
+
+# @name start
+POST /user/action?auth={{anonymAccessToken}}&action=rbs.basicauth.request.START_AUTH HTTP/1.1
+Host: {{host}}
+
+{
+    "msisdn": "+905309365021"
+}
+
+
+###
+
+# @name validateCode
+POST /user/action?auth={{anonymAccessToken}}&action=rbs.basicauth.request.ANSWER_CHALLENGE HTTP/1.1
+Host: {{host}}
+
+{
+    "hashedKey": "vQaAdDzD5h3VaeQn/f6WIvFCOrivw0sdeDCCeAg0ZBo=",    
+    "answer": {
+        "code": "1414"
+    }
+}
+
+###
+
+# @name signup
+POST /user/action?auth={{anonymAccessToken}}&action=rbs.basicauth.request.ANSWER_CHALLENGE HTTP/1.1
+Host: {{host}}
+
+{
+    "hashedKey": "vQaAdDzD5h3VaeQn/f6WIvFCOrivw0sdeDCCeAg0ZBo=",    
+    "answer": {
+        "firstName": "Baran",
+        "lastName": "Baygan",
+        "email": "baran@rettermobile.com",
+        "phoneNumber": "+905309364921",
+        "birthDate": "05/06/1980",
+        "acceptedKvkk": true,
+        "acceptedTerms": true
+    }
+}

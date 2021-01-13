@@ -1,4 +1,3 @@
 POST /user/action?auth={{accessToken}}&action=rbs.cms.request.LIST_CONTENTS HTTP/1.1
 Host: {{host}}
 
-"AABD74C2-7650-4A88-B572-7F13537A17FE"

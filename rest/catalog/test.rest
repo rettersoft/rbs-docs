@@ -1,2 +1,8 @@
-GET / HTTP/1.1
-Host: www.trendyol.com
+POST https://jfkls4hvpb.execute-api.eu-west-1.amazonaws.com/handler HTTP/1.1|
+Content-Type: application/json
+X-Rbs-Action: rbs.catalog.request.GET_CATEGORIES
+X-Rbs-ActionType: request
+X-Rbs-Identity: rbs.basicauth.enduser
+X-Rbs-ProjectId: 933a51e1c87a9ccc181d21fca91c2aad
+X-Rbs-ServiceId: ""
+X-Rbs-UserId: 067961b7-25fa-44a9-9534-08084b2b5470

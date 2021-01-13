@@ -1,6 +1,6 @@
 
 # @name getAnonymToken
-GET /public/anonymous-auth?projectId=933a51e1c87a9ccc181d21fca91c2aad HTTP/1.1
+GET /public/anonymous-auth?projectId={{projectId}} HTTP/1.1
 Host: {{host}}
 
 ###

@@ -2,21 +2,12 @@ POST /user/action?auth={{accessToken}}&action=rbs.cms.request.UPSERT_CONTENT HTT
 Host: {{host}}
 
 {
-	"id": "D2BD74C2-7650-4A88-B572-7F13537A17FE",
-	"name": "something1",
-	"itemType": "Yemek Tarifi",
+	"id": "47c7927e-d04a-42a0-a0f4-301a28ec37f7",
+	"name": "ozgur hellooo",
+	"itemType": "Yemek Tarifi Ozgur",
 	"attributes": [
-		{
-            "groupId": "style",
-			"type": "color",
-			"value": [
-				{
-					"locale": "en_US",
-					"value": "123"
-				}
-			]
-		}
+		
 	],
-	"parentId": "AABD74C2-7650-4A88-B572-7F13537A17FE",
+	"parentId": "19128631-6ed1-4190-a610-d8511f3b3c18",
 	"children": []
 }
