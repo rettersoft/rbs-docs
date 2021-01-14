@@ -48,3 +48,10 @@ Host: {{host}}
         "acceptedTerms": true
     }
 }
+
+###
+
+@customToken = {{validateCode.response.body.$[0].response.data.customToken}}
+
+GET /public/auth?customToken={{customToken}} HTTP/1.1
+Host: {{host}}
