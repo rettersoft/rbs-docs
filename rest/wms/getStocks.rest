@@ -1,12 +1,11 @@
 POST /user/action?auth={{accessToken}}&action=rbs.wms.request.GET_STOCKS HTTP/1.1
 Host: {{host}}
 
-{
-    "type": "SELLABLE",
-    "products": [
-        {
-            "variantGroupId": "NIKE_AIR",
-            "sku": "NIKE_AIR_38_WHITE"
-        }
-    ]
-}
+[
+    {
+        "type": "$active",
+        "merchantId": "DEFAULT",
+        "variantGroupId": "NIKE_AIR",
+        "sku": "NIKE_AIR_38_WHITE"
+    }
+]

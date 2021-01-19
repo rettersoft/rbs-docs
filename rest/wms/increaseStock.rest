@@ -7,5 +7,5 @@ Host: {{host}}
     "storeId": "STORE_A",
     "variantGroupId": "NIKE_AIR",
     "sku": "NIKE_AIR_38_WHITE",
-    "qty": 1
+    "qty": 4
 }

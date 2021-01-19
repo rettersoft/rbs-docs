@@ -2,15 +2,14 @@ POST /user/action?auth={{accessToken}}&action=rbs.wms.request.COMMIT_STOCK HTTP/
 Host: {{host}}
 
 {
-    "type": "?",
-    "ownerId": "ORDER_ID_X",
-    "products": [
+    "items": [
         {
             "merchantId": "DEFAULT",
             "storeId": "STORE_A",
             "variantGroupId": "NIKE_AIR",
             "sku": "NIKE_AIR_38_WHITE",
-            "qty": 2
+            "ownerId": "ORDER_ID_X",
+            "qty": 1
         }
     ]
 }

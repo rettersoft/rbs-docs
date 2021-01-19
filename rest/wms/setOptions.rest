@@ -2,67 +2,11 @@ POST /user/action?auth={{accessToken}}&action=rbs.wms.request.UPSERT_OPTION HTTP
 Host: {{host}}
 
 {
-    "optionId": "MAIN",
+    "first": "MAIN",
     "data": {
-        "assets": [
-            {
-                "id": "SELLABLE",
-                "name": "Sellable Products",
-                "options": {
-                    "first": true,
-                    "active": true,
-                    "ttl": {
-                        "val": "exp",
-                        "to": "DISCARD"
-                    }
-                }
-            },
-            {
-                "id": "RESERVED",
-                "name": "Reserved Products",
-                "options": {
-                    "hold": true
-                }
-            },
-            {
-                "id": "SOLD",
-                "name": "Sold Products",
-                "options": {
-                    "last": true
-                }
-            },
-            {
-                "id": "INVEST",
-                "name": "Investigation",
-                "options": {
-                    "ttl": {
-                        "val": 864000,
-                        "to": "$back"
-                    }
-                }
-            },
-            {
-                "id": "DISCARD",
-                "name": "Discarded Products"
-            }
-        ],
-        "rules": [
-            { "direction": ["SELLABLE", "INVEST"], "options": {} },
-            {
-                "direction": ["SELLABLE", "RESERVED"],
-                "options": {
-                    "ttl": {
-                        "val": 300,
-                        "to": "SELLABLE"
-                    }
-                }
-            },
-
-            { "direction": ["RESERVED", "SOLD"], "options": {} },
-            { "direction": ["RESERVED", "SELLABLE"], "options": {} },
-            { "direction": ["SOLD", "INVEST"], "options": {} },
-            { "direction": ["INVEST", "DISCARD"], "options": {} },
-            { "direction": ["INVEST", "SELLABLE"], "options": {} }
-        ]
+        "first": "SELLABLE",
+        "active": "SELLABLE",
+        "hold": "RESERVED",
+        "last": "SOLD"
     }
 }

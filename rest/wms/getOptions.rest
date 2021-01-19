@@ -1,4 +1,2 @@
 POST /user/action?auth={{accessToken}}&action=rbs.wms.request.GET_OPTION HTTP/1.1
 Host: {{host}}
-
-{ "optionId": "MAIN" }
