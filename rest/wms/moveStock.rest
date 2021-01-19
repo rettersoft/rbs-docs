@@ -3,15 +3,14 @@ Host: {{host}}
 
 {
     "from": "SELLABLE",
-    "type": "RESERVED",
-    "ownerId": "ORDER_ID_X",
-    "products": [
+    "to": "INVEST",
+    "items": [
         {
             "merchantId": "DEFAULT",
-            "storeId": "STORE_A",
+            "storeId": "STORE_B",
             "variantGroupId": "NIKE_AIR",
             "sku": "NIKE_AIR_38_WHITE",
-            "qty": 3
+            "qty": 1
         }
     ]
 }

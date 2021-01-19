@@ -1,0 +1,2 @@
+POST /user/action?auth={{accessToken}}&action=rbs.wms.request.GET_DIAGRAM HTTP/1.1
+Host: {{host}}
