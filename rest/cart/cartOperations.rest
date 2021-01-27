@@ -1,0 +1,31 @@
+# @name createCard
+
+POST /user/action?auth={{accessToken}}&action=rbs.cart.request.CREATE HTTP/1.1
+Host: {{host}}
+
+###
+
+@cartId = {{createCard.response.body.$[0].response.data.cartId}}
+
+POST /user/action?auth={{accessToken}}&action=rbs.cart.request.ADD_ITEM HTTP/1.1
+Host: {{host}}
+
+{
+    "cartId": "{{cartId}}",
+    "itemId": "item1"
+}
+###
+POST /user/action?auth={{accessToken}}&action=rbs.cart.request.REMOVE_ITEM HTTP/1.1
+Host: {{host}}
+
+{
+    "cartId": "{{cartId}}",
+    "itemId": "item2"
+}
+###
+POST /user/action?auth={{accessToken}}&action=rbs.cart.request.GET HTTP/1.1
+Host: {{host}}
+
+{
+    "cartId": "{{cartId}}"
+}
