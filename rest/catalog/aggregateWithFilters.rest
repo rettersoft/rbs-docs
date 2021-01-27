@@ -4,12 +4,14 @@ POST /user/action?auth={{accessToken}}&action=rbs.catalog.request.AGGREGATE HTTP
 Host: {{host}}
 
 {
-    
     "filters": [
        {
-           "filterId": "ozgur",
-           "filterValues": ["selam"]
+           "filterId": "categories",
+           "filterValues": ["hardal"]
+       },
+        {
+           "filterId": "size",
+           "filterValues": ["1 KG"]
        }
-       
     ]
 }

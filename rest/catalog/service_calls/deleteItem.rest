@@ -1,0 +1,11 @@
+
+
+# Delete item
+POST /service/action?auth={{accessToken}}&action=rbs.catalog.request.DELETE_ITEM HTTP/1.1
+Host: {{host}}
+
+{
+    "id": "sku1112",
+    "variantGroupId": "sku1112",
+    "modelName": "rbs.pimproduct"
+}

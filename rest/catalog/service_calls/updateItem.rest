@@ -1,0 +1,58 @@
+
+
+# Aggregate with no payload
+POST /service/action?auth={{accessToken}}&action=rbs.catalog.request.UPDATE_ITEM HTTP/1.1
+Host: {{host}}
+
+{
+    "id": "sku1112",
+    "variantGroupId": "sku1112",
+    "isSearchable": true,
+    "isParent": true,
+    "modelName": "rbs.pimproduct",
+    "attributes": [
+        {
+        "attributeId": "description",
+        "value": [
+          {
+            "locale": "tr_TR",
+            "value": "tr"
+          },
+          {
+            "locale": "en_US",
+            "value": "asdfghj"
+          }
+        ]
+      },
+        {
+            "attributeId": "shortName",
+            "value": [
+                {
+                    "locale": "tr_TR",
+                    "value": "tr"
+                },
+                {
+                    "locale": "en_US",
+                    "value": "sdfghjk"
+                }
+            ]
+      }
+    ],
+    "attributeDefinitions": [
+        {
+    "attributeType": "text",
+    "id": "shortName",
+    "isListAttribute": true,
+    "isLocalized": true,
+    "isMandatory": true
+  },
+        {
+            "attributeType": "longText",
+            "id": "description",
+            "isListAttribute": true,
+            "isLocalized": true,
+            "isMandatory": true
+        }
+    ]
+    
+}

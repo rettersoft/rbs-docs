@@ -1,7 +1,0 @@
-POST /user/action?auth={{accessToken}}&action=rbs.catalog.request.GET_PRODUCT HTTP/1.1
-Host: {{host}}
-
-{
-    "variantGroupId": "123",
-    "id": "153104781"
-}
