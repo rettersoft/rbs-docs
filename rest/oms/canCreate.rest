@@ -18,7 +18,7 @@ Host: {{host}}
             "items": [
                 {
                     "merchantId": "default",
-                    "varyantGroupId": "D",
+                    "variantGroupId": "D",
                     "itemId": "7685"
                 }
             ]
