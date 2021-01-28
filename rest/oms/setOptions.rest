@@ -1,0 +1,26 @@
+POST /user/action?auth={{accessToken}}&action=rbs.oms.request.UPSERT_OPTION HTTP/1.1
+Host: {{host}}
+
+{
+    "optionId": "PRE_ORDER_CFG",
+    "data": [
+        {
+            "phaseId": "RESERVE-STOCKS",
+            "service": "rbs.wms",
+            "required": true,
+            "async": false,
+            "config": {}
+        },
+        {
+            "phaseId": "PAYMENT",
+            "service": "rbs.billing",
+            "config": {}
+        },
+        {
+            "phaseId": "COMMIT-STOCKS",
+            "service": "rbs.wms",
+            "required": true,
+            "config": {}
+        }
+    ]
+}

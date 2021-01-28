@@ -3,6 +3,19 @@ Host: {{host}}
 
 {
     "merchantId": "DEFAULT",
-    "storeId": "TEST_STORE",
-    "name": "Test Store"
+    "storeId": "STORE_A",
+    "name": "Store A",
+    "rules": [
+        {
+            "types": ["CARGO"],
+            "providers": ["YURTICI_KARGO", "ARAS_KARGO"],
+            "days": ["1", "2", "3", "4", "5", "6", "7"],
+            "zones": ["ZONE_A"],
+            "slots": [
+                ["00:00", "17:00"]
+            ],
+            "capacity": 100,
+            "fee": 9
+        }
+    ]
 }

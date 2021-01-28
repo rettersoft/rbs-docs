@@ -3,5 +3,5 @@ Host: {{host}}
 
 {
     "cartId": "TEST",
-    "zoneId": "01ES0KE9KJEN54APAT9BRXRME8"
+    "zoneId": "ZONE_A"
 }

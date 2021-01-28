@@ -1,11 +1,11 @@
-POST /user/action?auth={{accessToken}}&action=rbs.wms.request.INCREASE_STOCK HTTP/1.1
+POST /user/action?auth={{accessToken}}&action=rbs.wms.request.UPDATE_STOCK HTTP/1.1
 Host: {{host}}
 
 {
     "type": "SELLABLE",
-    "merchantId": "DEFAULT",
+    "merchantId": "default",
     "storeId": "STORE_A",
-    "variantGroupId": "NIKE_AIR",
-    "sku": "NIKE_AIR_38_WHITE",
+    "variantGroupId": "D",
+    "sku": "7685",
     "qty": 4
 }

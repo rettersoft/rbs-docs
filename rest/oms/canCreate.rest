@@ -1,0 +1,41 @@
+POST /user/action?auth={{accessToken}}&action=rbs.order.request.CAN_CREATE HTTP/1.1
+Host: {{host}}
+
+[
+    {
+        "serviceId": "rbs.crm",
+        "config": {
+            "userId": "TEST_USER",
+            "email": "test_user@example.com",
+            "msisdn": "905007654321",
+            "segments": []
+        }
+    },
+    {
+        "serviceId": "rbs.cart",
+        "config": {
+            "cartId": "TEST",
+            "items": [
+                {
+                    "merchantId": "default",
+                    "varyantGroupId": "D",
+                    "itemId": "7685"
+                }
+            ]
+        }
+    },
+    {
+        "serviceId": "rbs.billing",
+        "config": {
+            "paymentMethod": "masterpass"
+        }
+    },
+    {
+        "serviceId": "rbs.logistics",
+        "config": {
+            "addressId": "HOME",
+            "zoneId": "ZONE_A",
+            "pools": []
+        }
+    }
+]
