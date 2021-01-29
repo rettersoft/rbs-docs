@@ -2,6 +2,15 @@ POST /user/action?auth={{accessToken}}&action=rbs.logistics.request.GET_POOLS HT
 Host: {{host}}
 
 {
-    "cartId": "TEST",
+    "cart": {
+        "cartId": "TEST",
+        "items": [
+            {
+                "merchantId": "default",
+                "variantGroupId": "D",
+                "itemId": "7685"
+            }
+        ]
+    },
     "zoneId": "ZONE_A"
 }

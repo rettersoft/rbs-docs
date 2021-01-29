@@ -8,12 +8,12 @@ Host: {{host}}
             "phaseId": "RESERVE-STOCKS",
             "service": "rbs.wms",
             "required": true,
-            "async": false,
             "config": {}
         },
         {
             "phaseId": "PAYMENT",
             "service": "rbs.billing",
+            "required": true,
             "config": {}
         },
         {
