@@ -12,11 +12,13 @@ Host: {{host}}
         "serviceId": "rbs.cart",
         "config": {
             "cartId": "7542e4c0ab",
+            "totalAmount": 20000,
             "items": [
                 {
                     "merchantId": "default",
                     "variantGroupId": "D",
                     "itemId": "7685",
+                    "amount": 20000,
                     "qty": 1
                 }
             ]
