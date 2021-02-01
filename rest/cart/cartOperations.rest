@@ -5,7 +5,7 @@ Host: {{host}}
 
 ###
 
-@cartId = {{createCard.response.body.$[0].response.data.cartId}}
+@cartId = {{createCard.response.body.$[0].response.cartId}}
 
 POST /user/action?auth={{accessToken}}&action=rbs.cart.request.ADD_ITEM HTTP/1.1
 Host: {{host}}
