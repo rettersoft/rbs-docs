@@ -1,0 +1,61 @@
+
+POST /user/action?auth={{accessToken}}&action=rbs.promotion.request.CREATE HTTP/1.1
+Host: {{host}}
+
+{
+    "promotion": {
+        "categoryId": "1",
+        "applyOnce": false,
+        "discardMinCartTotal": false,
+        "dontCombineOtherPromotions": false,
+        "maxAmount": 10000,
+        "totalCount": 1000,
+        "perUserCount": 5,
+        "condition": {
+            "minAmount": 20
+        },
+        "gifts": [
+            {
+                "giftType":"percentDiscount",
+                "discount":50
+            }
+        ]
+    },
+    "metadata": {
+        "title": {
+            "en": "Test Promotion",
+            "tr": "Test Promotion"
+        },
+         "shortTitle": {
+            "en": "Test",
+            "tr": "Test"
+        },
+         "imageUrl": {
+            "en": "",
+            "tr": ""
+        },
+         "detailImageUrl": {
+            "en": "",
+            "tr": ""
+        },
+         "description": {
+            "en": "Promotion for test",
+            "tr": "Promotion for test"
+        }
+    }
+}
+###
+POST /user/action?auth={{accessToken}}&action=rbs.promotion.request.GET HTTP/1.1
+Host: {{host}}
+
+{
+    "promotionId": "Xfkahbn5"
+}
+###
+
+POST /user/action?auth={{accessToken}}&action=rbs.promotion.request.DELETE HTTP/1.1
+Host: {{host}}
+
+{
+    "promotionId": "Xfkahbn5"
+}
