@@ -1,0 +1,9 @@
+POST /user/action?auth={{accessToken}}&action=rbs.stock.request.GET HTTP/1.1
+Host: {{host}}
+
+{
+    "merchantId": "default",
+    "zoneId": "default",
+    "variantGroupId": "D",
+    "id": "7685"
+}

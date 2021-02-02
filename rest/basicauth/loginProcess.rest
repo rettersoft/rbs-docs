@@ -51,7 +51,7 @@ Host: {{host}}
 
 ###
 
-@customToken = {{validateCode.response.body.$[0].response.data.customToken}}
+@customToken = {{validateCode.response.body.$[0].response.customToken}}
 
 GET /public/auth?customToken={{customToken}} HTTP/1.1
 Host: {{host}}

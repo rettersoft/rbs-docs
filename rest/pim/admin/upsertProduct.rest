@@ -2,166 +2,17 @@ POST /user/action?auth={{accessToken}}&action=rbs.pimproduct.request.UPSERT_PROD
 Host: {{host}}
 
 {
-  "sku": "1212121212",
-  "variantGroupId": "1212121212",
+  "sku": "7690",
+  "isParent": false,
+  "isSearchable": false,
+  "variantGroupId": "D",
   "categories": [
     "Soslar"
   ],
   "attributes": [
-    {
-      "attributeId": "shortName",
-      "value": [
-        {
-          "locale": "en_US",
-          "value": "Baran short US1"
-        },
-        {
-          "locale": "tr_TR",
-          "value": "Pınar Süt 1L2"
-        }
-      ]
-    },
-    {
-      "attributeId": "HeroType",
-      "value": [
-        {
-          "locale": "default",
-          "value": ""
-        }
-      ]
-    },
-    {
-      "attributeId": "NewProducts",
-      "boolValue": true
-    },
-    {
-      "attributeId": "PackagingShipmentInfo",
-      "value": [
-        {
-          "locale": "default",
-          "value": ""
-        }
-      ]
-    },
-    {
-      "attributeId": "PinarChef",
-      "value": [
-        {
-          "locale": "default",
-          "value": ""
-        }
-      ]
-    },
-    {
-      "attributeId": "availableInStock",
-      "numberValue": 100
-    },
-    {
-      "attributeId": "cargoAvailable",
-      "value": [
-        {
-          "locale": "default",
-          "value": "Yes"
-        }
-      ]
-    },
-    {
-      "attributeId": "content"
-    },
-    {
-      "attributeId": "ingredients",
-      "value": [
-        {
-          "locale": "en_US",
-          "value": ""
-        },
-        {
-          "locale": "tr_TR",
-          "value": "werq"
-        }
-      ]
-    },
-    {
-      "attributeId": "isHeroProduct",
-      "boolValue": false
-    },
-    {
-      "attributeId": "longName",
-      "value": [
-        {
-          "locale": "en_US",
-          "value": ""
-        },
-        {
-          "locale": "tr_TR",
-          "value": "long name tr"
-        }
-      ]
-    },
-    {
-      "attributeId": "maxAllowedInCart",
-      "numberValue": 10
-    },
-    {
-      "attributeId": "producer",
-      "value": [
-        {
-          "locale": "en_US",
-          "value": ""
-        },
-        {
-          "locale": "tr_TR",
-          "value": "Pınar Süt"
-        }
-      ]
-    },
-    {
-      "attributeId": "productDescription",
-      "value": [
-        {
-          "locale": "en_US",
-          "value": ""
-        },
-        {
-          "locale": "tr_TR",
-          "value": "Sütün daha fazla insana ulaşmasını sağlayan UHT teknolojisini ilk kez Pınar Süt kullanmıştır. UHT, Ultra Isıl İşlemdir ve sütün ömrünü günlerden aylara çıkartır. Bu sayede süt ilk günkü tazeliğinde daha çok insana ulaşmaktadır. Anadolu'nun en modern çiftliklerinden toplanan sütler, bütün aşamalar sonucunda 132 kez kontrolden geçmiş olur. "
-        }
-      ]
-    },
-    {
-      "attributeId": "productFeature"
-    },
-    {
-      "attributeId": "size",
-      "value": [
-        {
-          "locale": "default",
-          "value": "1 litre"
-        }
-      ]
-    },
-    {
-      "attributeId": "specialToPinar",
-      "value": [
-        {
-          "locale": "default",
-          "value": "No"
-        }
-      ]
-    },
-    {
-      "attributeId": "storageConditions",
-      "value": [
-        {
-          "locale": "en_US",
-          "value": ""
-        },
-        {
-          "locale": "tr_TR",
-          "value": "Serin ve Kuru ortamda muhafaza ediniz"
-        }
-      ]
-    }
-  ],
-  "images": []
+      {
+        "attributeId": "size",
+        "variantValue": "xtiny"
+      }
+    ]
 }
