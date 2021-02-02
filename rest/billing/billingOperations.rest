@@ -3,5 +3,36 @@ POST /user/action?auth={{accessToken}}&action=rbs.billing.request.GET_CLIENT_CON
 Host: {{host}}
 
 {
-    "cartId": "c9de38e0de"
+    "cartId": "7542e4c0ab"
+}
+###
+
+POST /user/action?auth={{accessToken}}&action=rbs.billing.request.TEST HTTP/1.1
+Host: {{host}}
+
+{
+   "orderId":"86473821-4",
+   "phaseId":"BILLING_PHASE",
+   "taskToken":"TaskToken1",
+   "input":{
+      "orderId":"86473821-4",
+      "transactionType":"payment",
+      "paymentOptions":[
+         {
+            "method":"masterpass",
+            "authType":"POST"
+         }
+      ],
+      "totalAmount":10500,
+      "items":[
+         {
+            "amount":10000,
+            "id":"86473821-001"
+         },
+         {
+            "amount":500,
+            "id":"86473821-002"
+         }
+      ]
+   }
 }

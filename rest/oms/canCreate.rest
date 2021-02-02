@@ -1,0 +1,46 @@
+POST /user/action?auth={{accessToken}}&action=rbs.order.request.CAN_CREATE HTTP/1.1
+Host: {{host}}
+
+[
+    {
+        "serviceId": "rbs.crm",
+        "config": {
+            "userId": "7aa36c80-ecc5-43e2-b555-b04c8ace9892"
+        }
+    },
+    {
+        "serviceId": "rbs.cart",
+        "config": {
+            "cartId": "7542e4c0ab",
+            "totalAmount": 20000,
+            "items": [
+                {
+                    "merchantId": "default",
+                    "variantGroupId": "D",
+                    "itemId": "7685",
+                    "amount": 20000,
+                    "qty": 1
+                }
+            ]
+        }
+    },
+    {
+        "serviceId": "rbs.billing",
+        "config": {
+            "paymentMethod": "masterpass"
+        }
+    },
+    {
+        "serviceId": "rbs.logistics",
+        "config": {
+            "addressId": "HOME",
+            "zoneId": "ZONE_A",
+            "pools": {
+                "type": "CARGO",
+                "provider": "ARAS_KARGO",
+                "storeId": "STORE_A",
+                "fee": 9
+            }
+        }
+    }
+]

@@ -4,8 +4,8 @@ Host: {{host}}
 [
     {
         "type": "$active",
-        "merchantId": "DEFAULT",
-        "variantGroupId": "NIKE_AIR",
-        "sku": "NIKE_AIR_38_WHITE"
+        "merchantId": "default",
+        "variantGroupId": "D",
+        "sku": "7685"
     }
 ]

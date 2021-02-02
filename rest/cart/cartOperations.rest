@@ -5,14 +5,16 @@ Host: {{host}}
 
 ###
 
-@cartId = {{createCard.response.body.$[0].response.data.cartId}}
+@cartId = {{createCard.response.body.$[0].response.cartId}}
 
 POST /user/action?auth={{accessToken}}&action=rbs.cart.request.ADD_ITEM HTTP/1.1
 Host: {{host}}
 
 {
     "cartId": "{{cartId}}",
-    "itemId": "item1"
+    "merchantId": "default",
+    "variantGroupId": "D",
+    "itemId": "7685"
 }
 ###
 POST /user/action?auth={{accessToken}}&action=rbs.cart.request.REMOVE_ITEM HTTP/1.1
@@ -20,12 +22,35 @@ Host: {{host}}
 
 {
     "cartId": "{{cartId}}",
-    "itemId": "item2"
+    "merchantId": "default",
+    "variantGroupId": "D",
+    "itemId": "7685"
 }
 ###
+
+# @name getCart
+
 POST /user/action?auth={{accessToken}}&action=rbs.cart.request.GET HTTP/1.1
 Host: {{host}}
 
 {
     "cartId": "{{cartId}}"
 }
+###
+@cartItems = {{getCart.response.body.$[0].response}}
+
+POST /user/action?auth={{accessToken}}&action=rbs.cart.request.TEST HTTP/1.1
+Host: {{host}}
+
+{
+    "cartId": "{{cartId}}",
+    "cartItems":[
+        {
+            "merchantId":"Ali",
+            "variantGroupId":"variantGroupId1",
+            "itemId":"item1",
+            "qty":2
+        }
+    ]
+}
+
