@@ -4,6 +4,6 @@ Host: {{host}}
 {
     "merchantId": "default",
     "zoneId": "default",
-    "variantGroupId": "pinarkido",
-    "id": "test00004"
+    "variantGroupId": "p112",
+    "id": "lattetestcocuk2"
 }
