@@ -1,0 +1,51 @@
+
+# @name register
+POST /user/action?auth={{accessToken}}&action=rbs.partnerauth.request.REGISTER HTTP/1.1
+Host: {{host}}
+
+{
+    "phoneNumber": "905314048097"
+}
+
+
+###
+
+# @name validatePhoneNumber
+POST /user/action?auth={{accessToken}}&action=rbs.partnerauth.request.ANSWER_CHALLENGE HTTP/1.1
+Host: {{host}}
+
+{
+    "challengeId": "f0b467a3-aa14-46bd-897e-481c04208635",    
+    "challengeAnswer": "454494"
+}
+
+###
+
+# @name validatePartner
+POST /user/action?auth={{accessToken}}&action=rbs.partnerauth.request.ANSWER_CHALLENGE HTTP/1.1
+Host: {{host}}
+
+{
+    "challengeId": "f06af65a-c9f1-4a27-99d0-7519569bc5ae",
+    "verificationType": "INVITATION_CODE",
+    "phoneNumber": "905314048097",
+    "code": "mavi",
+    "email": "ahmet@mail.net",
+    "userInformation": {
+        "name": "Ahmet",
+        "surname": "Deniz",
+        "kvkk": true,
+        "platform": "web"
+    }
+}
+
+###
+
+# @name validateEmail
+POST /user/action?auth={{accessToken}}&action=rbs.partnerauth.request.ANSWER_CHALLENGE HTTP/1.1
+Host: {{host}}
+
+{
+    "challengeId": "250bdd94-cbc7-4a6f-a822-397d3867e03a",    
+    "challengeAnswer": "168031"
+}

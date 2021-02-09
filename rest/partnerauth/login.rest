@@ -1,0 +1,6 @@
+POST /user/action?auth={{accessToken}}&action=rbs.partnerauth.request.LOGIN HTTP/1.1
+Host: {{host}}
+
+{
+    "msisdn": "905314048097"
+}
