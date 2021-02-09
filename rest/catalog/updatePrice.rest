@@ -1,0 +1,14 @@
+POST /user/action?auth={{accessToken}}&action=rbs.catalog.request.UPDATE_PRICE HTTP/1.1
+Host: {{host}}
+
+{
+    "modelName": "rbs.merchant",
+    "variantGroupId": "productId",
+    "id": "productId",
+    "attributes": {
+        "merchantId": "merchantSampleId",
+        "price": 100,
+        "productId": "abc3"
+    }
+}
+
