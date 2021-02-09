@@ -1,0 +1,7 @@
+POST /user/action?auth={{accessToken}}&action=rbs.order.request.CAN_RETURN HTTP/1.1
+Host: {{host}}
+
+{
+    "orderId": "210207E03F0DRX",
+    "items": ["1"]
+}
