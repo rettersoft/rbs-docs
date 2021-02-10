@@ -1,5 +1,5 @@
-POST /user/action?auth={{accessToken}}&action=rbs.wms.request.GET_STOCKS HTTP/1.1
-Host: {{host}}
+POST https://{{host}}/user/action?auth={{accessToken}}&action=rbs.wms.request.GET_STOCKS HTTP/1.1
+Content-Type: application/json
 
 [
     {
