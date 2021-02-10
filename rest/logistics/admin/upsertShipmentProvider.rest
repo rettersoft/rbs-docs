@@ -1,5 +1,5 @@
-POST /user/action?auth={{accessToken}}&action=rbs.logistics.request.UPSERT_SHIPMENT_PROVIDER HTTP/1.1
-Host: {{host}}
+POST https://{{host}}/user/action?auth={{accessToken}}&action=rbs.logistics.request.UPSERT_SHIPMENT_PROVIDER HTTP/1.1
+Content-Type: application/json
 
 {
     "merchantId": "DEFAULT",
