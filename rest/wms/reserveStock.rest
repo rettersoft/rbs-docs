@@ -1,4 +1,4 @@
-POST https://{{host}}/user/action?auth={{accessToken}}&action=rbs.wms.request.RESERVE_STOCK HTTP/1.1
+POST https://{{host}}/user/action/{{projectId}}/rbs.wms.request.RESERVE_STOCK?auth={{accessToken}} HTTP/1.1
 Content-Type: application/json
 
 {
