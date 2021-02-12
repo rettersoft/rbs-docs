@@ -1,0 +1,4 @@
+POST /user/action?auth={{accessToken}}&action=rbs.partnerauth.request.GET_CONFIG HTTP/1.1
+Host: {{host}}
+
+{}
