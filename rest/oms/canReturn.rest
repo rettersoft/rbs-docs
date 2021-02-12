@@ -1,4 +1,4 @@
-POST https://{{host}}/user/action?auth={{accessToken}}&action=rbs.order.request.CAN_RETURN HTTP/1.1
+POST https://{{host}}/user/action/{{projectId}}/rbs.order.request.CAN_RETURN?auth={{accessToken}} HTTP/1.1
 Content-Type: application/json
 
 {
