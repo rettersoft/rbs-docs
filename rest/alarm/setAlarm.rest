@@ -1,5 +1,5 @@
 
-POST https://{{host}}/service/action?auth={{accessToken}}&action=rbs.alarm.request.SET HTTP/1.1
+POST https://{{host}}/service/action/{{projectId}}/rbs.alarm.request.SET?auth={{accessToken}} HTTP/1.1
 Content-Type: application/json
 
 { "waitSeconds": 5, "data": "?" }
