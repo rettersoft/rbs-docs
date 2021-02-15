@@ -1,0 +1,59 @@
+###
+### // numbers (0123456789), alphabetic (abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ) // alphanumeric (0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ)
+# @name createCode
+POST https://{{host}}/user/action/{{projectId}}/rbs.codegenerator.request.CREATE_CODE?auth={{accessToken}} HTTP/1.1
+Content-Type: application/json
+Host: {{host}}
+
+{
+    "type": "PARTNER_KEY_CODE",
+    "groupId": "mess",
+    "count": 5,
+    "length": 8,
+    "charset": "numbers",
+    "prefix": "mess-",
+    "postfix": ""
+}
+
+###
+
+# @name getGroups
+POST https://{{host}}/user/action/{{projectId}}/rbs.codegenerator.request.GET_GROUPS?auth={{accessToken}} HTTP/1.1
+Content-Type: application/json
+Host: {{host}}
+
+{}
+
+###
+
+# @name getCode
+POST https://{{host}}/user/action/{{projectId}}/rbs.codegenerator.request.GET_CODE?auth={{accessToken}} HTTP/1.1
+Content-Type: application/json
+Host: {{host}}
+
+{
+    "code": "turkcell-16259432-2021"
+}
+
+###
+
+# @name markAsUsed
+POST https://{{host}}/user/action/{{projectId}}/rbs.codegenerator.request.MARK_AS_USED?auth={{accessToken}} HTTP/1.1
+Content-Type: application/json
+Host: {{host}}
+
+{
+    "code": "mess-93949646",
+    "userId": "123123"
+}
+
+###
+
+# @name exportExcel
+POST https://{{host}}/user/action/{{projectId}}/rbs.codegenerator.request.EXPORT_EXCEL?auth={{accessToken}} HTTP/1.1
+Content-Type: application/json
+Host: {{host}}
+
+{
+    "groupId": "mess"
+}

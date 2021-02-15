@@ -1,30 +1,30 @@
 
 # @name getAnonymToken
-GET /public/anonymous-auth?projectId={{projectId}} HTTP/1.1
-Host: {{host}}
+GET https://{{host}}/public/anonymous-auth?projectId={{projectId}} HTTP/1.1
+
+
 
 
 ###
 
 @anonymAccessToken = {{getAnonymToken.response.body.$.accessToken}}
 
+
 # @name start
-POST /user/action?auth={{anonymAccessToken}}&action=rbs.basicauth.request.START_AUTH HTTP/1.1
-Host: {{host}}
+POST https://{{host}}/user/action/{{projectId}}/rbs.basicauth.request.START_AUTH?auth={{anonymAccessToken}} HTTP/1.1
 
 {
-    "msisdn": "+905309365021"
+    "msisdn": "+905309364921"
 }
 
 
 ###
 
 # @name validateCode
-POST /user/action?auth={{anonymAccessToken}}&action=rbs.basicauth.request.ANSWER_CHALLENGE HTTP/1.1
-Host: {{host}}
+POST https://{{host}}/user/action/{{projectId}}/rbs.basicauth.request.ANSWER_CHALLENGE?auth={{anonymAccessToken}} HTTP/1.1
 
 {
-    "hashedKey": "vQaAdDzD5h3VaeQn/f6WIvFCOrivw0sdeDCCeAg0ZBo=",    
+    "hashedKey": "MSZfRI0ORiyOInUT1NwqLsu8T3rlpeDQKGf4RGEhWGc=",    
     "answer": {
         "code": "1414"
     }
@@ -32,12 +32,12 @@ Host: {{host}}
 
 ###
 
-# @name signup
+# @name signup  
 POST /user/action?auth={{anonymAccessToken}}&action=rbs.basicauth.request.ANSWER_CHALLENGE HTTP/1.1
 Host: {{host}}
 
 {
-    "hashedKey": "vQaAdDzD5h3VaeQn/f6WIvFCOrivw0sdeDCCeAg0ZBo=",    
+    "hashedKey": "MSZfRI0ORiyOInUT1NwqLsu8T3rlpeDQKGf4RGEhWGc=",    
     "answer": {
         "firstName": "Baran",
         "lastName": "Baygan",
@@ -53,5 +53,5 @@ Host: {{host}}
 
 @customToken = {{validateCode.response.body.$[0].response.customToken}}
 
-GET /public/auth?customToken={{customToken}} HTTP/1.1
-Host: {{host}}
+GET https://{{host}}/public/auth?customToken={{customToken}} HTTP/1.1
+
