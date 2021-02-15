@@ -1,5 +1,5 @@
-POST /user/action?auth={{accessToken}}&action=rbs.logistics.request.LIST_SHIPMENTS HTTP/1.1
-Host: {{host}}
+POST https://{{host}}/user/action/{{projectId}}/rbs.logistics.request.LIST_SHIPMENTS?auth={{accessToken}} HTTP/1.1
+Content-Type: application/json
 
 {
     "orderId": "ORDER_A"

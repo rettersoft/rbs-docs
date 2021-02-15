@@ -1,2 +1,2 @@
-POST /user/action?auth={{accessToken}}&action=rbs.wms.request.GET_DIAGRAM HTTP/1.1
-Host: {{host}}
+POST https://{{host}}/user/action/{{projectId}}/rbs.wms.request.GET_DIAGRAM?auth={{accessToken}} HTTP/1.1
+Content-Type: application/json

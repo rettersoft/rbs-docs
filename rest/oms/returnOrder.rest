@@ -1,0 +1,7 @@
+POST https://{{host}}/user/action/{{projectId}}/rbs.order.request.RETURN?auth={{accessToken}} HTTP/1.1
+Content-Type: application/json
+
+{
+    "orderId": "210208NOVD9SHT",
+    "items": ["1"]
+}

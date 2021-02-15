@@ -1,11 +1,11 @@
-POST /user/action?auth={{accessToken}}&action=rbs.order.request.CAN_CREATE HTTP/1.1
-Host: {{host}}
+POST https://{{host}}/user/action/{{projectId}}/rbs.order.request.CAN_CREATE?auth={{accessToken}} HTTP/1.1
+Content-Type: application/json
 
 [
     {
         "serviceId": "rbs.crm",
         "config": {
-            "userId": "7aa36c80-ecc5-43e2-b555-b04c8ace9892"
+            "userId": "1063e61a-39cc-46a0-9bb7-b3dcee9df165"
         }
     },
     {
@@ -33,7 +33,7 @@ Host: {{host}}
     {
         "serviceId": "rbs.logistics",
         "config": {
-            "addressId": "HOME",
+            "addressId": "01EVTG8MJD1SJK0HRJXFCH4RKW",
             "zoneId": "ZONE_A",
             "pools": {
                 "type": "CARGO",
