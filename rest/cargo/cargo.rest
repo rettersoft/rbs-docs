@@ -1,0 +1,42 @@
+###
+### // numbers (0123456789), alphabetic (abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ) // alphanumeric (0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ)
+# @name createShipment
+POST https://{{host}}/user/action/{{projectId}}/rbs.cargo.request.CREATE_SHIPMENT?auth={{accessToken}} HTTP/1.1
+Content-Type: application/json
+Host: {{host}}
+
+{
+    "cargoCompany": "AYKARGO",
+    "orderId": "12345",
+    "receiverInformation": {
+        "nameSurname": "Ahmet Deniz",
+        "phoneNumber": "905314048097",
+        "email": "ahmet@rettermobile.com",
+        "address": "Zühtüpaşa mahallesi 2.hat boyu sokak no:5 daire: 9",
+        "city": "İstanbul",
+        "district": "Kadıköy",
+        "customerReferenceType": "Unilever Turkiye"
+    }
+}
+
+###
+# @name trackShipment
+POST https://{{host}}/user/action/{{projectId}}/rbs.cargo.request.TRACK_SHIPMENT?auth={{accessToken}} HTTP/1.1
+Content-Type: application/json
+Host: {{host}}
+
+{
+    "cargoCompany": "AYKARGO",
+    "trackingNo": "90532313"
+}
+
+###
+# @name cancelShipment
+POST https://{{host}}/user/action/{{projectId}}/rbs.cargo.request.CANCEL_SHIPMENT?auth={{accessToken}} HTTP/1.1
+Content-Type: application/json
+Host: {{host}}
+
+{
+    "cargoCompany": "AYKARGO",
+    "trackingNo": "90532313"
+}
