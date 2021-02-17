@@ -1,10 +1,9 @@
-POST /user/action?auth={{accessToken}}&action=rbs.pimproduct.request.UPSERT_CATEGORY HTTP/1.1
-Host: {{host}}
-
+POST https://{{host}}/user/action/{{projectId}}/rbs.pimproduct.request.UPSERT_CATEGORY?auth={{accessToken}} HTTP/1.1
+Content-Type: application/json
 
 {
     "id":"dondurulmusurun",
-    "parent":"B2C",
+    "parentId":"B2C",
     "name":[{"locale":"en_US","value":"Dondurulmuş Ürünler"},{"locale":"tr_TR","value":"Dondurulmuş Ürünler"}],
     "image":
         {
