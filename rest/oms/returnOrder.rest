@@ -2,6 +2,6 @@ POST https://{{host}}/user/action/{{projectId}}/rbs.order.request.RETURN?auth={{
 Content-Type: application/json
 
 {
-    "orderId": "210208NOVD9SHT",
-    "items": ["1"]
+    "orderId": "21021534ZZALLM",
+    "items": ["2"]
 }

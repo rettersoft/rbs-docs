@@ -1,0 +1,1 @@
+GET https://{{host}}/user/action/{{projectId}}/rbs.cms.get.CONTENT?auth={{accessToken}}&data=eyJpZCI6IjIwZjFkZWRjLWI4ZmEtNDBiYS1hMTM0LWU0NzRmNjg5ZTUwNCJ9 HTTP/1.1
