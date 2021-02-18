@@ -11,15 +11,16 @@ Content-Type: application/json
     {
         "serviceId": "rbs.cart",
         "config": {
-            "cartId": "7542e4c0ab",
-            "totalAmount": 20000,
+            "cartId": "1de255c877",
+            "totalPrice": 27,
             "items": [
                 {
                     "merchantId": "default",
                     "variantGroupId": "D",
-                    "itemId": "7685",
-                    "amount": 20000,
-                    "qty": 1
+                    "itemId": "768521",
+                    "qty": 3,
+                    "price": 9,
+                    "name": "Peynir"
                 }
             ]
         }

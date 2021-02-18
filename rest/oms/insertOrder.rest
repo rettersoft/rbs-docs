@@ -11,24 +11,28 @@ Content-Type: application/json
     {
         "serviceId": "rbs.cart",
         "config": {
-            "cartId": "7542e4c0ab",
-            "totalAmount": 20000,
+            "cartId": "1de255c877",
+            "totalPrice": 27,
             "items": [
                 {
                     "merchantId": "default",
                     "variantGroupId": "D",
-                    "itemId": "7685",
-                    "amount": 20000,
-                    "qty": 1
+                    "itemId": "768521",
+                    "qty": 3,
+                    "price": 9,
+                    "name": "Peynir"
                 }
             ]
         }
     },
     {
         "serviceId": "rbs.billing",
-        "config": {
-            "paymentMethod": "masterpass"
-        }
+        "config": [
+            {
+                "paymentMethod": "masterpass",
+                "installment": 3
+            }
+        ]
     },
     {
         "serviceId": "rbs.logistics",
