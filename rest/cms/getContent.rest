@@ -1,1 +1,5 @@
+
+# Example JSON in data query string. {"id":"20f1dedc-b8fa-40ba-a134-e474f689e504"}
+# This should be base64 encoded. eyJpZCI6IjIwZjFkZWRjLWI4ZmEtNDBiYS1hMTM0LWU0NzRmNjg5ZTUwNCJ9
+
 GET https://{{host}}/user/action/{{projectId}}/rbs.cms.get.CONTENT?auth={{accessToken}}&data=eyJpZCI6IjIwZjFkZWRjLWI4ZmEtNDBiYS1hMTM0LWU0NzRmNjg5ZTUwNCJ9 HTTP/1.1
