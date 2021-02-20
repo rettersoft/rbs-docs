@@ -3,9 +3,28 @@ Content-Type: application/json
 
 [
     {
+        "serviceId": "rbs.address",
+        "config": {
+            "shipmentAddress": {
+                "addressId": "01EYMX24JNP5439ND40RWM3GPS",
+                "name": "Test Address",
+                "country": "TÜRKİYE",
+                "city": "İSTANBUL",
+                "district": "ATAŞEHİR"
+            },
+            "invoiceAddress": {
+                "addressId": "01EYMXKC3JPBGRKQVNM3KP3W31",
+                "name": "Test Address",
+                "country": "TÜRKİYE",
+                "city": "İSTANBUL",
+                "district": "ATAŞEHİR"
+            }
+        }
+    },
+    {
         "serviceId": "rbs.crm",
         "config": {
-            "userId": "1063e61a-39cc-46a0-9bb7-b3dcee9df165"
+            "userId": "root"
         }
     },
     {
@@ -34,7 +53,6 @@ Content-Type: application/json
     {
         "serviceId": "rbs.logistics",
         "config": {
-            "addressId": "01EVTG8MJD1SJK0HRJXFCH4RKW",
             "zoneId": "ZONE_A",
             "pools": {
                 "type": "CARGO",
