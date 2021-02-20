@@ -56,7 +56,7 @@ Content-Type: application/json
             "zoneId": "ZONE_A",
             "pools": {
                 "type": "CARGO",
-                "provider": "ARAS_KARGO",
+                "provider": "AYKARGO",
                 "storeId": "STORE_A",
                 "fee": 9
             }
