@@ -6,7 +6,7 @@ Host: {{host}}
 
 {
     "cargoCompany": "AYKARGO",
-    "orderId": "12345123",
+    "orderId": "99999",
     "alias": "alias",
     "receiverInformation": {
         "nameSurname": "Ahmet Deniz",
