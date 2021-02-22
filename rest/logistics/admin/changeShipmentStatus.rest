@@ -2,7 +2,7 @@ POST https://{{host}}/user/action/{{projectId}}/rbs.logistics.request.CHANGE_SHI
 Content-Type: application/json
 
 {
-    "orderId": "ORDER_A",
-    "shipmentId": "SHIPMENT_A",
+    "orderId": "2102205QG60ZUU",
+    "shipmentId": "2HTO",
     "next": true
 }
