@@ -6,7 +6,7 @@ Host: {{host}}
 
 {
     "cargoCompany": "UPS",
-    "orderId": "99999",
+    "orderId": "11111111",
     "alias": "alias",
     "receiverInformation": {
         "nameSurname": "Ahmet Deniz",
@@ -15,7 +15,14 @@ Host: {{host}}
         "address": "Zühtüpaşa mahallesi 2.hat boyu sokak no:5 daire: 9",
         "city": "İstanbul",
         "district": "Kadıköy",
-        "customerReferenceType": "Unilever Turkiye"
+        "customerReferenceType": "Unilever Turkiye",
+        "boxCount": 1
+    },
+    "senderInformation": {
+        "nameSurname": "Ahmet",
+        "address": "Zühtüpaşa mahallaesi 2.hat boyu sokak no:5 daire:9",
+        "city": "İstanbul",
+        "district": "Kadıköy"
     }
 }
 
@@ -26,7 +33,7 @@ Content-Type: application/json
 Host: {{host}}
 
 {
-    "orderId": "123"
+    "orderId": "11111111"
 }
 
 ###
