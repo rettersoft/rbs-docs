@@ -16,8 +16,10 @@ Content-Type: application/json
   "merchantId": "default"
 },
   {
-    "itemId":"sku1",
+    "itemId":"sku",
     "variantGroupId":"pinarSut",
-    "merchantId": "default"
+    "merchantId": "default",
+    "segmentId": "unilever",
+    "zone": "ankara"
   }
 ]
