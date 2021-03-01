@@ -1,0 +1,2 @@
+POST https://{{host}}/user/action/{{projectId}}/rbs.merchant.request.EXPORT_EXCEL?auth={{accessToken}}
+Content-Type: application/json

@@ -1,0 +1,23 @@
+POST {{host}}/user/action/{{projectId}}/rbs.pimproduct.request.GET_SOME_PRODUCTS?auth={{accessToken}}
+Content-Type: application/json
+
+[{
+  "itemId":"7685",
+  "variantGroupId":"D",
+  "segmentId": "unilever",
+  "zone": "istanbul",
+  "merchantId": "default"
+},
+  {
+  "itemId":"7686",
+  "variantGroupId":"D",
+  "segmentId": "nonunilever",
+  "zone": "ankara",
+  "merchantId": "default"
+},
+  {
+    "itemId":"sku1",
+    "variantGroupId":"pinarSut",
+    "merchantId": "default"
+  }
+]
