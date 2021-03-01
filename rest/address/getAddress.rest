@@ -2,4 +2,4 @@
 POST https://{{host}}/user/action/{{projectId}}/rbs.address.request.GET_ADDRESS?auth={{accessToken}} HTTP/1.1
 Content-Type: application/json
 
-{ "addressId": "01EYKDBVPN431Y66W7Z1DK36M9" }
+{ "addressId": "01EYMX24JNP5439ND40RWM3GPS" }

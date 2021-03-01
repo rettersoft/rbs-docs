@@ -2,5 +2,5 @@ POST https://{{host}}/user/action/{{projectId}}/rbs.logistics.request.LIST_SHIPM
 Content-Type: application/json
 
 {
-    "orderId": "ORDER_A"
+    "orderId": "2102205QG60ZUU"
 }

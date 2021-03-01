@@ -1,0 +1,2 @@
+GET https://{{host}}/user/action/{{projectId}}/rbs.order.get.DATA?auth={{accessToken}}&data=ewogICAgIm9yZGVySWQiOiAiMjEwMjIwNVFHNjBaVVUiCn0%3D HTTP/1.1
+Content-Type: application/json

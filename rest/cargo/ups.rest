@@ -1,0 +1,47 @@
+###
+# @name createTrackingNumber
+POST https://{{host}}/user/action/{{projectId}}/rbs.trackingnumber.request.CREATE?auth={{accessToken}} HTTP/1.1
+Content-Type: application/json
+Host: {{host}}
+
+{
+    "cargoCompany": "UPS",
+    "orderId": "99999",
+    "alias": "alias",
+    "receiverInformation": {
+        "nameSurname": "Baran Baygan",
+        "phoneNumber": "905309364921",
+        "email": "baran@rettermobile.com",
+        "address": "Visnezade Mahallesi Suleyman Seba Caddesi No: 79 4B Besiktas/Istanbul",
+        "city": "İstanbul",
+        "district": "Beşiktaş",
+        "customerReferenceType": "Retter",
+        "boxCount": 1
+    },
+    "senderInformation": {
+        "nameSurname": "Ahmet Deniz",
+        "address": "Zuhtupasa mahallesi 2.hat boyu sokak no:5 daire:9",
+        "city": "İstanbul",
+        "district": "Kadıköy"
+    }
+}
+
+###
+# @name getTrackingNumber
+POST https://{{host}}/user/action/{{projectId}}/rbs.trackingnumber.request.GET?auth={{accessToken}} HTTP/1.1
+Content-Type: application/json
+Host: {{host}}
+
+{
+    "orderId": "11111111"
+}
+
+###
+# @name cancelTrackingNumber
+POST https://{{host}}/user/action/{{projectId}}/rbs.trackingnumber.request.CANCEL?auth={{accessToken}} HTTP/1.1
+Content-Type: application/json
+Host: {{host}}
+
+{
+    "orderId": "90532313"
+}
