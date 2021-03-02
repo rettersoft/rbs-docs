@@ -1,0 +1,76 @@
+###
+# @name upsertProcess
+POST https://{{host}}/user/action/{{projectId}}/rbs.process.request.UPSERT?auth={{accessToken}} HTTP/1.1
+Content-Type: application/json
+
+{
+    "processId": "SHIPMENT_JOURNEY",
+    "data": {
+        "assets": [
+            {
+                "id": "PENDING",
+                "type": "DECISION"
+            },
+            {
+                "id": "PICKING",
+                "type": "SERVICE"
+            },
+            {
+                "id": "PACKAGING",
+                "type": "SERVICE"
+            },
+            {
+                "id": "READY",
+                "type": "SERVICE"
+            }
+        ],
+        "rules": [
+            {
+                "direction": ["PENDING", "PICKING"],
+                "conditions": { "shipmentType": { "EQ": "CARGO" } }
+            },
+            {
+                "direction": ["PENDING", "PACKAGING"],
+                "conditions": { "shipmentType": { "EQ": "SLOT" } }
+            },
+            {
+                "direction": ["PICKING", "PACKAGING"]
+            },
+            {
+                "direction": ["PACKAGING", "READY"]
+            }
+        ]
+    }
+}
+
+###
+# @name getProcess
+POST https://{{host}}/user/action/{{projectId}}/rbs.process.request.GET?auth={{accessToken}} HTTP/1.1
+Content-Type: application/json
+
+{
+    "processId": "SHIPMENT_JOURNEY"
+}
+
+###
+# @name startProcess
+POST https://{{host}}/user/action/{{projectId}}/rbs.process.request.START?auth={{accessToken}} HTTP/1.1
+Content-Type: application/json
+
+{
+    "processId": "SHIPMENT_JOURNEY",
+    "executionId": "210228ABCDEFGH",
+    "payload": {
+    }
+}
+
+###
+# @name stopProcess
+POST https://{{host}}/user/action/{{projectId}}/rbs.process.request.STOP?auth={{accessToken}} HTTP/1.1
+Content-Type: application/json
+
+{
+    "processId": "SHIPMENT_JOURNEY",
+    "executionId": "210228ABCDEFGH",
+    "token": "21022816018NFEBO9S"
+}
