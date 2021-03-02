@@ -1,0 +1,10 @@
+
+POST https://{{host}}/user/action/{{projectId}}/rbs.businessuserauth.request.ADMIN_UPSERT_USER?auth={{accessToken}} HTTP/1.1
+Content-Type: application/json
+
+{
+  "email": "email@mail.com",
+  "password": "password",
+  "userRoleId": "admin, user e.g",
+  "name": "username"
+}

@@ -1,0 +1,2 @@
+GET https://{{host}}/user/action/{{projectId}}/rbs.merchant.get.PRICE_LIST?auth={{accessToken}}&data=ewogICJzZWdtZW50SWQiOiAidW5pbGV2ZXIiLAogICJtZXJjaGFudElkIjogImRlZmF1bHQiLAogICJ2YXJpYW50SWQiOiAiRCIsCiAgImlkIjogIjc2ODUiCn0=
+Content-Type: application/json

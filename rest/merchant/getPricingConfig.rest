@@ -1,0 +1,2 @@
+POST https://{{host}}/user/action/{{projectId}}/rbs.merchant.request.GET_PRICING_CONFIG?auth={{accessToken}}
+Content-Type: application/json

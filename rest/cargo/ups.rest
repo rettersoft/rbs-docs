@@ -9,13 +9,20 @@ Host: {{host}}
     "orderId": "99999",
     "alias": "alias",
     "receiverInformation": {
-        "nameSurname": "Ahmet Deniz",
-        "phoneNumber": "905314048097",
-        "email": "ahmet@rettermobile.com",
-        "address": "Zühtüpaşa mahallesi 2.hat boyu sokak no:5 daire: 9",
+        "nameSurname": "Baran Baygan",
+        "phoneNumber": "905309364921",
+        "email": "baran@rettermobile.com",
+        "address": "Visnezade Mahallesi Suleyman Seba Caddesi No: 79 4B Besiktas/Istanbul",
         "city": "İstanbul",
-        "district": "Kadıköy",
-        "customerReferenceType": "Unilever Turkiye"
+        "district": "Beşiktaş",
+        "customerReferenceType": "Retter",
+        "boxCount": 1
+    },
+    "senderInformation": {
+        "nameSurname": "Ahmet Deniz",
+        "address": "Zuhtupasa mahallesi 2.hat boyu sokak no:5 daire:9",
+        "city": "İstanbul",
+        "district": "Kadıköy"
     }
 }
 
@@ -26,7 +33,7 @@ Content-Type: application/json
 Host: {{host}}
 
 {
-    "orderId": "123"
+    "orderId": "11111111"
 }
 
 ###
