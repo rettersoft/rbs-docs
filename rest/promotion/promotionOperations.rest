@@ -1,10 +1,8 @@
 # @name createPromotion
 
-POST /user/action?auth={{accessToken}}&action=rbs.promotion.request.CREATE HTTP/1.1
-Host: {{host}}
+POST {{host}}/user/action/{{projectId}}/rbs.promotion.request.CREATE?auth={{accessToken}} HTTP/1.1
 
 {
-    "promotion": {
         "categoryId": "1",
         "applyOnce": false,
         "discardMinCartTotal": false,
@@ -20,44 +18,21 @@ Host: {{host}}
                 "giftType":"percentDiscount",
                 "discount":50
             }
-        ]
-    },
-    "metadata": {
-        "title": {
-            "en": "Test Promotion",
-            "tr": "Test Promotion"
-        },
-         "shortTitle": {
-            "en": "Test",
-            "tr": "Test"
-        },
-         "imageUrl": {
-            "en": "",
-            "tr": ""
-        },
-         "detailImageUrl": {
-            "en": "",
-            "tr": ""
-        },
-         "description": {
-            "en": "Promotion for test",
-            "tr": "Promotion for test"
-        }
-    }
+        ],
+        "isVisible": true
 }
 ###
 @promotionId = {{createPromotion.response.body.$[0].response.promotionId}}
 
-POST /user/action?auth={{accessToken}}&action=rbs.promotion.request.GET HTTP/1.1
-Host: {{host}}
+POST {{host}}/user/action/{{projectId}}/rbs.promotion.request.GET?auth={{accessToken}} HTTP/1.1
+Content-Type: application/json
 
 {
     "promotionId": "{{promotionId}}"
 }
 ###
 
-POST /user/action?auth={{accessToken}}&action=rbs.promotion.request.DELETE HTTP/1.1
-Host: {{host}}
+POST {{host}}/user/action/{{projectId}}/rbs.promotion.request.DELETE?auth={{accessToken}} HTTP/1.1
 
 {
     "promotionId": "{{promotionId}}"
