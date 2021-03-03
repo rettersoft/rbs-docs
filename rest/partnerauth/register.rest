@@ -5,7 +5,7 @@ Content-Type: application/json
 Host: {{host}}
 
 {
-    "phoneNumber": "905314048097"
+    "phoneNumber": "905306129661"
 }
 
 
@@ -16,8 +16,8 @@ POST https://{{host}}/user/action/{{projectId}}/rbs.partnerauth.request.ANSWER_C
 Host: {{host}}
 
 {
-    "challengeId": "0f760be8-a5d1-49a3-aaf5-e0e004031834",    
-    "challengeAnswer": "208260"
+    "challengeId": "31275b78-b2ef-4dea-9630-ae8f38f81693",    
+    "challengeAnswer": "542284"
 }
 
 ###
@@ -27,10 +27,10 @@ POST https://{{host}}/user/action/{{projectId}}/rbs.partnerauth.request.ANSWER_C
 Host: {{host}}
 
 {
-    "challengeId": "f3c9aad9-4225-4b23-8569-0189835dfd77",
+    "challengeId": "b976df3e-6c66-4541-88d6-da3eb3fae361",
     "verificationType": "INVITATION_CODE",
-    "phoneNumber": "905314048097",
     "code": "118943",
+    "phoneNumber": "905314048097",
     "email": "ahmet@mail.net",
     "userInformation": {
         "name": "Ahmet",
