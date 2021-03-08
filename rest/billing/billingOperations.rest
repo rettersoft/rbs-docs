@@ -6,11 +6,8 @@ Content-Type: application/json
     "cartId": "7542e4c0ab"
 }
 ###
-POST {{host}}/user/action/{{projectId}}/rbs.billing.request.GENERATE_CLIENT_TOKEN?auth={{accessToken}} HTTP/1.1
+POST {{host}}/user/action/{{projectId}}/rbs.billing.request.GENERATE_MP_CLIENT_TOKEN?auth={{accessToken}} HTTP/1.1
 
-{
-    "configurationId": "Test"
-}
 ###
 POST {{host}}/user/action/{{projectId}}/rbs.billing.request.COMMIT_MP_PAYMENT?auth={{accessToken}} HTTP/1.1
 
