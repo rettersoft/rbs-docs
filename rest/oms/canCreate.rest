@@ -41,7 +41,8 @@ Content-Type: application/json
                     "price": 9,
                     "name": "Peynir"
                 }
-            ]
+            ],
+            "totalAmount": 20000
         }
     },
     {

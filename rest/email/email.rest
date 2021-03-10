@@ -1,0 +1,11 @@
+
+# @name sendEmail
+POST https://{{host}}/user/action/{{projectId}}/rbs.email.request.SEND_EMAIL?auth={{accessToken}} HTTP/1.1
+Content-Type: application/json
+Host: {{host}}
+
+{
+    "to": ["ahmet@rettermobile.com"],
+    "subject": "string",
+    "body": "string"
+}

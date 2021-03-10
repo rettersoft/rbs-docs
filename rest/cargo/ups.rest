@@ -6,7 +6,7 @@ Host: {{host}}
 
 {
     "cargoCompany": "UPS",
-    "orderId": "99999",
+    "orderId": "test12",
     "alias": "alias",
     "receiverInformation": {
         "nameSurname": "Baran Baygan",
@@ -16,7 +16,7 @@ Host: {{host}}
         "city": "İstanbul",
         "district": "Beşiktaş",
         "customerReferenceType": "Retter",
-        "boxCount": 1
+        "boxCount": 2
     },
     "senderInformation": {
         "nameSurname": "Ahmet Deniz",
@@ -33,7 +33,7 @@ Content-Type: application/json
 Host: {{host}}
 
 {
-    "orderId": "11111111"
+    "orderId": "test10"
 }
 
 ###
@@ -44,4 +44,27 @@ Host: {{host}}
 
 {
     "orderId": "90532313"
+}
+
+###
+# @name UpdateShipmentStatus
+POST https://{{host}}/user/action/{{projectId}}/rbs.trackingnumber.request.UPDATE_STATUS?auth={{accessToken}} HTTP/1.1
+Content-Type: application/json
+Host: {{host}}
+
+{
+    "orderId": "test10",
+    "status": "DELIVERED"
+}
+
+###
+# @name SupportedDistricts
+POST https://{{host}}/user/action/{{projectId}}/rbs.trackingnumber.request.SUPPORTED_DISTRICTS?auth={{accessToken}} HTTP/1.1
+Content-Type: application/json
+Host: {{host}}
+
+{
+    "cargoCompany": "UPS",
+    "city": "İstanbul",
+    "district": "Kadıköy"
 }

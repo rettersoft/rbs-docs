@@ -16,8 +16,8 @@ POST https://{{host}}/user/action/{{projectId}}/rbs.partnerauth.request.ANSWER_C
 Host: {{host}}
 
 {
-    "challengeId": "0f760be8-a5d1-49a3-aaf5-e0e004031834",    
-    "challengeAnswer": "208260"
+    "challengeId": "58476866-25a0-460b-be2d-abef9af7deb0",    
+    "challengeAnswer": "141414"
 }
 
 ###
@@ -27,11 +27,11 @@ POST https://{{host}}/user/action/{{projectId}}/rbs.partnerauth.request.ANSWER_C
 Host: {{host}}
 
 {
-    "challengeId": "f3c9aad9-4225-4b23-8569-0189835dfd77",
-    "verificationType": "INVITATION_CODE",
+    "challengeId": "34940191-bc9f-42f6-b4d8-9759a220e4fc",
+    "verificationType": "PARTNER_EMAIL",
+    "partner": "unilever",
     "phoneNumber": "905314048097",
-    "code": "118943",
-    "email": "ahmet@mail.net",
+    "email": "ahmet@rettermobile.com",
     "userInformation": {
         "name": "Ahmet",
         "surname": "Deniz",
@@ -49,4 +49,12 @@ Host: {{host}}
 {
     "challengeId": "967932f6-5704-4007-862e-b2c34af39e31",    
     "challengeAnswer": "136699"
+}
+
+###
+# @name getConfig
+POST https://{{host}}/user/action/{{projectId}}/rbs.partnerauth.request.GET_CONFIG?auth={{accessToken}} HTTP/1.1
+Host: {{host}}
+
+{
 }
