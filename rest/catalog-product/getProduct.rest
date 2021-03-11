@@ -1,0 +1,12 @@
+GET https://{{host}}/user/action/{{projectId}}/rbs.product.get.DATA?auth={{accessToken}}&data=ewogICAgIm1lcmNoYW50SWQiOiAiZGVmYXVsdCIsCiAgICAiem9uZUlkIjogImRlZmF1bHQiLAogICAgInZhcmlhbnRHcm91cElkIjogInAxMTIiLAogICAgImlkIjogImxhdHRldGVzdGNvY3VrMiIKfQ== HTTP/1.1
+Content-Type: application/json
+
+
+###
+
+{
+    "merchantId": "default",
+    "zoneId": "default",
+    "variantGroupId": "p112",
+    "id": "lattetestcocuk2"
+}
