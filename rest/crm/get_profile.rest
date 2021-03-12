@@ -1,2 +1,2 @@
-POST /user/action?auth={{accessToken}}&action=rbs.profile.request.GET HTTP/1.1
-Host: {{host}}
+
+POST https://{{host}}/user/action/{{projectId}}/rbs.profile.request.GET?auth={{accessToken}} HTTP/1.1
