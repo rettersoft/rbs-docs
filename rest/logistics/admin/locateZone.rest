@@ -3,7 +3,12 @@ Content-Type: application/json
 
 {
     "address": {
-        "city": "İSTANBUL",
+        "city": "İstanbul",
         "district": "ATAŞEHİR"
     }
 }
+
+###
+
+GET https://{{host}}/user/action/{{projectId}}/rbs.logistics.get.LOCATE_ZONE?auth={{accessToken}}&data=ewogICAgImFkZHJlc3MiOiB7CiAgICAgICAgImNpdHkiOiAiQnVyc2EiLAogICAgICAgICJkaXN0cmljdCI6ICJPc21hbmdhemkiCiAgICB9Cn0= HTTP/1.1
+Content-Type: application/json

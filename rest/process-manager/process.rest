@@ -1,4 +1,13 @@
 ###
+# @name convertDiagram
+POST https://{{host}}/user/action/{{projectId}}/rbs.process.request.CONVERT?auth={{accessToken}} HTTP/1.1
+Content-Type: application/json
+
+{
+    "diagram": "[CAN_CREATE | action: rbs.order.request.CAN_CREATE | inputPath = $.config]\n[GENERATE_ORDER_ID | \n    action: rbs.order.request.GENERATE_ID |\n    resultPath: $.orderId | \n    outputPath: $.0.response.orderId |\n    errorPath: $.0.response.error |\n    A: $.orderId EXISTS\n]\n[RESERVE_STOCK | \n    action: rbs.stock.request.RESERVE |\n    resultPath: $.stock | \n    outputPath: $.0.response |\n    errorPath: $.0.response.error |\n    A: $.stock.status = true\n]\n[CREATE_PAYMENT |\n    action: rbs.payment.request.CREATE | \n    callbackAction: rbs.payment.event.CREATION_RESULT | \n    timeout: 300, PAYMENT_FAILED |\n    resultPath: $.payment | \n    outputPath: $.0.response |\n    errorPath: $.0.response.error |\n    A: $.payment.status = SUCCESS |\n    B: $.payment.status = COMMIT_NEEDED\n]\n[COMMIT_PAYMENT |\n    action: rbs.payment.request.COMMIT | \n    callbackAction: rbs.payment.event.COMMIT_RESULT | \n    timeout: 300, PAYMENT_FAILED |\n    resultPath: $.payment | \n    outputPath: $.0.response |\n    errorPath: $.0.response.error |\n    A: $.payment.status = SUCCESS\n]\n[COMMIT_STOCK | \n    action: rbs.stock.request.COMMIT |\n    resultPath: $.stock |\n    outputPath: $.0.response |\n    errorPath: $.0.response.error |\n    A: $.stock.status = true\n]\n[CREATE_ORDER |\n    action: rbs.order.request.CREATE |\n    resultPath: $.order | \n    outputPath: $.0.response.order |\n    errorPath: $.0.response.error |\n    A: $.order.orderId = $.orderId\n]\n\n\n[CAN_CREATE] -> [GENERATE_ORDER_ID]\n[CAN_CREATE] -> [INVALID_REQUEST]\n[INVALID_REQUEST] -> [BREAK]\n[GENERATE_ORDER_ID] -> (A)[RESERVE_STOCK]\n[GENERATE_ORDER_ID] -> [BREAK]\n[RESERVE_STOCK] -> (A) [CREATE_PAYMENT]\n[RESERVE_STOCK] -> [OUT_OF_STOCK]\n[OUT_OF_STOCK] -> [ROLLBACK]\n[CREATE_PAYMENT] -> (A) [COMMIT_STOCK]\n[CREATE_PAYMENT] -> (B) [COMMIT_PAYMENT]\n[CREATE_PAYMENT] -> [PAYMENT_FAILED]\n[PAYMENT_FAILED] -> [ROLLBACK]\n[COMMIT_PAYMENT] -> (A)  [COMMIT_STOCK]\n[COMMIT_PAYMENT] -> [PAYMENT_FAILED]\n[COMMIT_STOCK] -> (A) [CREATE_ORDER]\n[CREATE_ORDER] -> (A) [ORDER_CREATED]\n[CREATE_ORDER] -> [ROLLBACK]"
+}
+
+###
 # @name upsertProcess
 POST https://{{host}}/user/action/{{projectId}}/rbs.process.request.UPSERT?auth={{accessToken}} HTTP/1.1
 Content-Type: application/json
@@ -62,6 +71,16 @@ Content-Type: application/json
     "executionId": "210228ABCDEFGH",
     "payload": {
     }
+}
+
+###
+# @name getExecution
+POST https://{{host}}/user/action/{{projectId}}/rbs.process.request.GET_EXECUTION?auth={{accessToken}} HTTP/1.1
+Content-Type: application/json
+
+{
+    "processId": "SHIPMENT_JOURNEY",
+    "executionId": "210228ABCDEFGH"
 }
 
 ###
