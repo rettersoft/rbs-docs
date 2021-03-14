@@ -1,0 +1,6 @@
+
+POST https://{{host}}/user/action/{{projectId}}/rbs.merchant.request.DENEME?auth={{accessToken}} HTTP/1.1
+
+{
+    
+}

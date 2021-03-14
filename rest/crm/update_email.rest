@@ -1,0 +1,6 @@
+POST /user/action?auth={{accessToken}}&action=rbs.profile.request.UPDATE_EMAIL HTTP/1.1
+Host: {{host}}
+
+{
+    "email": "baran@rettermobile.com"
+}
