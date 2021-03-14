@@ -1,9 +1,7 @@
 POST https://{{host}}/user/action/{{projectId}}/rbs.pimproduct.request.GET_SOME_PRODUCTS?auth={{accessToken}} HTTP/1.1
 Content-Type: application/json
 
-{ 
-    "items": [
-        { "sku": "sku2", "variantGroupId": "pinarSut2" },
-        { "sku": "sku1", "variantGroupId": "pinarSut" }
-    ] 
-}
+[
+    { "itemId": "sku2", "variantGroupId": "pinarSut2" },
+    { "itemId": "TEST_123", "variantGroupId": "TEST_123" }
+] 

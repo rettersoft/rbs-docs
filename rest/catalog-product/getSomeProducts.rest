@@ -1,0 +1,18 @@
+GET https://{{host}}/user/action/{{projectId}}/rbs.product.get.SOME?auth={{accessToken}}&data=ewogICAgImlkcyI6IFt7CiAgICAgICAgIm1lcmNoYW50SWQiOiAiZGVmYXVsdCIsCiAgICAgICAgInZhcmlhbnRHcm91cElkIjogInBpbmFya2lkbyIsCiAgICAgICAgImlkIjogInRlc3QwMDAwMyIKICAgIH0sIHsKICAgICAgICAibWVyY2hhbnRJZCI6ICJkZWZhdWx0IiwKICAgICAgICAidmFyaWFudEdyb3VwSWQiOiAicGluYXJraWRvIiwKICAgICAgICAiaWQiOiAidGVzdDAwMDAzIgogICAgfSwgewogICAgICAgICJtZXJjaGFudElkIjogImRlZmF1bHQiLAogICAgICAgICJ2YXJpYW50R3JvdXBJZCI6ICJwaW5hcmtpZG8iLAogICAgICAgICJpZCI6ICJ0ZXN0MDAwMDMiCiAgICB9XQp9 HTTP/1.1
+
+###
+{
+    "ids": [{
+        "merchantId": "default",
+        "variantGroupId": "pinarkido",
+        "id": "test00003"
+    }, {
+        "merchantId": "default",
+        "variantGroupId": "pinarkido",
+        "id": "test00003"
+    }, {
+        "merchantId": "default",
+        "variantGroupId": "pinarSut",
+        "id": "test00003"
+    }]
+}

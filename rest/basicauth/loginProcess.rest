@@ -33,8 +33,7 @@ POST https://{{host}}/user/action/{{projectId}}/rbs.basicauth.request.ANSWER_CHA
 ###
 
 # @name signup  
-POST /user/action?auth={{anonymAccessToken}}&action=rbs.basicauth.request.ANSWER_CHALLENGE HTTP/1.1
-Host: {{host}}
+POST https://{{host}}/user/action/{{projectId}}/rbs.basicauth.request.ANSWER_CHALLENGE?auth={{anonymAccessToken}} HTTP/1.1
 
 {
     "hashedKey": "MSZfRI0ORiyOInUT1NwqLsu8T3rlpeDQKGf4RGEhWGc=",    
