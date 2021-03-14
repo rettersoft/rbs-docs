@@ -93,3 +93,35 @@ Content-Type: application/json
     "executionId": "210228ABCDEFGH",
     "token": "21022816018NFEBO9S"
 }
+
+###
+# @name addEvent
+POST https://{{host}}/user/action/{{projectId}}/rbs.process.request.ADD_EVENT?auth={{accessToken}} HTTP/1.1
+Content-Type: application/json
+
+{
+    "processId": "TEST",
+    "event": "TES_EVENT"
+}
+
+###
+# @name removeEvent
+POST https://{{host}}/user/action/{{projectId}}/rbs.process.request.REMOVE_EVENT?auth={{accessToken}} HTTP/1.1
+Content-Type: application/json
+
+{
+    "processId": "TEST",
+    "event": "TES_EVENT"
+}
+
+###
+# @name trigger
+POST https://{{host}}/service/action/{{projectId}}/rbs.order.event.TRIGGER?auth={{accessToken}} HTTP/1.1
+Content-Type: application/json
+
+{
+    "processId": "CREATE_ORDER_AND_SHIPMENTS",
+    "payload": {
+        "unknown": "1"
+    }
+}
