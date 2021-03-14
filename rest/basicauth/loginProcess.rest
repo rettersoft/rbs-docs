@@ -14,7 +14,7 @@ GET https://{{host}}/public/anonymous-auth?projectId={{projectId}} HTTP/1.1
 POST https://{{host}}/user/action/{{projectId}}/rbs.basicauth.request.START_AUTH?auth={{anonymAccessToken}} HTTP/1.1
 
 {
-    "msisdn": "+905309364921"
+    "msisdn": "+905309364914"
 }
 
 
@@ -24,7 +24,7 @@ POST https://{{host}}/user/action/{{projectId}}/rbs.basicauth.request.START_AUTH
 POST https://{{host}}/user/action/{{projectId}}/rbs.basicauth.request.ANSWER_CHALLENGE?auth={{anonymAccessToken}} HTTP/1.1
 
 {
-    "hashedKey": "MSZfRI0ORiyOInUT1NwqLsu8T3rlpeDQKGf4RGEhWGc=",    
+    "hashedKey": "dUIddw320HQeRKx4ldb417In0TU/K7CL4ydeM0P2UVI=",
     "answer": {
         "code": "1414"
     }
@@ -36,7 +36,7 @@ POST https://{{host}}/user/action/{{projectId}}/rbs.basicauth.request.ANSWER_CHA
 POST https://{{host}}/user/action/{{projectId}}/rbs.basicauth.request.ANSWER_CHALLENGE?auth={{anonymAccessToken}} HTTP/1.1
 
 {
-    "hashedKey": "MSZfRI0ORiyOInUT1NwqLsu8T3rlpeDQKGf4RGEhWGc=",    
+    "hashedKey": "dUIddw320HQeRKx4ldb417In0TU/K7CL4ydeM0P2UVI=",
     "answer": {
         "firstName": "Baran",
         "lastName": "Baygan",
