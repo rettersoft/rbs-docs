@@ -1,0 +1,40 @@
+###
+# @name createTrackingNumber
+POST https://{{host}}/user/action/{{projectId}}/rbs.trackingnumber.request.CREATE?auth={{accessToken}} HTTP/1.1
+Content-Type: application/json
+Host: {{host}}
+
+{
+    "cargoCompany": "AYKARGO",
+    "orderId": "99999",
+    "alias": "alias",
+    "receiverInformation": {
+        "nameSurname": "Ahmet Deniz",
+        "phoneNumber": "905314048097",
+        "email": "ahmet@rettermobile.com",
+        "address": "Zühtüpaşa mahallesi 2.hat boyu sokak no:5 daire: 9",
+        "city": "İstanbul",
+        "district": "Kadıköy",
+        "customerReferenceType": "Unilever Turkiye"
+    }
+}
+
+###
+# @name getTrackingNumber
+POST https://{{host}}/user/action/{{projectId}}/rbs.trackingnumber.request.GET?auth={{accessToken}} HTTP/1.1
+Content-Type: application/json
+Host: {{host}}
+
+{
+    "orderId": "123"
+}
+
+###
+# @name cancelTrackingNumber
+POST https://{{host}}/user/action/{{projectId}}/rbs.trackingnumber.request.CANCEL?auth={{accessToken}} HTTP/1.1
+Content-Type: application/json
+Host: {{host}}
+
+{
+    "orderId": "90532313"
+}

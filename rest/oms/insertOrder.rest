@@ -3,23 +3,43 @@ Content-Type: application/json
 
 [
     {
+        "serviceId": "rbs.address",
+        "config": {
+            "shipmentAddress": {
+                "addressId": "01EYMX24JNP5439ND40RWM3GPS",
+                "name": "Test Address",
+                "country": "TÜRKİYE",
+                "city": "İSTANBUL",
+                "district": "ATAŞEHİR"
+            },
+            "invoiceAddress": {
+                "addressId": "01EYMXKC3JPBGRKQVNM3KP3W31",
+                "name": "Test Address",
+                "country": "TÜRKİYE",
+                "city": "İSTANBUL",
+                "district": "ATAŞEHİR"
+            }
+        }
+    },
+    {
         "serviceId": "rbs.crm",
         "config": {
-            "userId": "1063e61a-39cc-46a0-9bb7-b3dcee9df165"
+            "userId": "root"
         }
     },
     {
         "serviceId": "rbs.cart",
         "config": {
-            "cartId": "7542e4c0ab",
-            "totalAmount": 20000,
+            "cartId": "1de255c877",
+            "totalPrice": 27,
             "items": [
                 {
                     "merchantId": "default",
                     "variantGroupId": "D",
-                    "itemId": "7685",
-                    "amount": 20000,
-                    "qty": 1
+                    "itemId": "768521",
+                    "qty": 3,
+                    "price": 9,
+                    "name": "Peynir"
                 }
             ]
         }
@@ -33,11 +53,10 @@ Content-Type: application/json
     {
         "serviceId": "rbs.logistics",
         "config": {
-            "addressId": "01EVTG8MJD1SJK0HRJXFCH4RKW",
             "zoneId": "ZONE_A",
             "pools": {
                 "type": "CARGO",
-                "provider": "ARAS_KARGO",
+                "provider": "AYKARGO",
                 "storeId": "STORE_A",
                 "fee": 9
             }

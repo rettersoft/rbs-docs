@@ -1,0 +1,10 @@
+
+POST https://{{host}}/user/action/{{projectId}}/rbs.catalog.request.ADD_TAG?auth={{accessToken}} HTTP/1.1
+Content-Type: application/json
+
+{
+    "modelName": "rbs.pimproduct",
+    "variantGroupId": "D",
+    "id": "7685",
+    "tags": "test2,test3,zone#ankara"
+}

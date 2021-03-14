@@ -4,6 +4,7 @@ Content-Type: application/json
 {
     "optionId": "SHIPMENT_STATUSES",
     "data": [
+            { "status": "CANCELLED", "cancel": true },
             { "status": "PENDING", "cancellable": true, "addable": true },
             { "status": "PACKAGING", "addable": true, "back": true },
             { "status": "READY", "back": true },

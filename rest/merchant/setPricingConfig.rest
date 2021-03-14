@@ -1,0 +1,7 @@
+POST https://{{host}}/user/action/{{projectId}}/rbs.merchant.request.SET_PRICING_CONFIG?auth={{accessToken}}
+Content-Type: application/json
+
+{
+  "segments": ["unilever", "nonunilever"],
+  "zones": ["ankara", "istanbul"]
+}

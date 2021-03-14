@@ -1,9 +1,11 @@
 
 # Aggregate with no payload
-POST https://{{host}}/user/action/{{projectId}}/rbs.catalog.request.ADMIN_UPDATE_CONFIG?auth={{accessToken}} HTTP/1.1
+POST https://{{host}}/user/action/{{projectId}}/rbs.catalog.request.UPDATE_MODEL_CONFIG?auth={{accessToken}} HTTP/1.1
 Content-Type: application/json
 
 {
+    "modelName": "PROJECT",
+    "data": {
         "defaultMerchantDiscountedPriceFieldName": "storeAdiscountPrice",
         "updateToken": "7rb1sh",
         "textSearchFields": [
@@ -189,3 +191,4 @@ Content-Type: application/json
         },
         "defaultMerchantId": "store3"
     }
+}

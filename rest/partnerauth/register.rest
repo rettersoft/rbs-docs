@@ -1,6 +1,7 @@
 
 # @name register
-POST /user/action?auth={{accessToken}}&action=rbs.partnerauth.request.REGISTER HTTP/1.1
+POST https://{{host}}/user/action/{{projectId}}/rbs.partnerauth.request.REGISTER?auth={{accessToken}} HTTP/1.1
+Content-Type: application/json
 Host: {{host}}
 
 {
@@ -11,26 +12,26 @@ Host: {{host}}
 ###
 
 # @name validatePhoneNumber
-POST /user/action?auth={{accessToken}}&action=rbs.partnerauth.request.ANSWER_CHALLENGE HTTP/1.1
+POST https://{{host}}/user/action/{{projectId}}/rbs.partnerauth.request.ANSWER_CHALLENGE?auth={{accessToken}} HTTP/1.1
 Host: {{host}}
 
 {
-    "challengeId": "f0b467a3-aa14-46bd-897e-481c04208635",    
-    "challengeAnswer": "454494"
+    "challengeId": "58476866-25a0-460b-be2d-abef9af7deb0",    
+    "challengeAnswer": "141414"
 }
 
 ###
 
 # @name validatePartner
-POST /user/action?auth={{accessToken}}&action=rbs.partnerauth.request.ANSWER_CHALLENGE HTTP/1.1
+POST https://{{host}}/user/action/{{projectId}}/rbs.partnerauth.request.ANSWER_CHALLENGE?auth={{accessToken}} HTTP/1.1
 Host: {{host}}
 
 {
-    "challengeId": "f06af65a-c9f1-4a27-99d0-7519569bc5ae",
-    "verificationType": "INVITATION_CODE",
+    "challengeId": "34940191-bc9f-42f6-b4d8-9759a220e4fc",
+    "verificationType": "PARTNER_EMAIL",
+    "partner": "unilever",
     "phoneNumber": "905314048097",
-    "code": "mavi",
-    "email": "ahmet@mail.net",
+    "email": "ahmet@rettermobile.com",
     "userInformation": {
         "name": "Ahmet",
         "surname": "Deniz",
@@ -42,10 +43,18 @@ Host: {{host}}
 ###
 
 # @name validateEmail
-POST /user/action?auth={{accessToken}}&action=rbs.partnerauth.request.ANSWER_CHALLENGE HTTP/1.1
+POST https://{{host}}/user/action/{{projectId}}/rbs.partnerauth.request.ANSWER_CHALLENGE?auth={{accessToken}} HTTP/1.1
 Host: {{host}}
 
 {
-    "challengeId": "250bdd94-cbc7-4a6f-a822-397d3867e03a",    
-    "challengeAnswer": "168031"
+    "challengeId": "967932f6-5704-4007-862e-b2c34af39e31",    
+    "challengeAnswer": "136699"
+}
+
+###
+# @name getConfig
+POST https://{{host}}/user/action/{{projectId}}/rbs.partnerauth.request.GET_CONFIG?auth={{accessToken}} HTTP/1.1
+Host: {{host}}
+
+{
 }

@@ -1,0 +1,6 @@
+POST https://{{host}}/user/action/{{projectId}}/rbs.order.request.COMPILE?auth={{accessToken}} HTTP/1.1
+Content-Type: application/json
+
+{
+    "orderId": "2102205QG60ZUU"
+}

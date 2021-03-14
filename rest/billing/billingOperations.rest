@@ -1,24 +1,32 @@
 
-POST /user/action?auth={{accessToken}}&action=rbs.billing.request.GET_CLIENT_CONFIG HTTP/1.1
-Host: {{host}}
+POST {{host}}/user/action?auth={{accessToken}}&action=rbs.billing.request.GET_CLIENT_CONFIG HTTP/1.1
+Content-Type: application/json
 
 {
     "cartId": "7542e4c0ab"
 }
 ###
+POST {{host}}/user/action/{{projectId}}/rbs.billing.request.GENERATE_MP_CLIENT_TOKEN?auth={{accessToken}} HTTP/1.1
 
-POST /user/action?auth={{accessToken}}&action=rbs.billing.request.TEST HTTP/1.1
+###
+POST {{host}}/user/action/{{projectId}}/rbs.billing.request.COMMIT_MP_PAYMENT?auth={{accessToken}} HTTP/1.1
+
+{
+   "purchaseToken": "631F87128B9AD2E8F5BB306DE5E01F3F80858779A4D940436B95FA9B39729A65B1F039717C969E3F06B0A7458D5E04A05520F5AC4B42FC490B7BC1D703A9D4FCC037419393CFEC1F9D2CE4892C79471152AAC591CA97C9273DCBD3098E4F62A4",
+   "transactionId": "2102173RZ3I0BH-TX-1",
+   "orderId": "2102173RZ3I0BH"
+}
+
+###
+POST /user/action?auth={{accessToken}}&action=rbs.billing.request.POST_COMMIT_MP_PAYMENT HTTP/1.1
 Host: {{host}}
 
 {
-   "orderId":"86473821-4",
-   "phaseId":"BILLING_PHASE",
-   "taskToken":"TaskToken1",
-   "input":{
-      "orderId":"86473821-4",
-      "transactionType":"payment",
-      "paymentOptions":[
-         {
+   "amount": 70,
+   "transactionId": "OrderAli13-TX-1",
+   "orderId": "OrderAli13"
+}
+
             "method":"masterpass",
             "authType":"POST"
          }

@@ -1,56 +1,41 @@
 # @name createCard
 
-POST /user/action?auth={{accessToken}}&action=rbs.cart.request.CREATE HTTP/1.1
-Host: {{host}}
+POST {{host}}/user/action/{{projectId}}/rbs.cart.request.CREATE?auth={{accessToken}} HTTP/1.1
 
 ###
 
 @cartId = {{createCard.response.body.$[0].response.cartId}}
 
-POST /user/action?auth={{accessToken}}&action=rbs.cart.request.ADD_ITEM HTTP/1.1
-Host: {{host}}
+POST {{host}}/user/action/{{projectId}}/rbs.cart.request.ADD_ITEM?auth={{accessToken}} HTTP/1.1
 
 {
-    "cartId": "{{cartId}}",
+    "itemId": "152902238",
+    "variantGroupId": "karisikpizza",
     "merchantId": "default",
-    "variantGroupId": "D",
-    "itemId": "7685"
+    "qty": 3
 }
 ###
-POST /user/action?auth={{accessToken}}&action=rbs.cart.request.REMOVE_ITEM HTTP/1.1
-Host: {{host}}
+POST {{host}}/user/action/{{projectId}}/rbs.cart.request.REMOVE_ITEM?auth={{accessToken}} HTTP/1.1
 
 {
-    "cartId": "{{cartId}}",
     "merchantId": "default",
     "variantGroupId": "D",
-    "itemId": "7685"
+    "itemId": "768521",
+    "qty": 4
 }
 ###
 
 # @name getCart
 
-POST /user/action?auth={{accessToken}}&action=rbs.cart.request.GET HTTP/1.1
-Host: {{host}}
+POST {{host}}/user/action/{{projectId}}/rbs.cart.request.GET?auth={{accessToken}} HTTP/1.1
 
 {
-    "cartId": "{{cartId}}"
+    "serviceFee": 15
 }
 ###
-@cartItems = {{getCart.response.body.$[0].response}}
 
-POST /user/action?auth={{accessToken}}&action=rbs.cart.request.TEST HTTP/1.1
-Host: {{host}}
+POST {{host}}/user/action/{{projectId}}/rbs.cart.request.SUMMARY?auth={{accessToken}} HTTP/1.1
 
 {
-    "cartId": "{{cartId}}",
-    "cartItems":[
-        {
-            "merchantId":"Ali",
-            "variantGroupId":"variantGroupId1",
-            "itemId":"item1",
-            "qty":2
-        }
-    ]
+    "serviceFee": 15
 }
-

@@ -1,15 +1,13 @@
 
 # @name getAnonymToken
-GET /public/anonymous-auth?projectId={{projectId}} HTTP/1.1
-Host: {{host}}
+GET {{host}}/public/anonymous-auth?projectId={{projectId}} HTTP/1.1
 
 ###
 
 @anonymAccessToken = {{getAnonymToken.response.body.$.accessToken}}
 
 # @name adminLogin
-POST /user/action?auth={{anonymAccessToken}}&action=rbs.businessuserauth.request.LOGIN
-Host: {{host}}
+POST {{host}}/user/action/{{projectId}}/rbs.businessuserauth.request.LOGIN?auth={{anonymAccessToken}} HTTP/1.1
 
 {
     "email": "root",
@@ -20,5 +18,5 @@ Host: {{host}}
 
 @customToken = {{adminLogin.response.body.$[0].response.customToken}}
 
-GET /public/auth?customToken={{customToken}} HTTP/1.1
-Host: {{host}}
+
+GET {{host}}/public/auth?customToken={{customToken}} HTTP/1.1

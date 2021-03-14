@@ -1,3 +1,0 @@
-POST https://{{host}}/user/action/{{projectId}}/rbs.catalog.request.GET_CATEGORIES?auth={{accessToken}} HTTP/1.1
-Content-Type: application/json
-

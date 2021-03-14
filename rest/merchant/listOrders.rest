@@ -1,3 +1,0 @@
-
-POST /user/action?auth={{accessToken}}&action=rbs.merchant.request.LIST_ORDERS HTTP/1.1
-Host: {{host}}
