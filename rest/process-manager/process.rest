@@ -67,9 +67,177 @@ POST https://{{host}}/user/action/{{projectId}}/rbs.process.request.START?auth={
 Content-Type: application/json
 
 {
-    "processId": "SHIPMENT_JOURNEY",
-    "executionId": "210228ABCDEFGH",
+    "processId": "CREATE_ORDER_AND_SHIPMENTS",
     "payload": {
+        "address": {
+            "shipmentAddress": {
+                "addressId": "01EYMX24JNP5439ND40RWM3GPS",
+                "name": "Test Address",
+                "country": "TÜRKİYE",
+                "city": "İSTANBUL",
+                "district": "ATAŞEHİR"
+            },
+            "invoiceAddress": {
+                "addressId": "01EYMXKC3JPBGRKQVNM3KP3W31",
+                "name": "Test Address",
+                "country": "TÜRKİYE",
+                "city": "İSTANBUL",
+                "district": "ATAŞEHİR"
+            }
+        },
+        "crm": {
+            "userId": "c85a5c6f11b1381c3cee0608cd80dec8"
+        },
+        "cart": {
+            "totalPriceToPay": "271,20",
+            "totalPrice": "303,00",
+            "serviceFeeDiscount": "0,00",
+            "discount": "31,80",
+            "appliedPromotions": [
+                {
+                    "appliedDiscount": "0,00",
+                    "appliedServiceFeeDiscount": "0,00"
+                },
+                {
+                    "appliedDiscount": "31,80",
+                    "appliedServiceFeeDiscount": "0,00"
+                }
+            ],
+            "promotionSuggestions": {
+                "minAmountForFreeServiceFee": "133,00"
+            },
+            "items": [
+                {
+                    "merchantId": "AliMerchant",
+                    "variantGroupId": "AliVaraiantGroupId",
+                    "itemId": "AliItemId",
+                    "qty": 3,
+                    "product": {
+                        "images": ["7208d184-f864-416e-8495-36a7eb897869"],
+                        "attributes": [
+                            {
+                                "fieldNameLabel": "CanReturnItem",
+                                "attType": "UNKNOWN_TYPE",
+                                "fieldName": "CanReturnItem",
+                                "valueLabel": "true",
+                                "value": true
+                            },
+                            {
+                                "fieldNameLabel": "Description",
+                                "attType": "UNKNOWN_TYPE",
+                                "fieldName": "Description",
+                                "valueLabel": "Ali description",
+                                "value": "Ali description"
+                            },
+                            {
+                                "fieldNameLabel": "test",
+                                "attType": "UNKNOWN_TYPE",
+                                "fieldName": "test",
+                                "valueLabel": "",
+                                "value": ""
+                            },
+                            {
+                                "fieldNameLabel": "uruncesidi",
+                                "attType": "LIST",
+                                "fieldName": "uruncesidi",
+                                "valueLabel": "",
+                                "value": ""
+                            },
+                            {
+                                "fieldNameLabel": "ItemFeatureBaran",
+                                "attType": "UNKNOWN_TYPE",
+                                "fieldName": "ItemFeatureBaran",
+                                "valueLabel": "",
+                                "value": ""
+                            },
+                            {
+                                "fieldNameLabel": "isVirtual",
+                                "attType": "UNKNOWN_TYPE",
+                                "fieldName": "isVirtual",
+                                "valueLabel": "true",
+                                "value": true
+                            },
+                            {
+                                "fieldNameLabel": "shortDescription",
+                                "attType": "TEXT",
+                                "fieldName": "shortDescription",
+                                "valueLabel": "",
+                                "value": ""
+                            },
+                            {
+                                "badges": [],
+                                "listValue": ["demoCat"],
+                                "attType": "LIST",
+                                "fieldName": "categories",
+                                "listValueLabel": ["demoCat"],
+                                "valueLabel": "",
+                                "fieldNameLabel": "categories",
+                                "value": ""
+                            },
+                            {
+                                "fieldNameLabel": "shortName",
+                                "attType": "TEXT",
+                                "fieldName": "shortName",
+                                "valueLabel": "Ali Product",
+                                "value": "Ali Product"
+                            },
+                            {
+                                "badges": [],
+                                "listValue": [],
+                                "attType": "LIST",
+                                "fieldName": "productdetailIcons",
+                                "listValueLabel": [],
+                                "valueLabel": "",
+                                "fieldNameLabel": "productdetailIcons",
+                                "value": ""
+                            },
+                            {
+                                "fieldNameLabel": "noDiscount",
+                                "attType": "UNKNOWN_TYPE",
+                                "fieldName": "noDiscount",
+                                "valueLabel": "true",
+                                "value": true
+                            },
+                            {
+                                "badges": [],
+                                "listValue": [],
+                                "attType": "LIST",
+                                "fieldName": "productFeature",
+                                "listValueLabel": [],
+                                "valueLabel": "",
+                                "fieldNameLabel": "productFeature",
+                                "value": ""
+                            }
+                        ]
+                    },
+                    "stock": 1,
+                    "price": {
+                        "normal": "500,00",
+                        "discounted": "101,00",
+                        "priceToPay": "90,90"
+                    }
+                }
+            ]
+        },
+        "billing": [
+            {
+                "amount": 27120,
+                "authType": "AUTH",
+                "method": "masterpass",
+                "providerConfigId": "masterpass1",
+                "installment": 3
+            }
+        ],
+        "logistics": {
+            "zoneId": "zoneA",
+            "note": "Lütfen zili çalmayın!",
+            "pools": {
+                "type": "CARGO",
+                "provider": "AYKARGO",
+                "storeId": "STORE_A",
+                "fee": 9
+            }
+        }
     }
 }
 
