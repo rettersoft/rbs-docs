@@ -1,0 +1,33 @@
+[NEW_SHIPMENT |
+	action: rbs.shipmentstatus.event.NEW_SHIPMENT |
+    actionCallback: pinar.astron.event.PACKAGING_STARTED |
+    parameters: {
+    	"items.$": "$.payload.shipment.items"
+    } |
+    resultPath: newShipment |
+    outputPath: $.0.response
+]
+
+[PACKAGING |
+	action: rbs.shipmentstatus.event.PACKAGING |
+    actionCallback: pinar.astron.event.IN_TRANSIT_STARTED |
+    parameters: {} |
+    resultPath: packaging |
+    outputPath: $.0.response
+]
+
+[IN_TRANSIT |
+	action: rbs.shipmentstatus.event.IN_TRANSIT |
+    actionCallback: pinar.astron.event.DELIVERED |
+    parameters: {} |
+    resultPath: inTransit |
+    outputPath: $.0.response
+]
+
+[DELIVERED]
+
+[NEW_SHIPMENT] -> [PACKAGING]
+
+[PACKAGING] -> [IN_TRANSIT]
+
+[IN_TRANSIT] -> [DELIVERED]
