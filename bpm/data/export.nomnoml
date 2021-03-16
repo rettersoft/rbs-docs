@@ -1,0 +1,24 @@
+[GET_PROFILE | 
+	action: rbs.profile.request.DATA |
+    parameters: { "uid.$": "$.payload.userId" } |
+    resultPath: profile | 
+    outputPath: $.0.response |
+    errorPath: $.0.response.error |
+    A: { "$.profile.firstName": { "EX": true } }
+]
+
+[POST_EVENT |
+    parameters: {
+    	"url": "REMOTE_API_URL",
+        "data": {
+        	"address.$": "$.payload",
+            "profile.$": "$.profile"
+        }
+    } |
+    action: rbs.integration.request.POST |
+    service: rbs.integration
+]
+
+[GET_PROFILE] -> A [POST_EVENT]
+
+[GET_PROFILE] -> [USER_NOT_FOUND]
