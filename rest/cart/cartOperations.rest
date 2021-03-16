@@ -9,19 +9,19 @@ POST {{host}}/user/action/{{projectId}}/rbs.cart.request.CREATE?auth={{accessTok
 POST {{host}}/user/action/{{projectId}}/rbs.cart.request.ADD_ITEM?auth={{accessToken}} HTTP/1.1
 
 {
-    "itemId": "152902238",
-    "variantGroupId": "karisikpizza",
-    "merchantId": "default",
+    "itemId": "153100000",
+    "variantGroupId": "tamyaglisut",
+    "merchantId": "pınarMerchant",
     "qty": 3
 }
 ###
 POST {{host}}/user/action/{{projectId}}/rbs.cart.request.REMOVE_ITEM?auth={{accessToken}} HTTP/1.1
 
 {
-    "merchantId": "default",
-    "variantGroupId": "D",
-    "itemId": "768521",
-    "qty": 4
+    "itemId": "153100000",
+    "variantGroupId": "tamyaglisut",
+    "merchantId": "pınarMerchant",
+    "qty": 1
 }
 ###
 
@@ -30,12 +30,14 @@ POST {{host}}/user/action/{{projectId}}/rbs.cart.request.REMOVE_ITEM?auth={{acce
 POST {{host}}/user/action/{{projectId}}/rbs.cart.request.GET?auth={{accessToken}} HTTP/1.1
 
 {
-    "serviceFee": 15
+    "serviceFee": 15,
+    "zoneId": "zoneA"
 }
 ###
 
 POST {{host}}/user/action/{{projectId}}/rbs.cart.request.SUMMARY?auth={{accessToken}} HTTP/1.1
 
 {
-    "serviceFee": 15
+    "serviceFee": 15,
+    "zoneId": "zoneA"
 }
