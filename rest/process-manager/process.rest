@@ -89,7 +89,7 @@ Content-Type: application/json
             "userId": "c85a5c6f11b1381c3cee0608cd80dec8"
         },
         "cart": {
-            "totalPriceToPay": 27810,
+            "totalPriceToPay": 26910,
             "totalPrice": 30000,
             "serviceFeeDiscount": 900,
             "discount": 3090,
@@ -230,22 +230,24 @@ Content-Type: application/json
                 }
             ]
         },
-        "billing": [
-            {
-                "amount": 27810,
-                "authType": "PRE_AUTH",
-                "paymentMethod": "masterpass",
-                "providerConfigId": "masterpass1",
-                "installmentCount": 3
-            }
-        ],
+        "billing": {
+            "paymentOptions": [ 
+                { 
+                    "amount": 26910,
+                    "authType": "AUTH",
+                    "paymentMethod": "iyzico",
+                    "providerConfigId": "iyzico1",
+                    "installmentCount": 1
+                } 
+            ]
+        },
         "logistics": {
             "zoneId": "zoneA",
             "note": "Lütfen zili çalmayın!",
             "pools": {
                 "type": "CARGO",
-                "provider": "AYKARGO",
-                "storeId": "STORE_A",
+                "provider": "MNG",
+                "storeId": "pinardepo",
                 "fee": 9
             }
         }

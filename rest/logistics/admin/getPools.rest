@@ -6,11 +6,18 @@ Content-Type: application/json
         "cartId": "TEST",
         "items": [
             {
-                "merchantId": "default",
-                "variantGroupId": "D",
-                "itemId": "7685"
+                "merchantId": "AliMerchant",
+                "variantGroupId": "AliVaraiantGroupId",
+                "itemId": "AliItemId"
             }
         ]
     },
-    "zoneId": "ZONE_A"
+    "address": {
+        "addressId": "01EYMX24JNP5439ND40RWM3GPS",
+        "name": "Test Address",
+        "country": "TÜRKİYE",
+        "city": "İSTANBUL",
+        "district": "ATAŞEHİR"
+    },
+    "zoneId": "zoneA"
 }
