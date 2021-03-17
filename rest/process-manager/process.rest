@@ -89,22 +89,27 @@ Content-Type: application/json
             "userId": "c85a5c6f11b1381c3cee0608cd80dec8"
         },
         "cart": {
-            "totalPriceToPay": "271,20",
-            "totalPrice": "303,00",
-            "serviceFeeDiscount": "0,00",
-            "discount": "31,80",
+            "totalPriceToPay": 27810,
+            "totalPrice": 30000,
+            "serviceFeeDiscount": 900,
+            "discount": 3090,
             "appliedPromotions": [
                 {
-                    "appliedDiscount": "0,00",
-                    "appliedServiceFeeDiscount": "0,00"
+                    "title": "Deneme",
+                    "appliedDiscount": 0,
+                    "appliedServiceFeeDiscount": 900
                 },
                 {
-                    "appliedDiscount": "31,80",
-                    "appliedServiceFeeDiscount": "0,00"
+                    "appliedDiscount": 0,
+                    "appliedServiceFeeDiscount": 0
+                },
+                {
+                    "appliedDiscount": 3090,
+                    "appliedServiceFeeDiscount": 0
                 }
             ],
             "promotionSuggestions": {
-                "minAmountForFreeServiceFee": "133,00"
+                "minAmountForFreeServiceFee": 13300
             },
             "items": [
                 {
@@ -113,7 +118,9 @@ Content-Type: application/json
                     "itemId": "AliItemId",
                     "qty": 3,
                     "product": {
-                        "images": ["7208d184-f864-416e-8495-36a7eb897869"],
+                        "images": [
+                            "7208d184-f864-416e-8495-36a7eb897869"
+                        ],
                         "attributes": [
                             {
                                 "fieldNameLabel": "CanReturnItem",
@@ -166,10 +173,14 @@ Content-Type: application/json
                             },
                             {
                                 "badges": [],
-                                "listValue": ["demoCat"],
+                                "listValue": [
+                                    "demoCat"
+                                ],
                                 "attType": "LIST",
                                 "fieldName": "categories",
-                                "listValueLabel": ["demoCat"],
+                                "listValueLabel": [
+                                    "demoCat"
+                                ],
                                 "valueLabel": "",
                                 "fieldNameLabel": "categories",
                                 "value": ""
@@ -212,20 +223,20 @@ Content-Type: application/json
                     },
                     "stock": 1,
                     "price": {
-                        "normal": "500,00",
-                        "discounted": "101,00",
-                        "priceToPay": "90,90"
+                        "normal": 50000,
+                        "discounted": 10000,
+                        "priceToPay": 8970
                     }
                 }
             ]
         },
         "billing": [
             {
-                "amount": 27120,
-                "authType": "AUTH",
-                "method": "masterpass",
+                "amount": 27810,
+                "authType": "PRE_AUTH",
+                "paymentMethod": "masterpass",
                 "providerConfigId": "masterpass1",
-                "installment": 3
+                "installmentCount": 3
             }
         ],
         "logistics": {
