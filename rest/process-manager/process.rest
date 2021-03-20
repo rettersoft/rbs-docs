@@ -13,7 +13,7 @@ POST https://{{host}}/user/action/{{projectId}}/rbs.process.request.UPSERT?auth=
 Content-Type: application/json
 
 {
-    "processId": "SHIPMENT_JOURNEY",
+    "processId": "ABC",
     "data": {
         "assets": [
             {
@@ -58,7 +58,7 @@ POST https://{{host}}/user/action/{{projectId}}/rbs.process.request.GET?auth={{a
 Content-Type: application/json
 
 {
-    "processId": "SHIPMENT_JOURNEY"
+    "processId": "ABC"
 }
 
 ###
