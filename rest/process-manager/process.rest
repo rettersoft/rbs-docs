@@ -260,8 +260,8 @@ POST https://{{host}}/user/action/{{projectId}}/rbs.process.request.GET_EXECUTIO
 Content-Type: application/json
 
 {
-    "processId": "SHIPMENT_JOURNEY",
-    "executionId": "210228ABCDEFGH"
+    "processId": "CREATE_ORDER_AND_SHIPMENTS",
+    "executionId": "01F1624EY4RT4XQ57GGJ02E9QP"
 }
 
 ###
