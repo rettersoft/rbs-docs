@@ -4,8 +4,8 @@ Content-Type: application/json
 [
     {
         "type": "$active",
-        "merchantId": "default",
-        "variantGroupId": "D",
-        "sku": "7685"
+        "merchantId": "AliMerchant",
+        "variantGroupId": "AliVaraiantGroupId",
+        "itemId": "AliItemId"
     }
 ]

@@ -13,7 +13,7 @@ POST https://{{host}}/user/action/{{projectId}}/rbs.process.request.UPSERT?auth=
 Content-Type: application/json
 
 {
-    "processId": "SHIPMENT_JOURNEY",
+    "processId": "ABC",
     "data": {
         "assets": [
             {
@@ -58,7 +58,7 @@ POST https://{{host}}/user/action/{{projectId}}/rbs.process.request.GET?auth={{a
 Content-Type: application/json
 
 {
-    "processId": "SHIPMENT_JOURNEY"
+    "processId": "ABC"
 }
 
 ###
@@ -67,9 +67,190 @@ POST https://{{host}}/user/action/{{projectId}}/rbs.process.request.START?auth={
 Content-Type: application/json
 
 {
-    "processId": "SHIPMENT_JOURNEY",
-    "executionId": "210228ABCDEFGH",
+    "processId": "CREATE_ORDER_AND_SHIPMENTS",
     "payload": {
+        "address": {
+            "shipmentAddress": {
+                "addressId": "01EYMX24JNP5439ND40RWM3GPS",
+                "name": "Test Address",
+                "country": "TÜRKİYE",
+                "city": "İSTANBUL",
+                "district": "ATAŞEHİR"
+            },
+            "invoiceAddress": {
+                "addressId": "01EYMXKC3JPBGRKQVNM3KP3W31",
+                "name": "Test Address",
+                "country": "TÜRKİYE",
+                "city": "İSTANBUL",
+                "district": "ATAŞEHİR"
+            }
+        },
+        "crm": {
+            "userId": "c85a5c6f11b1381c3cee0608cd80dec8"
+        },
+        "cart": {
+            "totalPriceToPay": 26910,
+            "totalPrice": 30000,
+            "serviceFeeDiscount": 900,
+            "discount": 3090,
+            "appliedPromotions": [
+                {
+                    "title": "Deneme",
+                    "appliedDiscount": 0,
+                    "appliedServiceFeeDiscount": 900
+                },
+                {
+                    "appliedDiscount": 0,
+                    "appliedServiceFeeDiscount": 0
+                },
+                {
+                    "appliedDiscount": 3090,
+                    "appliedServiceFeeDiscount": 0
+                }
+            ],
+            "promotionSuggestions": {
+                "minAmountForFreeServiceFee": 13300
+            },
+            "items": [
+                {
+                    "merchantId": "AliMerchant",
+                    "variantGroupId": "AliVaraiantGroupId",
+                    "itemId": "AliItemId",
+                    "qty": 3,
+                    "product": {
+                        "images": [
+                            "7208d184-f864-416e-8495-36a7eb897869"
+                        ],
+                        "attributes": [
+                            {
+                                "fieldNameLabel": "CanReturnItem",
+                                "attType": "UNKNOWN_TYPE",
+                                "fieldName": "CanReturnItem",
+                                "valueLabel": "true",
+                                "value": true
+                            },
+                            {
+                                "fieldNameLabel": "Description",
+                                "attType": "UNKNOWN_TYPE",
+                                "fieldName": "Description",
+                                "valueLabel": "Ali description",
+                                "value": "Ali description"
+                            },
+                            {
+                                "fieldNameLabel": "test",
+                                "attType": "UNKNOWN_TYPE",
+                                "fieldName": "test",
+                                "valueLabel": "",
+                                "value": ""
+                            },
+                            {
+                                "fieldNameLabel": "uruncesidi",
+                                "attType": "LIST",
+                                "fieldName": "uruncesidi",
+                                "valueLabel": "",
+                                "value": ""
+                            },
+                            {
+                                "fieldNameLabel": "ItemFeatureBaran",
+                                "attType": "UNKNOWN_TYPE",
+                                "fieldName": "ItemFeatureBaran",
+                                "valueLabel": "",
+                                "value": ""
+                            },
+                            {
+                                "fieldNameLabel": "isVirtual",
+                                "attType": "UNKNOWN_TYPE",
+                                "fieldName": "isVirtual",
+                                "valueLabel": "true",
+                                "value": true
+                            },
+                            {
+                                "fieldNameLabel": "shortDescription",
+                                "attType": "TEXT",
+                                "fieldName": "shortDescription",
+                                "valueLabel": "",
+                                "value": ""
+                            },
+                            {
+                                "badges": [],
+                                "listValue": [
+                                    "demoCat"
+                                ],
+                                "attType": "LIST",
+                                "fieldName": "categories",
+                                "listValueLabel": [
+                                    "demoCat"
+                                ],
+                                "valueLabel": "",
+                                "fieldNameLabel": "categories",
+                                "value": ""
+                            },
+                            {
+                                "fieldNameLabel": "shortName",
+                                "attType": "TEXT",
+                                "fieldName": "shortName",
+                                "valueLabel": "Ali Product",
+                                "value": "Ali Product"
+                            },
+                            {
+                                "badges": [],
+                                "listValue": [],
+                                "attType": "LIST",
+                                "fieldName": "productdetailIcons",
+                                "listValueLabel": [],
+                                "valueLabel": "",
+                                "fieldNameLabel": "productdetailIcons",
+                                "value": ""
+                            },
+                            {
+                                "fieldNameLabel": "noDiscount",
+                                "attType": "UNKNOWN_TYPE",
+                                "fieldName": "noDiscount",
+                                "valueLabel": "true",
+                                "value": true
+                            },
+                            {
+                                "badges": [],
+                                "listValue": [],
+                                "attType": "LIST",
+                                "fieldName": "productFeature",
+                                "listValueLabel": [],
+                                "valueLabel": "",
+                                "fieldNameLabel": "productFeature",
+                                "value": ""
+                            }
+                        ]
+                    },
+                    "stock": 1,
+                    "price": {
+                        "normal": 50000,
+                        "discounted": 10000,
+                        "priceToPay": 8970
+                    }
+                }
+            ]
+        },
+        "billing": {
+            "paymentOptions": [ 
+                { 
+                    "amount": 26910,
+                    "authType": "AUTH",
+                    "paymentMethod": "iyzico",
+                    "providerConfigId": "iyzico1",
+                    "installmentCount": 1
+                } 
+            ]
+        },
+        "logistics": {
+            "zoneId": "zoneA",
+            "note": "Lütfen zili çalmayın!",
+            "pools": {
+                "type": "CARGO",
+                "provider": "MNG",
+                "storeId": "pinardepo",
+                "fee": 9
+            }
+        }
     }
 }
 
@@ -79,8 +260,8 @@ POST https://{{host}}/user/action/{{projectId}}/rbs.process.request.GET_EXECUTIO
 Content-Type: application/json
 
 {
-    "processId": "SHIPMENT_JOURNEY",
-    "executionId": "210228ABCDEFGH"
+    "processId": "CREATE_ORDER_AND_SHIPMENTS",
+    "executionId": "01F1624EY4RT4XQ57GGJ02E9QP"
 }
 
 ###
