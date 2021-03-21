@@ -14,7 +14,7 @@ GET https://{{host}}/public/anonymous-auth?projectId={{projectId}} HTTP/1.1
 POST https://{{host}}/user/action/{{projectId}}/rbs.basicauth.request.START_AUTH?auth={{anonymAccessToken}} HTTP/1.1
 
 {
-    "msisdn": "+905309364914"
+    "msisdn": "+905309364916"
 }
 
 
@@ -24,7 +24,7 @@ POST https://{{host}}/user/action/{{projectId}}/rbs.basicauth.request.START_AUTH
 POST https://{{host}}/user/action/{{projectId}}/rbs.basicauth.request.ANSWER_CHALLENGE?auth={{anonymAccessToken}} HTTP/1.1
 
 {
-    "hashedKey": "dUIddw320HQeRKx4ldb417In0TU/K7CL4ydeM0P2UVI=",
+    "hashedKey": "RG0ZEVhVwqEesTQ3uJHodYJj9I2JencOGzSNlqeqpdc=",
     "answer": {
         "code": "1414"
     }
@@ -36,12 +36,12 @@ POST https://{{host}}/user/action/{{projectId}}/rbs.basicauth.request.ANSWER_CHA
 POST https://{{host}}/user/action/{{projectId}}/rbs.basicauth.request.ANSWER_CHALLENGE?auth={{anonymAccessToken}} HTTP/1.1
 
 {
-    "hashedKey": "dUIddw320HQeRKx4ldb417In0TU/K7CL4ydeM0P2UVI=",
+    "hashedKey": "RG0ZEVhVwqEesTQ3uJHodYJj9I2JencOGzSNlqeqpdc=",
     "answer": {
         "firstName": "Baran",
         "lastName": "Baygan",
         "email": "baran@rettermobile.com",
-        "phoneNumber": "+905309364921",
+        "phoneNumber": "+905309364916",
         "birthDate": "05/06/1980",
         "acceptedKvkk": true,
         "acceptedTerms": true
