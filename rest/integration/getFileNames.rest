@@ -1,0 +1,22 @@
+GET https://{{host}}/user/action/{{projectId}}/rbs.integration.get.FILE_NAMES?auth={{accessToken}}&data=ewogICAgImRhdGUiOiIyMy4wMy4yMDIxIgp9 HTTP/1.1
+Content-Type: application/json
+
+
+### 
+{
+    "date":"23.03.2021"
+}
+
+ewogICAgImRhdGUiOiIyMy4wMy4yMDIxIgp9
+
+
+###
+GET https://{{host}}/user/action/{{projectId}}/rbs.storage.get.GET_FILE?auth={{accessToken}}&data=ewogICAgImZpbGVJZCI6ICI1MWJmZjNhZC0wOGRiLTQ3NjMtYTE1YS05Y2Q0ZjZkMTA2OTMiCn0= HTTP/1.1
+Content-Type: application/json
+
+###
+
+{
+    "fileId": "0383d2d8-0f4c-497b-a1bf-9c9cf9089d19"
+}
+
