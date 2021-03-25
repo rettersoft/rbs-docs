@@ -12,5 +12,7 @@ POST {{host}}/user/action/{{projectId}}/rbs.cart.request.SUMMARY?auth={{accessTo
 POST {{host}}/user/action/{{projectId}}/rbs.billing.request.GET_CLIENT_CONFIGS?auth={{accessToken}} HTTP/1.1
 
 {
-   "cartSummary": {{getCartSummary.response.body.$.0.response}}
+    "cartSummary": {{getCartSummary.response.body.$.0.response}},
+    "segmentId": "segment1",
+    "logistics": {}
 }
