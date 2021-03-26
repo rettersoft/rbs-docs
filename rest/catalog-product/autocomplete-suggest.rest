@@ -1,0 +1,13 @@
+GET https://{{host}}/user/action/{{projectId}}/rbs.catalog.get.SUGGEST?auth={{accessToken}}&data=ewogICAgIm1vZGVsTmFtZSI6ICJyYnMucGltcHJvZHVjdCIsCiAgICAiZmllbGQiOiAidGl0bGUiLAogICAgInF1ZXJ5IjogIlBpbmFyIgp9 HTTP/1.1
+Content-Type: application/json
+
+
+###
+
+{
+    "modelName": "rbs.pimproduct",
+    "field": "title",
+    "query": "Pinar"
+}
+
+ewogICAgIm1vZGVsTmFtZSI6ICJyYnMucGltcHJvZHVjdCIsCiAgICAiZmllbGQiOiAidGl0bGUiLAogICAgInF1ZXJ5IjogIlBpbmFyIgp9

@@ -1,0 +1,10 @@
+GET https://{{host}}/user/action/{{projectId}}/rbs.product.get.MOST_SEARCHED?auth={{accessToken}}&data=ewogICAgImxvY2FsZSI6ICJlbl9VUyIKfQ== HTTP/1.1
+Content-Type: application/json
+
+###
+
+{
+    "locale": "en_US"
+}
+
+ewogICAgImxvY2FsZSI6ICJlbl9VUyIKfQ==
