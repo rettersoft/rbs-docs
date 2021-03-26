@@ -306,3 +306,80 @@ Content-Type: application/json
         "unknown": "1"
     }
 }
+
+
+
+
+###
+# @name getCart
+POST https://{{host}}/user/action/{{projectId}}/rbs.cart.request.SUMMARY?auth={{accessToken}} HTTP/1.1
+
+{
+    "serviceFee": 0,
+    "zoneId": "zoneA"
+}
+
+###
+# @name createOrder
+POST {{host}}/user/action/{{projectId}}/rbs.process.request.START?auth={{accessToken}} HTTP/1.1
+Content-Type: application/json
+
+{
+    "processId": "CREATE_ORDER_AND_SHIPMENTS",
+    "payload": {
+        "address": {
+            "shipmentAddress": {
+                "addressId": "01EYMXKC3JPBGRKQVNM3KP3W31",
+                "name": "Test Address",
+                "country": "TÜRKİYE",
+                "city": "İSTANBUL",
+                "district": "ATAŞEHİR"
+            },
+            "invoiceAddress": {
+                "addressId": "01EYMXKC3JPBGRKQVNM3KP3W31",
+                "name": "Test Address",
+                "country": "TÜRKİYE",
+                "city": "İSTANBUL",
+                "district": "ATAŞEHİR"
+            }
+        },
+        "crm": {
+            "userId": "da37b7cc-3432-4268-a66f-a6c1bb3382b3"
+        },
+        "cart": {{getCart.response.body.$[0].response}},
+        "billing": {
+            "paymentOptions": [ 
+                { 
+                    "amount": 270,
+                    "authType": "AUTH",
+                    "paymentMethod": "iyzico",
+                    "providerConfigId": "iyzico1",
+                    "installmentCount": 1
+                } 
+            ]
+        },
+        "logistics": {
+            "zoneId": "zoneA",
+            "note": "Lütfen zili çalmayın!",
+            "pools": {
+                "type": "CARGO",
+                "provider": "MNG",
+                "storeId": "pinardepo",
+                "fee": 0
+            }
+        }
+    }
+}
+
+
+###
+# @name cancelOrder
+POST https://{{host}}/user/action/{{projectId}}/rbs.process.request.START?auth={{accessToken}} HTTP/1.1
+Content-Type: application/json
+
+{
+    "processId": "CANCEL_ORDER",
+    "payload": {
+        "orderId": "2103238JJA4AR6"
+    }
+}
