@@ -1,11 +1,17 @@
-POST https://{{host}}/user/action/{{projectId}}/rbs.catalog.request.SEARCH?auth={{accessToken}} HTTP/1.1
+GET https://{{host}}/user/action/{{projectId}}/rbs.catalog.get.SEARCH?auth={{accessToken}}&data=ewogICAgIm1vZGVsTmFtZSI6ICJyYnMucGltcHJvZHVjdCIsCiAgICAiZnJvbSI6IDAsCiAgICAic2l6ZSI6IDEwMCwKICAgICJzZWFyY2hUZXJtIjogInBpenphIiwKICAgICJmaWx0ZXJzIjogW3sKICAgICAgICAiZmlsdGVySWQiOiAiY2F0ZWdvcmllcyIsCiAgICAgICAgImZpbHRlclZhbHVlcyI6IFsiZXR1cnVubGVyaSJdCiAgICAgfV0KfQ== HTTP/1.1
 Content-Type: application/json
 
+
+###
 {
+    "modelName": "rbs.pimproduct",
     "from": 0,
     "size": 100,
     "searchTerm": "pizza",
-    "filters": [
-        
-    ]
+    "filters": [{
+        "filterId": "categories",
+        "filterValues": ["eturunleri"]
+     }]
 }
+
+ewogICAgIm1vZGVsTmFtZSI6ICJyYnMucGltcHJvZHVjdCIsCiAgICAiZnJvbSI6IDAsCiAgICAic2l6ZSI6IDEwMCwKICAgICJzZWFyY2hUZXJtIjogInBpenphIiwKICAgICJmaWx0ZXJzIjogW3sKICAgICAgICAiZmlsdGVySWQiOiAiY2F0ZWdvcmllcyIsCiAgICAgICAgImZpbHRlclZhbHVlcyI6IFsiZXR1cnVubGVyaSJdCiAgICAgfV0KfQ==
