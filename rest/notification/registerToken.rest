@@ -1,0 +1,8 @@
+POST https://{{host}}/user/action/{{projectId}}/rbs.notification.request.REGISTER?auth={{accessToken}} HTTP/1.1
+Content-Type: application/json
+
+{
+    "userId": "rbsUser",
+    "token": "fSql-1oFSrWKe6rcMyRO6Q:APA91bFe4AQJ_VCJYZXJ5lcfdNXbUb3bA5O015Bh9lfrZsYd8Erkg1-eDGE7OHI7P_P1W-zp7eI7XHRRnvL2lPgLSnQ2438tghXEmvtQwquZMxNhZ8ImHCKojin0OnLHcBSaVAgSeQ3a",
+    "channel": "ios" // android, ios, web
+}

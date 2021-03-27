@@ -1,0 +1,10 @@
+POST https://{{host}}/user/action/{{projectId}}/rbs.notification.request.SEND?auth={{accessToken}} HTTP/1.1
+Content-Type: application/json
+
+{
+    "userId": "rbsUserId",
+    "notification": {
+        "title": "Sepete 2 ekle 10% indirim",
+        "message": "Alacagin herhangi bir urunde 10% istemez misin?"
+    }
+}
