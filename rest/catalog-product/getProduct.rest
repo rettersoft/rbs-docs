@@ -1,12 +1,15 @@
-GET https://{{host}}/user/action/{{projectId}}/rbs.product.get.DATA?auth={{accessToken}}&data=ewogICAgIm1lcmNoYW50SWQiOiAiZGVmYXVsdCIsCiAgICAiem9uZUlkIjogImRlZmF1bHQiLAogICAgInZhcmlhbnRHcm91cElkIjogInAxMTIiLAogICAgImlkIjogImxhdHRldGVzdGNvY3VrMiIKfQ== HTTP/1.1
+GET https://{{host}}/user/action/{{projectId}}/rbs.product.get.DATA?auth={{accessToken}}&data=ewogICAgIm1vZGVsTmFtZSI6ICJyYnMucGltcHJvZHVjdCIsCiAgICAibWVyY2hhbnRJZCI6ICJkZWZhdWx0IiwKICAgICJ6b25lSWQiOiAiZGVmYXVsdCIsCiAgICAidmFyaWFudEdyb3VwSWQiOiAic3VjdWsxMiIsCiAgICAiaWQiOiAic3VjdWsxMiIKfQ== HTTP/1.1
 Content-Type: application/json
 
 
 ###
 
 {
+    "modelName": "rbs.pimproduct",
     "merchantId": "default",
     "zoneId": "default",
-    "variantGroupId": "p112",
-    "id": "lattetestcocuk2"
+    "variantGroupId": "sucuk12",
+    "id": "sucuk12"
 }
+
+ewogICAgIm1vZGVsTmFtZSI6ICJyYnMucGltcHJvZHVjdCIsCiAgICAibWVyY2hhbnRJZCI6ICJkZWZhdWx0IiwKICAgICJ6b25lSWQiOiAiZGVmYXVsdCIsCiAgICAidmFyaWFudEdyb3VwSWQiOiAic3VjdWsxMiIsCiAgICAiaWQiOiAic3VjdWsxMiIKfQ==
