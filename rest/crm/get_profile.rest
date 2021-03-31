@@ -1,2 +1,17 @@
+###
+# @name getUserProfile
+POST https://{{host}}/user/action/{{projectId}}/rbs.profile.request.DATA?auth={{accessToken}} HTTP/1.1
+Content-Type: application/json
 
-POST https://{{host}}/user/action/{{projectId}}/rbs.profile.request.GET?auth={{accessToken}} HTTP/1.1
+{
+  "userId": "1232k12r124123123dapwoq"
+}
+
+###
+# @name getUserProfile
+POST https://{{host}}/user/action/{{projectId}}/rbs.profile.request.DATA?auth={{accessToken}} HTTP/1.1
+Content-Type: application/json
+
+{
+  "phoneNumber": "905555555555"
+}

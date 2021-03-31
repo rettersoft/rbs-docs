@@ -5,7 +5,7 @@ Content-Type: application/json
 Host: {{host}}
 
 {
-    "to": ["ahmet@rettermobile.com"],
+    "to": ["nuri@rettermobile.com"],
     "subject": "string",
     "body": "string"
 }
