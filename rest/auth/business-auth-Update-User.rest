@@ -1,0 +1,9 @@
+
+POST https://{{host}}/user/action/{{projectId}}/rbs.businessuser.request.UPDATE_USER?auth={{accessToken}} HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "Test test",
+  "email": "email@mail.com",
+  "phoneNumber": "12321231242"
+}

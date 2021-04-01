@@ -1,0 +1,8 @@
+###
+# @name enableUser
+POST https://{{host}}/user/action/{{projectId}}/rbs.businessuser.request.ENABLE?auth={{accessToken}} HTTP/1.1
+Content-Type: application/json
+
+{
+  "email": "test@test.com"
+}
