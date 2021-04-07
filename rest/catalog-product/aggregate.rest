@@ -1,9 +1,13 @@
 
 
 # Aggregate with no payload
-POST https://{{host}}/user/action/{{projectId}}/rbs.catalog.request.AGGREGATE?auth={{accessToken}} HTTP/1.1
+GET https://{{host}}/user/action/{{projectId}}/rbs.catalog.get.AGGREGATE?auth={{accessToken}}&data=ewogICAgIm1vZGVsTmFtZSI6ICJyYnMucGltcHJvZHVjdCIKfQ== HTTP/1.1
 Content-Type: application/json
+
+###
 
 {
     "modelName": "rbs.pimproduct"
 }
+
+ewogICAgIm1vZGVsTmFtZSI6ICJyYnMucGltcHJvZHVjdCIKfQ==

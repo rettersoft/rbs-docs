@@ -5,6 +5,7 @@ Content-Type: application/json
 {
   "email": "email@mail.com",
   "password": "password",
-  "userRoleId": "admin, user e.g",
-  "name": "username"
+  "role": ["admin","user"],
+  "name": "username",
+  "claims": { "key": "value" }
 }

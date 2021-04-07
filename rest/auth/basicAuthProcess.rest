@@ -1,0 +1,64 @@
+
+###
+# @name startProcess
+POST https://{{host}}/user/action/{{projectId}}/rbs.process.request.START?auth={{accessToken}} HTTP/1.1
+Content-Type: application/json
+
+{
+  "processId": "BASIC_AUTH"
+}
+
+###
+# @name importVariables
+POST https://{{host}}/user/action/{{projectId}}/rbs.captcha.request.INPUT?auth={{accessToken}} HTTP/1.1
+Content-Type: application/json
+x-rbs-processId: BASIC_AUTH
+x-rbs-processexecutionid: 01F1Z1DYYK7KGJKSTWGJD13F92
+
+{
+  "answer": "HQIWkv",
+  "msisdn": "905321672477"
+}
+
+
+###
+# @name getExecution
+POST https://{{host}}/user/action/{{projectId}}/rbs.process.request.GET_EXECUTION?auth={{accessToken}} HTTP/1.1
+Content-Type: application/json
+
+{
+  "processId": "BASIC_AUTH",
+  "executionId": "01F1Z1DYYK7KGJKSTWGJD13F92"
+}
+
+###
+# @name inputOtp
+POST https://{{host}}/user/action/{{projectId}}/rbs.otp.event.ENTERED?auth={{accessToken}} HTTP/1.1
+Content-Type: application/json
+x-rbs-processId: BASIC_AUTH
+x-rbs-processexecutionid: 01F1Z1DYYK7KGJKSTWGJD13F92
+
+{
+  "otp":"525964"
+}
+
+###
+# @name importVariables
+POST https://{{host}}/user/action/{{projectId}}/rbs.signup.request.INPUT?auth={{accessToken}} HTTP/1.1
+Content-Type: application/json
+x-rbs-processId: BASIC_AUTH
+x-rbs-processexecutionid: 01F1YV96K6W31R45GD828CE0DA
+
+{
+  "firstName": "Nuri",
+  "lastName": "Efeoğlu",
+  "birthDate": "13/05/1994",
+  "email": "nuri@rettermobile.com",
+  "phoneNumber": "905321672477",
+  "receivePromotionalContent": true,
+  "acceptedKvkk": true,
+  "acceptedTerms": true
+}
+
+
+

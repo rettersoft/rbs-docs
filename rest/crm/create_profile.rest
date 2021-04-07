@@ -1,0 +1,18 @@
+###
+# @name getUserProfile
+POST https://{{host}}/user/action/{{projectId}}/rbs.profile.request.CREATE?auth={{accessToken}} HTTP/1.1
+Content-Type: application/json
+
+
+{
+  "firstName": "Test",
+  "lastName": "test",
+  "phoneNumber": "905555555555",
+  "email": "test@test.com",
+  "birthDate": "13/11/1999",
+  "receivePromotionalContent": true,
+  "communicationByPhone": false,
+  "communicationByEmail": true,
+  "acceptedTerms": true,
+  "acceptedKvkk": true
+}

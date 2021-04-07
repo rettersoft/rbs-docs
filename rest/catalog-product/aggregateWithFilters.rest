@@ -1,9 +1,11 @@
 
 # Aggregate with filters
-POST https://{{host}}/user/action/{{projectId}}/rbs.catalog.request.AGGREGATE?auth={{accessToken}} HTTP/1.1
+GET https://{{host}}/user/action/{{projectId}}/rbs.catalog.get.AGGREGATE?auth={{accessToken}}&data=ewogICAgIm1vZGVsTmFtZSI6ICJyYnMucGltcHJvZHVjdCIsCiAgICAiZmlsdGVycyI6IFsKICAgICAgIHsKICAgICAgICAgICAiZmlsdGVySWQiOiAiY2F0ZWdvcmllcyIsCiAgICAgICAgICAgImZpbHRlclZhbHVlcyI6IFsiaGFyZGFsIl0KICAgICAgIH0sCiAgICAgICAgewogICAgICAgICAgICJmaWx0ZXJJZCI6ICJzaXplIiwKICAgICAgICAgICAiZmlsdGVyVmFsdWVzIjogWyIxIEtHIl0KICAgICAgIH0KICAgIF0KfQ== HTTP/1.1
 Content-Type: application/json
 
+###
 {
+    "modelName": "rbs.pimproduct",
     "filters": [
        {
            "filterId": "categories",
@@ -15,3 +17,5 @@ Content-Type: application/json
        }
     ]
 }
+
+ewogICAgIm1vZGVsTmFtZSI6ICJyYnMucGltcHJvZHVjdCIsCiAgICAiZmlsdGVycyI6IFsKICAgICAgIHsKICAgICAgICAgICAiZmlsdGVySWQiOiAiY2F0ZWdvcmllcyIsCiAgICAgICAgICAgImZpbHRlclZhbHVlcyI6IFsiaGFyZGFsIl0KICAgICAgIH0sCiAgICAgICAgewogICAgICAgICAgICJmaWx0ZXJJZCI6ICJzaXplIiwKICAgICAgICAgICAiZmlsdGVyVmFsdWVzIjogWyIxIEtHIl0KICAgICAgIH0KICAgIF0KfQ==
