@@ -1,0 +1,28 @@
+POST https://{{host}}/user/action/{{projectId}}/rbs.vtl.request.RENDER?auth={{accessToken}} HTTP/1.1
+Content-Type: application/json
+
+{
+    "templateUrl": "https://temppinar.s3-eu-west-1.amazonaws.com/mesafeli.html",
+    "context": {
+        "name": "Baran"
+    }
+}
+
+
+###
+
+POST https://{{host}}/user/action/{{projectId}}/rbs.vtl.request.RENDER?auth={{accessToken}} HTTP/1.1
+Content-Type: application/json
+
+{
+    
+    "template": "hello $name",
+    "context": {
+        "name": "Baran"
+    }
+}
+
+
+
+
+
