@@ -2,7 +2,7 @@
 ###
 
 # @name start
-POST https://{{host}}/user/action/{{projectId}}/rbs.email.request.SEND_EMAIL_TEST?auth={{accessToken}} HTTP/1.1
+POST https://{{host}}/user/action/{{projectId}}/rbs.email.request.SEND_EMAIL?auth={{accessToken}} HTTP/1.1
 
 {
     "from": "info@rtbs.io",
