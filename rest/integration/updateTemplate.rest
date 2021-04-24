@@ -1,0 +1,21 @@
+POST https://{{host}}/user/action/{{projectId}}/rbs.integration.request.UPDATE_TEMPLATE?auth={{accessToken}} HTTP/1.1
+Content-Type: application/json
+
+{
+    "title": "Project BETA",
+    "description": "XML Description",
+    "facebookTemplate": {
+        "g:id": "SKU-{{id}}",
+        "g:title": "{{#? metadata.attributes.shortName.tr_TR}}",
+        "g:description": "{{#? metadata.attributes.productDescription.tr_TR}}",
+        "g:link": "http://example.com/product/{{id}}",
+        "g:salePrice": "{{price.price.discounted}}",
+        "g:price": "{{price.price.normal}}",
+        "g:condition": "new",
+        "g:availability": "{{stock.qty > 0 ? 'in_stock' : 'out_of_stock'}}",
+        "g:image_link": "",
+        "g:product_type": "{{metadata.categories.join(' > ')}}",
+        "g:brand":  "{{#? metadata.attributes.brand}}",
+        "g:mpn": "{{id}}"
+    }
+}

@@ -1,9 +1,18 @@
 
+###
+
 # @name start
 POST https://{{host}}/user/action/{{projectId}}/rbs.email.request.SEND_EMAIL?auth={{accessToken}} HTTP/1.1
 
 {
-    "to": ["baran@rettermobile.com"],
-    "subject": "deneme",
-    "body": "deneme"
+    "from": "info@rtbs.io",
+    "fromName": "RTBS",
+    "to": "ahmet@rettermobile.com",
+    "subject": "TEST",
+    "body": "TEST",
+    "attachments": [{
+        "filename": "File name",
+        "contentType": "text/html",
+        "contentBase64": "PGh0bWw+DQogICAgPGgxPlRFU1QgQ09OVEVOVDwvaDE+DQo8L2h0bWw+DQo="
+    }]
 }

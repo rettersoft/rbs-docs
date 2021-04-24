@@ -1,0 +1,20 @@
+POST https://{{host}}/user/action/{{projectId}}/rbs.pimproduct.request.GET_ROLES?auth={{accessToken}} HTTP/1.1
+Content-Type: application/json
+
+###
+
+POST https://{{host}}/user/action/{{projectId}}/rbs.pimproduct.request.UPSERT_ROLE?auth={{accessToken}} HTTP/1.1
+Content-Type: application/json
+
+{
+    "roleName": "sampleUser",
+    "canEdit": ["shortName"],
+    "canView": []
+}
+
+###
+
+POST https://{{host}}/user/action/{{projectId}}/rbs.pimproduct.request.DELETE_ROLE?auth={{accessToken}} HTTP/1.1
+Content-Type: application/json
+
+{ "roleName": "sampleUser"}
