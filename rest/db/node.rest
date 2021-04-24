@@ -1,0 +1,28 @@
+POST https://{{host}}/user/action/{{projectId}}/rbs.core.request.PUT_DOCUMENT?auth={{accessToken}} HTTP/1.1
+Content-Type: application/json
+
+{
+    "path": "/process/BASIC_AUTH/execution/grtdWR9UwJr2xW5Jdw65prjz",
+    "data": {
+        "c": 3
+    },
+    "ttlInSeconds": 600
+}
+
+###
+
+POST https://{{host}}/user/action/{{projectId}}/rbs.core.request.DOCUMENT?auth={{accessToken}} HTTP/1.1
+Content-Type: application/json
+
+{
+    "path": "/process/BASIC_AUTH/execution/grtdWR9UwJr2xW5Jdw65prjz"
+}
+
+###
+
+POST https://{{host}}/user/action/{{projectId}}/rbs.core.request.LIST_COLLECTION?auth={{accessToken}} HTTP/1.1
+Content-Type: application/json
+
+{
+    "collection": "/process/BASIC_AUTH/execution"
+}
