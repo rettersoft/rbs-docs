@@ -6,7 +6,7 @@ Host: {{host}}
 
 {
     "cargoCompany": "ARASKARGO",
-    "orderId": "99999",
+    "orderId": "88887",
     "alias": "alias",
     "receiverInformation": {
         "nameSurname": "Ahmet Deniz",
@@ -26,7 +26,7 @@ Content-Type: application/json
 Host: {{host}}
 
 {
-    "orderId": "123"
+    "orderId": "070eb076e9f9472d8515b002c7bb3982#shipment#test50"
 }
 
 ###
