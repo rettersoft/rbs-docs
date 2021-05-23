@@ -1,0 +1,73 @@
+###
+# @name createTrackingNumber
+POST https://{{host}}/user/action/{{projectId}}/rbs.trackingnumber.request.CREATE?auth={{accessToken}} HTTP/1.1
+Content-Type: application/json
+Host: {{host}}
+
+{
+    "cargoCompany": "CSERU",
+    "orderId": "cse-test-12",
+    "alias": "alias",
+    "receiverInformation": {
+        "nameSurname": "Baran Baygan",
+        "phoneNumber": "905309364921",
+        "email": "baran@rettermobile.com",
+        "address": "Visnezade Mahallesi Suleyman Seba Caddesi No: 79 4B Besiktas/Istanbul",
+        "city": "İstanbul",
+        "district": "Beşiktaş",
+        "customerReferenceType": "Retter",
+        "boxCount": 2,
+        "postcode": "123022"
+    },
+    "senderInformation": {
+        "nameSurname": "Ahmet Deniz",
+        "address": "Zuhtupasa mahallesi 2.hat boyu sokak no:5 daire:9",
+        "city": "İstanbul",
+        "district": "Kadıköy",
+        "phoneNumber": "555-55-55",
+        "postcode": "123022"
+    }
+}
+
+###
+# @name getTrackingNumber
+POST https://{{host}}/user/action/{{projectId}}/rbs.trackingnumber.request.GET?auth={{accessToken}} HTTP/1.1
+Content-Type: application/json
+Host: {{host}}
+
+{
+    "orderId": "cse-test-12"
+}
+
+###
+# @name cancelTrackingNumber
+POST https://{{host}}/user/action/{{projectId}}/rbs.trackingnumber.request.CANCEL?auth={{accessToken}} HTTP/1.1
+Content-Type: application/json
+Host: {{host}}
+
+{
+    "orderId": "cse-test-12"
+}
+
+###
+# @name UpdateShipmentStatus
+POST https://{{host}}/user/action/{{projectId}}/rbs.trackingnumber.request.UPDATE_STATUS?auth={{accessToken}} HTTP/1.1
+Content-Type: application/json
+Host: {{host}}
+
+{
+    "orderId": "test10",
+    "status": "DELIVERED"
+}
+
+###
+# @name SupportedDistricts
+POST https://{{host}}/user/action/{{projectId}}/rbs.trackingnumber.request.SUPPORTED_DISTRICTS?auth={{accessToken}} HTTP/1.1
+Content-Type: application/json
+Host: {{host}}
+
+{
+    "cargoCompany": "UPS",
+    "city": "İstanbul",
+    "district": "Kadıköy"
+}
