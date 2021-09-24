@@ -45,6 +45,8 @@ interface {
 | first | boolean | false | ❌ | Flag to overwrite starting step. |
 | skip | boolean | false | ❌ | Flag to ignore step. |
 
+> In other component steps, you can use common attributes too.
+
 > <span style="color: #0074d9">*</sup> *There are a few ways to return data back to the client that starts the process such as inputPath, parameters and response.*
 
 > <span style="color: #0074d9">**</sup> *Process mining covers pre-defined attributes such as processId, executionId, stepId, etc. With these info parameters, you can pass 3 more data to process mining data pool: info1, info2 and info3.*
@@ -223,7 +225,7 @@ interface {
 
 | Attribute Name | Type | Default | Must | Description |
 | -------------- | ---- | ------- | ---- | ----------- |
-| inputPath | string | undefined | ❌ | Path to input parameters. Make sure it starts with a dollar sign "$". Default value is "$". If you want to use a custom input, use "parameters" instead. |
+| inputPath | string | $ | ❌ | Path to input parameters. Make sure it starts with a dollar sign "$". Default value is "$". If you want to use a custom input, use "parameters" instead. |
 | parameters | object | undefined | ❌ | Custom parameters. Must be a valid JSON. If you want to send data from state, use "inputPath" instead. |
 | each | object | undefined | ❌ | Path to array of "parameters". All parameters will be called via *Promise.all*, then collect all the responses. |
 | action | string | undefined | ✅ | RBS action name to call. |
@@ -232,7 +234,7 @@ interface {
 | retry | object | undefined | ❌ | Retry policy with exponential backoff support. It's disabled by default. |
 | headers | object | undefined | ❌ | Adds processId and executionId headers to request. |
 | auth | object | undefined | ❌ | Generates or uses custom user token before calling the service. Be careful! User will have privileges according to these settings. |
-| outputPath | string | $.0.response | ❌ | Path to resolve service response into output. |
+| outputPath | string | $ | ❌ | Path to resolve service response into output. |
 | resultPath | string | undefined | ❌ | Variable name to store output into state. |
 | errorPath | string | undefined | ❌ | Path to resolve service error. |
 | rollbackOnFailure | boolean | false | ❌ | Flag for applying rollback. |
@@ -302,6 +304,59 @@ class AsynchronousServiceCallExample {
 ### Working With Other Processes
 
 A process can start other processes as well as interact with them while they are still in progress.
+In general programming, working with solution oriented, small and maintainable classes or functions is a best practice.
+That works well in process development too.
+
+> We recommend to develop processes to solve one problem at a time.
+
+```typescript
+interface {
+    process: string
+    invocationType: string
+    inputPath?: string
+    parameters?: object
+    executionId?: string
+    outputPath?: string
+    resultPath?: string
+    errorPath?: string
+}
+```
+
+| Attribute Name | Type | Default | Must | Description |
+| -------------- | ---- | ------- | ---- | ----------- |
+| process | string | undefined | ✅ | Process ID to start. |
+| invocationType | string | NORMAL | ✅ | Running mode for execution. Available options are *NORMAL*, *EXPRESS*, *EXPRESS_CACHED*. |
+| inputPath | string | $ | ❌ | Path to input parameters. Make sure it starts with a dollar sign "$". Default value is "$". If you want to use a custom input, use "parameters" instead. |
+| parameters | object | undefined | ❌ | Custom parameters. Must be a valid JSON. If you want to send data from state, use "inputPath" instead. |
+| executionId | string | undefined | ❌ | Execution ID to prevent PM assigning an auto generated ID. |
+| outputPath | string | $.0.response | ❌ | Path to resolve service response into output. |
+| resultPath | string | undefined | ❌ | Variable name to store output into state. |
+| errorPath | string | undefined | ❌ | Path to resolve service error. |
+
+```typescript
+class StartProcessExample {
+    id: 'START_PROCESS'
+    process: 'TEST_PROCESS'
+    parameters: {}
+    outputPath: '$.0.response'
+    resultPath: 'startedProcess'
+    errorPath: '$.0.errors.0'
+}
+```
+
+```typescript
+class StartAnotherProcessExample {
+    id: 'START_PROCESS_IN_EXPRESS_MODE'
+    process: 'ANOTHER_TEST_PROCESS'
+    startMode: 'EXPRESS'
+    parameters: {}
+    outputPath: '$.0.response'
+    resultPath: 'startedProcess'
+    errorPath: '$.0.errors.0'
+}
+```
+
+> You should provide one of these attributes <span style="color:#0074d9">inputPath</span> or <span style="color:#0074d9">parameters</span> to send an initial payload for the process.
 
 ### Native Code Support
 
