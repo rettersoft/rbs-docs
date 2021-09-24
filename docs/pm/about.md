@@ -48,6 +48,17 @@ It is also not possible multiple interactions with a single execution of a proce
 A process can respond to a single incoming request and proceeds to the next step accordingly.
 That makes multiple interactions impossible on a single step.
 
+> How can I start a process?
+
+There are 2 ways of starting a process: normal (*rbs.process.request.START*) and express (*rbs.process.request.START_EXPRESS*) mode.
+In normal mode, Process Manager returns details of the newly started execution.
+If you want to track the progress of that execution, you should call *rbs.process.request.GET_EXECUTION* action.
+In express mode, Process Manager executes all possible steps and responds with the result.
+Express mode doesn't support asynchronous operations.
+It's not recommended to start a process in express mode if it takes longer than 30 seconds to complete.
+
+Express mode also has a cache (*rbs.process.get.START_EXPRESS*) feature.
+
 > Where is the documentation of a process?
 
 Processes are by their nature documented because they are composed of UI elements. They are created by a drag and drop editor. Even non developers can understand how a process works.
