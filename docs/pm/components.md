@@ -377,7 +377,7 @@ interface {
 
 | Attribute Name | Type | Default | Must | Description |
 | -------------- | ---- | ------- | ---- | ----------- |
-| st | string | undefined | ✅ | SelectTransform code to run in sandbox |
+| st | string | undefined | ✅ | SelectTransform code to run in sandbox. |
 | inputPath | string | $ | ❌ | Path to manage initial parameters. Make sure it starts with a dollar sign "$". |
 | outputPath | string | undefined | ❌ | Path to resolve result of SelectTransform into output. |
 | resultPath | string | undefined | ✅ | Variable name to store output into state. |
@@ -426,7 +426,7 @@ interface {
 
 | Attribute Name | Type | Default | Must | Description |
 | -------------- | ---- | ------- | ---- | ----------- |
-| js | string | undefined | ✅ | Javascript code to run in sandbox |
+| js | string | undefined | ✅ | Javascript code to run in sandbox. |
 | inputPath | string | $ | ❌ | Path to manage initial parameters. Make sure it starts with a dollar sign "$". |
 | outputPath | string | undefined | ❌ | Path to resolve result of Javascript into output. |
 | resultPath | string | undefined | ✅ | Variable name to store output into state. |
@@ -452,4 +452,144 @@ class JS_WithCustomFunctionExample {
 
 ### Third Party Libraries
 
-Service call
+#### Working with Dates
+
+Besides *$$.DATE* directive, Process Manager also has a date components which supports all [date-fns](https://date-fns.org) features in chain mode.
+
+```typescript
+interface {
+    date: { val?: string | number, chain: any[] }
+    inputPath?: string
+    outputPath?: string
+    resultPath: string
+}
+```
+
+| Attribute Name | Type | Default | Must | Description |
+| -------------- | ---- | ------- | ---- | ----------- |
+| date | object | undefined | ✅ | initial date and date-fns method chain. If you don't provide an initial date, it will use current date instead. |
+| inputPath | string | $ | ❌ | Path to manage initial parameters. Make sure it starts with a dollar sign "$". |
+| outputPath | string | undefined | ❌ | Path to resolve result of date-fns chain into output. |
+| resultPath | string | dateResult | ✅ | Variable name to store output into state. |
+
+> In chain mode, you can call a *date-fns* method after another. We need to provide a single array that each item is also an array with *date-fns* method and its parameters.
+
+> Your native codes also support *date-fns* as well as they support *lodash* and *joi*.
+
+```typescript
+class DateExample {
+    date: {
+        chain: [
+            ['addDays', -1],
+            ['format', 'yyyy-MM-dd']
+        ]
+    }
+    resultPath: 'yesterdayAtSameTime'
+}
+```
+
+#### Validation Support
+
+Process Manager has a strong data validation support. It uses [joi](https://joi.dev) under the hood.
+Just like *date-fns*, validation support also uses chain mechanism for applying multiple validations to a single value.
+
+Validation is possible in two ways: simple validation which covers primitive types or objects with only primitive attributes.
+On the other hand, if your data has a complex interface, you can define each type as model and use them in your validation expressions.
+
+```typescript
+interface {
+    validate: object
+    models?: object
+    inputPath?: string
+    outputPath?: string
+    resultPath: string
+}
+```
+
+| Attribute Name | Type | Default | Must | Description |
+| -------------- | ---- | ------- | ---- | ----------- |
+| validate | object | undefined | ✅ | Defines fields to validate. Each key should represent a field to validate. |
+| models | object | undefined | ❌ | Model definitions to validate advanced data types. |
+| inputPath | string | $ | ❌ | Path to manage initial parameters. Make sure it starts with a dollar sign "$". |
+| outputPath | string | undefined | ❌ | Path to resolve result of validation into output. |
+| resultPath | string | validationResult | ✅ | Variable name to store output into state. |
+
+```typescript
+class SimpleValidationExample {
+    validate: {
+        name: [
+            'string',
+            ['min', 2],
+            ['max', 24],
+            'required'
+        ]
+        surname: [
+            'string',
+            ['min', 2],
+            ['max', 40]
+        ]
+    }
+}
+```
+
+```typescript
+class AdvancedValidationExample {
+    validate: {
+        tags: 'tags',
+        singleTag: 'tag'
+    }
+    models: {
+        tag: {
+            type: 'object',
+            attributes: {
+                name: ['string', ['min', 2], ['max', 250], 'required']
+            }
+        },
+        tags: {
+            type: 'array',
+            of: 'tag'
+        }
+    }
+}
+```
+
+#### Multi Factor Authentication
+
+Process Manager has methods for generating MFA secret with QR code as well as generating valid tokens and verifying them.
+It uses [node-2fa](https://www.npmjs.com/package/node-2fa) under the hood.
+
+```typescript
+interface {
+    mfaSecret: { name: string, account: string }
+    mfaToken: string
+    mfaVerify: { secret: string, token: string }
+    resultPath: string
+}
+```
+
+| Attribute Name | Type | Default | Must | Description |
+| -------------- | ---- | ------- | ---- | ----------- |
+| mfaSecret | object | undefined | ❌ | Parameters to generate multi factor authentication secret. Keep secrets user specific and store in DB. |
+| mfaToken | object | undefined | ❌ | Secret to generate token. Returns an object containing, 6-character token. |
+| mfaVerify | object | undefined | ❌ | Parameters to verify token for a specific secret. Checks if a time-based token matches a token from secret key, within a +/- window (default: 4) minute window. |
+| resultPath | string | mfaResult | ✅ | Variable name to store output into state. |
+
+> You should provide one of *mfa* attributes to use multi factor authentication support.
+
+```typescript
+class SimpleValidationExample {
+    validate: {
+        name: [
+            'string',
+            ['min', 2],
+            ['max', 24],
+            'required'
+        ]
+        surname: [
+            'string',
+            ['min', 2],
+            ['max', 40]
+        ]
+    }
+}
+```
