@@ -360,7 +360,95 @@ class StartAnotherProcessExample {
 
 ### Native Code Support
 
-Service call
+We keep working on improving Process Manager but if your process requires more programming abilities you can use native codes in two ways: SelectTransform and Javascript.
+
+#### SelectTransform
+
+[SelectTransform](https://selecttransform.github.io/site/transform.html) is an open source template tool for JSON documents.
+
+```typescript
+interface {
+    st: string
+    inputPath?: string
+    outputPath?: string
+    resultPath: string
+}
+```
+
+| Attribute Name | Type | Default | Must | Description |
+| -------------- | ---- | ------- | ---- | ----------- |
+| st | string | undefined | ✅ | SelectTransform code to run in sandbox |
+| inputPath | string | $ | ❌ | Path to manage initial parameters. Make sure it starts with a dollar sign "$". |
+| outputPath | string | undefined | ❌ | Path to resolve result of SelectTransform into output. |
+| resultPath | string | undefined | ✅ | Variable name to store output into state. |
+
+```typescript
+class STExample {
+    st: '{{ name }}'
+    inputPath: '$.payload'
+    resultPath: 'name'
+}
+```
+
+> If you want to return object instead of string, you should write your *SelectTransform* code as a valid JSON.
+Otherwise you'll get a parsing error.
+
+```typescript
+class ST_JSONExample {
+    st: `
+        {
+            "name": "{{ name }}",
+            "surname": "{{ surname }}"
+        }
+    `
+    inputPath: '$.payload'
+    resultPath: 'profile'
+}
+```
+
+#### Javascript
+
+Your native Javascript code runs in a restricted sandbox.
+It supports [lodash](https://lodash.com) and [dateFNS](https://date-fns.org) by default.
+
+- Input is available through a variable called *$*.
+- You can define your own functions. All user-defined functions are available through a variable called *_*.
+
+```typescript
+interface {
+    js: string
+    inputPath?: string
+    outputPath?: string
+    resultPath: string
+    fnCustomFunctionName?: string
+}
+```
+
+| Attribute Name | Type | Default | Must | Description |
+| -------------- | ---- | ------- | ---- | ----------- |
+| js | string | undefined | ✅ | Javascript code to run in sandbox |
+| inputPath | string | $ | ❌ | Path to manage initial parameters. Make sure it starts with a dollar sign "$". |
+| outputPath | string | undefined | ❌ | Path to resolve result of Javascript into output. |
+| resultPath | string | undefined | ✅ | Variable name to store output into state. |
+
+```typescript
+class JSExample {
+    js: 'lodash.groupBy($.items, 'name')'
+    inputPath: '$.payload'
+    resultPath: 'groupResult'
+}
+```
+
+Same result with a custom function.
+
+```typescript
+class JS_WithCustomFunctionExample {
+    js: '_.fnTest($.items)'
+    inputPath: '$.payload'
+    resultPath: 'groupResult'
+    fnTest: `(items) => lodash.groupBy(items, 'name')`
+}
+```
 
 ### Third Party Libraries
 

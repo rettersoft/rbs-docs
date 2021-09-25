@@ -21,6 +21,126 @@ So you can use RBS processes in following ways:
 - A process has an internal storage unit called **state** which you can write to and read from it through steps.
 - A process has also a user-based storage called **userState**.
 While *state* is globally available in a single execution, users access their data in *userState* by a valid token.
+- In a process, a step cannot call itself.
+
+## API
+
+For more information about Process Manager API please visit documentation section on developer console.
+
+### Actions
+
+You can interact with Process Manager API by calling one of the following actions.
+
+#### rbs.process.request.LIST
+
+Returns list of available processes in your project.
+There is no parameter to filter processes yet!
+
+#### rbs.process.request.EXECUTIONS
+
+Returns list of recent executions of a process.
+
+```typescript
+interface {
+    processId: string
+}
+```
+
+#### rbs.process.request.START
+
+Starts a new execution in normal mode.
+If you don't send executionId, a sortable unique value will be assigned automatically.
+
+```typescript
+interface {
+    processId: string
+    executionId?: string
+    payload: { [key: string]: any }
+}
+```
+
+#### rbs.process.request.START_EXPRESS
+
+Starts a new execution in express mode.
+If you want to start an execution and retrieve the final output, please use express mode.
+If you want it to be cached for awhile you should call *rbs.process.get.START_EXPRESS* instead.
+
+```typescript
+interface {
+    processId: string
+    executionId?: string
+    payload: { [key: string]: any }
+}
+```
+
+#### rbs.process.request.UPSERT
+
+Updates an existing process or creates a new one if *processId* is not in use.
+
+```typescript
+interface  {
+    processId: string
+    data: any
+    roles?: string[]
+    state?: object
+}
+```
+
+#### rbs.process.request.ADD_EVENT
+
+Adds a new trigger event to a process.
+When a trigger event fired, a new execution starts automatically.
+To accomplish that properly, you should add the event also into receives part of Process Manager's role.
+
+```typescript
+interface  {
+    processId: string
+    event: string
+}
+```
+
+#### rbs.process.request.REMOVE_EVENT
+
+Removes a trigger event from a process.
+
+```typescript
+interface  {
+    processId: string
+    event: string
+}
+```
+
+#### rbs.process.request.EVENTS
+
+Returns a list of available trigger events of a process.
+
+```typescript
+interface  {
+    processId: string
+}
+```
+
+#### rbs.process.request.GET_EXECUTION
+
+Returns details of an execution and steps the execution passed through.
+
+```typescript
+interface {
+    processId: string
+    executionId: string,
+}
+```
+
+#### rbs.process.request.STOP
+
+Returns inputs and outputs of a single step in execution of a process.
+
+```typescript
+interface {
+    processId: string
+    executionId: string,
+}
+```
 
 ## FAQ
 
