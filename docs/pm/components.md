@@ -54,17 +54,17 @@ interface {
 #### Simple Step Examples
 
 ```typescript
-class EmptyStep {
+EmptyStep {
     id: 'EMPTY'
     skip: true
 }
 
-class ErrorStep {
+ErrorStep {
     id: 'ERROR'
     error: 'Something went wrong please try again later!'
 }
 
-class StateStep {
+StateStep {
     id: 'UPDATE_STATE'
     state: {
         "static_data": "static_value",
@@ -100,7 +100,7 @@ interface {
 | resultPath | string | undefined | ❌ | Variable name to store output into state. |
 
 ```typescript
-class PutDocumentExample {
+PutDocumentExample {
     id: 'SAVE_INTO_CODB'
     path: '/collectionA/document1'
     document: '$.pathToDocument'
@@ -131,7 +131,7 @@ interface {
 | resultPath | string | undefined | ✅ | Variable name to store output into state. |
 
 ```typescript
-class GetDocumentExample {
+GetDocumentExample {
     id: 'GET_FROM_CODB'
     path: '/collectionA/document1'
     documentCache: true
@@ -159,7 +159,7 @@ interface {
 | resultPath | string | undefined | ✅ | Variable name to store output into state. |
 
 ```typescript
-class ListDocumentsExample {
+ListDocumentsExample {
     id: 'LIST_CODB_DOCUMENTS'
     path: '/collectionA/document1'
     limit: 100
@@ -185,7 +185,7 @@ interface {
 | resultPath | string | undefined | ❌ | Variable name to store output into state. |
 
 ```typescript
-class ListDocumentsExample {
+ListDocumentsExample {
     id: 'DELETE_CODB_DOCUMENT'
     path: '/collectionA/document1'
     resultPath: 'deleteDocumentResult'
@@ -260,7 +260,7 @@ On the other hand, you can make a service call on user's behalf by using <span s
 This feature has two ways of usages. In one of them, you should generate a valid custom token for a specific user and use it in *auth* attribute with <span style="color:#0074d9">token</span> parameter. Otherwise you should provide <span style="color:#0074d9">userId</span>, <span style="color:#0074d9">roles</span> and <span style="color:#0074d9">claims</span> to generate a token before making the request.
 
 ```typescript
-class SynchronousServiceCallExample {
+SynchronousServiceCallExample {
     id: 'GET_ORDER'
     action: 'rbs.order.request.DATA'
     parameters: { orderId: '$.payload.orderId' }
@@ -289,7 +289,7 @@ interface {
 > If you need an extra information in a step other than the first step, you can use <span style="color:#0074d9">actionCallback</span> without providing an action. In that case, instead of making a service call, Process Manager awaits for an asynchronous response from a client instance.
 
 ```typescript
-class AsynchronousServiceCallExample {
+AsynchronousServiceCallExample {
     id: 'PAYMENT'
     action: 'rbs.billing.request.PAY'
     inputPath: '$.payload.paymentInput'
@@ -334,7 +334,7 @@ interface {
 | errorPath | string | undefined | ❌ | Path to resolve service error. |
 
 ```typescript
-class StartProcessExample {
+StartProcessExample {
     id: 'START_PROCESS'
     process: 'TEST_PROCESS'
     parameters: {}
@@ -345,7 +345,7 @@ class StartProcessExample {
 ```
 
 ```typescript
-class StartAnotherProcessExample {
+StartAnotherProcessExample {
     id: 'START_PROCESS_IN_EXPRESS_MODE'
     process: 'ANOTHER_TEST_PROCESS'
     startMode: 'EXPRESS'
@@ -383,7 +383,7 @@ interface {
 | resultPath | string | undefined | ✅ | Variable name to store output into state. |
 
 ```typescript
-class STExample {
+STExample {
     id: 'SELECT_TRANSFORM'
     st: '{{ name }}'
     inputPath: '$.payload'
@@ -395,7 +395,7 @@ class STExample {
 Otherwise you'll get a parsing error.
 
 ```typescript
-class ST_JSONExample {
+ST_JSONExample {
     id: 'SELECT_TRANSFORM'
     st: `
         {
@@ -434,7 +434,7 @@ interface {
 | resultPath | string | undefined | ✅ | Variable name to store output into state. |
 
 ```typescript
-class JSExample {
+JSExample {
     id: 'JAVASCRIPT'
     js: 'lodash.groupBy($.items, 'name')'
     inputPath: '$.payload'
@@ -445,7 +445,7 @@ class JSExample {
 Same result with a custom function.
 
 ```typescript
-class JS_WithCustomFunctionExample {
+JS_WithCustomFunctionExample {
     id: 'JAVASCRIPT'
     js: '_.fnTest($.items)'
     inputPath: '$.payload'
@@ -458,7 +458,7 @@ class JS_WithCustomFunctionExample {
 
 #### Working with Dates
 
-Besides *$$.DATE* directive, Process Manager also has a date components which supports all [date-fns](https://date-fns.org) features in chain mode.
+Besides *$$.DATE* directive, Process Manager also has a date component which supports all [date-fns](https://date-fns.org) features in chain mode.
 
 ```typescript
 interface {
@@ -481,7 +481,7 @@ interface {
 > Your native codes also support *date-fns* as well as they support *lodash* and *joi*.
 
 ```typescript
-class DateExample {
+DateExample {
     id: 'DATE'
     date: {
         chain: [
@@ -496,7 +496,7 @@ class DateExample {
 #### Validation Support
 
 Process Manager has a strong data validation support. It uses [joi](https://joi.dev) under the hood.
-Just like *date-fns*, validation support also uses chain mechanism for applying multiple validations to a single value.
+Just like *date-fns*, validation support also uses chain mechanism for applying multiple validations to a single variable.
 
 Validation is possible in two ways: simple validation which covers primitive types or objects with only primitive attributes.
 On the other hand, if your data has a complex interface, you can define each type as model and use them in your validation expressions.
@@ -520,7 +520,7 @@ interface {
 | resultPath | string | validationResult | ✅ | Variable name to store output into state. |
 
 ```typescript
-class SimpleValidationExample {
+SimpleValidationExample {
     id: 'SIMPLE_VALIDATION'
     validate: {
         name: [
@@ -539,7 +539,7 @@ class SimpleValidationExample {
 ```
 
 ```typescript
-class AdvancedValidationExample {
+AdvancedValidationExample {
     id: 'ADVANCED_VALIDATION'
     validate: {
         tags: 'tags',
@@ -584,14 +584,14 @@ interface {
 > You should provide one of *mfa* attributes to use multi factor authentication support.
 
 ```typescript
-class MultiFactorAuthenticationSecret {
+MultiFactorAuthenticationSecret {
     id: 'VERIFY'
     mfaSecret: { name: "example.com", 'account.$': '$$.USER_ID' }
 }
 ```
 
 ```typescript
-class MultiFactorAuthenticationVerify {
+MultiFactorAuthenticationVerify {
     id: 'VERIFY'
     mfaVerify: { secret: '$.profile.secret', token: '$.payload.token'}
 }

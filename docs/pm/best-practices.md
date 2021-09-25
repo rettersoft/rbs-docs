@@ -8,7 +8,7 @@ It's common to fork a path in a process by response of a service call.
 While you're doing that, you should consider what you will put into *state* to use in your conditional flows.
 
 ```typescript
-class GetOrderNotRecommendedWay {
+GetOrderNotRecommendedWay {
     id: 'GET_ORDER'
     action: 'rbs.order.request.DATA'
     service: 'rbs.oms'
@@ -27,7 +27,7 @@ If you save *$.0* into state that means you will have more data than you actuall
 Instead of that, you should consider saving *$.0.response* directly.
 
 ```typescript
-class GetOrder {
+GetOrder {
     id: 'GET_ORDER'
     action: 'rbs.order.request.DATA'
     service: 'rbs.oms'
@@ -44,7 +44,7 @@ class GetOrder {
 You can design a loop just like *for* in general programming. That kind of loops require a variable to track steps.
 
 ```typescript
-class GetOrder {
+GetOrder {
     id: 'GET_ORDER'
     action: 'rbs.order.request.DATA'
     service: 'rbs.oms'
@@ -55,7 +55,7 @@ class GetOrder {
     onSuccess: { 'order.orderId': { EX: true } }
 }
 
-class Loop {
+Loop {
     id: 'LOOP'
     st: '{{ retry + 1 }}'
     resultPath: 'retry'
