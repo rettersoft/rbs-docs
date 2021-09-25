@@ -47,9 +47,9 @@ interface {
 
 > In other component steps, you can use common attributes too.
 
-> <span style="color: #0074d9">*</sup> *There are a few ways to return data back to the client that starts the process such as inputPath, parameters and response.*
+> <span style="color: #0074d9">*</span> *There are a few ways to return data back to the client that starts the process such as inputPath, parameters and response.*
 
-> <span style="color: #0074d9">**</sup> *Process mining covers pre-defined attributes such as processId, executionId, stepId, etc. With these info parameters, you can pass 3 more data to process mining data pool: info1, info2 and info3.*
+> <span style="color: #0074d9">**</span> *Process mining covers pre-defined attributes such as processId, executionId, stepId, etc. With these info parameters, you can pass 3 more data to process mining data pool: info1, info2 and info3.*
 
 #### Simple Step Examples
 
@@ -384,6 +384,7 @@ interface {
 
 ```typescript
 class STExample {
+    id: 'SELECT_TRANSFORM'
     st: '{{ name }}'
     inputPath: '$.payload'
     resultPath: 'name'
@@ -395,6 +396,7 @@ Otherwise you'll get a parsing error.
 
 ```typescript
 class ST_JSONExample {
+    id: 'SELECT_TRANSFORM'
     st: `
         {
             "name": "{{ name }}",
@@ -433,6 +435,7 @@ interface {
 
 ```typescript
 class JSExample {
+    id: 'JAVASCRIPT'
     js: 'lodash.groupBy($.items, 'name')'
     inputPath: '$.payload'
     resultPath: 'groupResult'
@@ -443,6 +446,7 @@ Same result with a custom function.
 
 ```typescript
 class JS_WithCustomFunctionExample {
+    id: 'JAVASCRIPT'
     js: '_.fnTest($.items)'
     inputPath: '$.payload'
     resultPath: 'groupResult'
@@ -478,6 +482,7 @@ interface {
 
 ```typescript
 class DateExample {
+    id: 'DATE'
     date: {
         chain: [
             ['addDays', -1],
@@ -516,6 +521,7 @@ interface {
 
 ```typescript
 class SimpleValidationExample {
+    id: 'SIMPLE_VALIDATION'
     validate: {
         name: [
             'string',
@@ -534,6 +540,7 @@ class SimpleValidationExample {
 
 ```typescript
 class AdvancedValidationExample {
+    id: 'ADVANCED_VALIDATION'
     validate: {
         tags: 'tags',
         singleTag: 'tag'
@@ -577,19 +584,15 @@ interface {
 > You should provide one of *mfa* attributes to use multi factor authentication support.
 
 ```typescript
-class SimpleValidationExample {
-    validate: {
-        name: [
-            'string',
-            ['min', 2],
-            ['max', 24],
-            'required'
-        ]
-        surname: [
-            'string',
-            ['min', 2],
-            ['max', 40]
-        ]
-    }
+class MultiFactorAuthenticationSecret {
+    id: 'VERIFY'
+    mfaSecret: { name: "example.com", 'account.$': '$$.USER_ID' }
+}
+```
+
+```typescript
+class MultiFactorAuthenticationVerify {
+    id: 'VERIFY'
+    mfaVerify: { secret: '$.profile.secret', token: '$.payload.token'}
 }
 ```
