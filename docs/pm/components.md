@@ -454,6 +454,72 @@ JS_WithCustomFunctionExample {
 }
 ```
 
+#### Javascript with AWS SDK Support
+
+By default your Javascript code cannot import any 3rd party libraries.
+But with AWS SDK support, you can import AWS SDK V3 modules and use them in your custom Javascript code.
+
+```typescript
+interface {
+    athena: [
+        ['Athena', '@aws-sdk/client-athena', 'AthenaClient']
+    ],
+    dynamodb: [
+        ['DynamoDB', '@aws-sdk/client-dynamodb', 'DynamoDB']
+    ],
+    kinesis: [
+        ['Kinesis', '@aws-sdk/client-kinesis', 'KinesisClient']
+    ],
+    personalize: [
+        ['Personalize', '@aws-sdk/client-personalize', 'PersonalizeClient']
+    ],
+    personalizeEvents: [
+        ['PersonalizeEvents', '@aws-sdk/client-personalize-events', 'PersonalizeEventsClient'],
+    ],
+    personalizeRuntime: [
+        ['PersonalizeRuntime', '@aws-sdk/client-personalize-runtime', 'PersonalizeRuntimeClient'],
+    ],
+    s3: [
+        ['Storage', '@aws-sdk/lib-storage'],
+        ['S3', '@aws-sdk/client-s3', 'S3'],
+    ],
+    sns: [
+        ['SNS', '@aws-sdk/client-sns', 'SNSClient']
+    ],
+    sqs: [
+        ['SQS', '@aws-sdk/client-sqs', 'SQSClient']
+    ],
+}
+```
+
+```text
+AWS
+└─── Athena
+└─── $athena: Athena.AthenaClient instance
+│
+└─── DynamoDB
+└─── $dynamoDB: DynamoDB.DynamoDB instance
+│
+└─── Kinesis
+└─── $kinesis: Kinesis.KinesisClient instance
+│
+└─── Personalize
+└─── $personalize: Personalize.PersonalizeClient instance
+└─── PersonalizeEvents
+└─── $personalizeEvents: PersonalizeEvents.PersonalizeEventsClient instance
+└─── PersonalizeRuntime
+└─── $personalizeRuntime: PersonalizeRuntime.PersonalizeRuntimeClient instance
+│
+└─── S3
+└─── $s3: S3.S3 instance
+│
+└─── SNS
+└─── $sns: SNS.SNSClient instance
+│
+└─── SQS
+└─── $sqs: SQS.SQSClient instance
+```
+
 ### Third Party Libraries
 
 #### Working with Dates
