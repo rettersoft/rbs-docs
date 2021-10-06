@@ -465,6 +465,7 @@ interface {
         ['Athena', '@aws-sdk/client-athena', 'AthenaClient']
     ],
     dynamodb: [
+        ['DynamoDBLib', '@aws-sdk/lib-dynamodb']
         ['DynamoDB', '@aws-sdk/client-dynamodb', 'DynamoDB']
     ],
     kinesis: [
@@ -498,6 +499,7 @@ AWS
 └─── $athena: Athena.AthenaClient instance
 │
 └─── DynamoDB
+└─── DynamoDBLib
 └─── $dynamoDB: DynamoDB.DynamoDB instance
 │
 └─── Kinesis
