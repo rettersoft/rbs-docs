@@ -513,6 +513,7 @@ AWS
 └─── $personalizeRuntime: PersonalizeRuntime.PersonalizeRuntimeClient instance
 │
 └─── S3
+└─── Storage
 └─── $s3: S3.S3 instance
 │
 └─── SNS
