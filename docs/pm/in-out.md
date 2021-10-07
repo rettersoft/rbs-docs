@@ -188,7 +188,7 @@ Returns first *defined* parameter.
 
 Returns last element of an array.
 
-#### $$.RANDOM(len?: number)
+#### $$.RANDOM(len?: number, numbersOnly?: boolean)
 
 Returns a random string in length of *len* parameter. Default value for len parameter is 8.
 It uses only capital letters and numbers to generate the random string.
