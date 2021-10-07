@@ -471,6 +471,9 @@ interface {
     kinesis: [
         ['Kinesis', '@aws-sdk/client-kinesis', 'KinesisClient']
     ],
+    lambda: [
+        ['Lambda', '@aws-sdk/client-lambda', 'LambdaClient']
+    ],
     personalize: [
         ['Personalize', '@aws-sdk/client-personalize', 'PersonalizeClient']
     ],
@@ -504,6 +507,9 @@ AWS
 │
 └─── Kinesis
 └─── $kinesis: Kinesis.KinesisClient instance
+│
+└─── Lambda
+└─── $lambda: Lambda.LambdaClient instance
 │
 └─── Personalize
 └─── $personalize: Personalize.PersonalizeClient instance
