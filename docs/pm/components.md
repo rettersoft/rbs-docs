@@ -654,7 +654,7 @@ interface {
 | mfaSecret | object | undefined | ❌ | Parameters to generate multi factor authentication secret. Keep secrets user specific and store in DB. |
 | mfaToken | object | undefined | ❌ | Secret to generate token. Returns an object containing, 6-character token. |
 | mfaVerify | object | undefined | ❌ | Parameters to verify token for a specific secret. Checks if a time-based token matches a token from secret key, within a +/- window (default: 4) minute window. |
-| resultPath | string | mfaResult | ✅ | Variable name to store output into state. |
+| resultPath | string | mfaResult | ✅ | Variable name to multi-factor output into state. |
 
 > You should provide one of *mfa* attributes to use multi factor authentication support.
 
@@ -671,3 +671,30 @@ MultiFactorAuthenticationVerify {
     mfaVerify: { secret: '$.profile.secret', token: '$.payload.token'}
 }
 ```
+
+#### Public File Storage
+
+RBS Storage service has file size limits because of Lambda and API Gateway restrictions.
+To avoid that, you can store your files in Process Manager directly.
+When you put a file, you can access it via a public URL.
+
+```typescript
+interface {
+    fileContent: string
+    filename?: string
+    fileNotExists?: boolean
+    fileBase64?: boolean
+    fileType?: string
+    fileTTL?: '1d' | '3d' | '7d' | '15d'
+}
+```
+
+| Attribute Name | Type | Default | Must | Description |
+| -------------- | ---- | ------- | ---- | ----------- |
+| fileContent | string | undefined | ✅ | File content to put into S3. |
+| filename | string | undefined | ❌ | Name of the file. If you don't provide a name, a ULID string will be assigned automatically. |
+| fileType | string | undefined | ❌ | Mime-type of the file. Default value is application/json. |
+| fileNotExists | boolean | false | ❌ | Flag to prevent overwriting an existing file. |
+| fileBase64 | boolean | false | ❌ | Flag to determine whether file format is base64 or not. |
+| fileTTL | 1d, 3d, 7d or 15d | 1d | ❌ | Time to live for the file. Default value is one day. |
+| resultPath | string | fileResult | ✅ | Variable name to storage output into state. |
