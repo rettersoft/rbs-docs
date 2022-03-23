@@ -5,6 +5,7 @@ Content-Type: application/json
     {
         "type": "$active",
         "merchantId": "default",
-        "variantGroupId": "D"
+        "variantGroupId": null,
+        "itemId": "S989.101"
     }
 ]
